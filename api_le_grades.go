@@ -28,8 +28,8 @@ func (c *Client) GetGradeValue(orgUnitId, gradeObjectId, userId int64) (*GradeVa
 
 // GetGradeValues returns grade values for all users for a grade object.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/{gradeObjectId}/values/
-func (c *Client) GetGradeValues(orgUnitId, gradeObjectId int64, params url.Values) (*PagedResultSet[GradeValue], error) {
-	var out PagedResultSet[GradeValue]
+func (c *Client) GetGradeValues(orgUnitId, gradeObjectId int64, params url.Values) (*ObjectListPage[GradeValueEntry], error) {
+	var out ObjectListPage[GradeValueEntry]
 	err := c.get(c.lePath("%d/grades/%d/values/", orgUnitId, gradeObjectId), params, &out)
 	return &out, err
 }

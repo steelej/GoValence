@@ -4,8 +4,8 @@ import "net/url"
 
 // GetSurveys returns all surveys for an org unit.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/surveys/
-func (c *Client) GetSurveys(orgUnitId int64, params url.Values) (*PagedResultSet[Survey], error) {
-	var out PagedResultSet[Survey]
+func (c *Client) GetSurveys(orgUnitId int64, params url.Values) (*ObjectListPage[Survey], error) {
+	var out ObjectListPage[Survey]
 	err := c.get(c.lePath("%d/surveys/", orgUnitId), params, &out)
 	return &out, err
 }
@@ -20,8 +20,8 @@ func (c *Client) GetSurvey(orgUnitId, surveyId int64) (*Survey, error) {
 
 // GetSurveyAttempts returns all attempts for a survey.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/surveys/{surveyId}/attempts/
-func (c *Client) GetSurveyAttempts(orgUnitId, surveyId int64, params url.Values) (*PagedResultSet[SurveyAttempt], error) {
-	var out PagedResultSet[SurveyAttempt]
+func (c *Client) GetSurveyAttempts(orgUnitId, surveyId int64, params url.Values) (*ObjectListPage[SurveyAttempt], error) {
+	var out ObjectListPage[SurveyAttempt]
 	err := c.get(c.lePath("%d/surveys/%d/attempts/", orgUnitId, surveyId), params, &out)
 	return &out, err
 }

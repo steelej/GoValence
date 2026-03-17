@@ -1,6 +1,9 @@
 package valence
 
-import "net/url"
+import (
+	"net/url"
+	"strings"
+)
 
 // GetDropboxFolders returns all dropbox folders for an org unit.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/
@@ -18,18 +21,18 @@ func (c *Client) GetDropboxFolder(orgUnitId, folderId int64) (*DropboxFolder, er
 	return &out, err
 }
 
-// GetDropboxSubmissions returns all submissions for a dropbox folder.
+// GetDropboxSubmissions returns all submissions for a dropbox folder, grouped by user.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/submissions/
-func (c *Client) GetDropboxSubmissions(orgUnitId, folderId int64) ([]Submission, error) {
-	var out []Submission
+func (c *Client) GetDropboxSubmissions(orgUnitId, folderId int64) ([]UserSubmissions, error) {
+	var out []UserSubmissions
 	err := c.get(c.lePath("%d/dropbox/folders/%d/submissions/", orgUnitId, folderId), nil, &out)
 	return out, err
 }
 
 // GetDropboxUserSubmissions returns submissions for a specific user in a dropbox folder.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/submissions/user/{userId}
-func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) ([]Submission, error) {
-	var out []Submission
+func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) ([]DropboxSubmissionEntry, error) {
+	var out []DropboxSubmissionEntry
 	err := c.get(c.lePath("%d/dropbox/folders/%d/submissions/user/%d", orgUnitId, folderId, userId), nil, &out)
 	return out, err
 }
@@ -38,6 +41,13 @@ func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) ([
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/submissions/{submissionId}/files/{fileId}
 func (c *Client) GetDropboxSubmissionFile(orgUnitId, folderId, submissionId, fileId int64) ([]byte, error) {
 	return c.getRaw(c.lePath("%d/dropbox/folders/%d/submissions/%d/files/%d", orgUnitId, folderId, submissionId, fileId), nil)
+}
+
+// GetDropboxFeedbackFile returns the raw bytes of a feedback attachment file.
+// entityType should be "user" or "group" (case-insensitive; will be lowercased).
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/feedback/{entityType}/{entityId}/attachments/{fileId}
+func (c *Client) GetDropboxFeedbackFile(orgUnitId, folderId int64, entityType string, entityId, fileId int64) ([]byte, error) {
+	return c.getRaw(c.lePath("%d/dropbox/folders/%d/feedback/%s/%d/attachments/%d", orgUnitId, folderId, strings.ToLower(entityType), entityId, fileId), nil)
 }
 
 // GetDropboxCategories returns all dropbox categories for an org unit.

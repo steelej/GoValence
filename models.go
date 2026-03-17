@@ -14,10 +14,17 @@ type PagingInfo struct {
 	HasMoreItems bool  `json:"HasMoreItems"`
 }
 
-// PagedResultSet is the generic wrapper returned by list endpoints.
+// PagedResultSet is the generic wrapper returned by list endpoints that use an "Items" key.
 type PagedResultSet[T any] struct {
 	PagingInfo PagingInfo `json:"PagingInfo"`
 	Items      []T        `json:"Items"`
+}
+
+// ObjectListPage is the generic paging wrapper for endpoints that return an "Objects" array.
+// Next is non-nil when more pages exist and contains the URL to fetch the next page.
+type ObjectListPage[T any] struct {
+	Objects []T     `json:"Objects"`
+	Next    *string `json:"Next"`
 }
 
 // ---- Versions --------------------------------------------------------------
@@ -181,7 +188,7 @@ type GroupCategory struct {
 	GroupCategoryId         int64    `json:"GroupCategoryId"`
 	Name                    string   `json:"Name"`
 	Description             RichText `json:"Description"`
-	EnrollmentStyle         string   `json:"EnrollmentStyle"`
+	EnrollmentStyle         int      `json:"EnrollmentStyle"`
 	EnrollmentQuantity      *int     `json:"EnrollmentQuantity"`
 	AutoEnroll              bool     `json:"AutoEnroll"`
 	RandomizeEnrollments    bool     `json:"RandomizeEnrollments"`
@@ -282,6 +289,28 @@ type GradeValue struct {
 	Released           bool     `json:"Released"`
 }
 
+// GradeUserRef is the user reference embedded in a GradeValueEntry.
+type GradeUserRef struct {
+	Identifier string `json:"Identifier"`
+	DisplayName string `json:"DisplayName"`
+}
+
+// GradeValueData is the grade value data embedded in a GradeValueEntry.
+type GradeValueData struct {
+	PointsNumerator     *float64 `json:"PointsNumerator"`
+	PointsDenominator   *float64 `json:"PointsDenominator"`
+	WeightedNumerator   *float64 `json:"WeightedNumerator"`
+	WeightedDenominator *float64 `json:"WeightedDenominator"`
+	DisplayedGrade      string   `json:"DisplayedGrade"`
+	GradeObjectIdentifier string `json:"GradeObjectIdentifier"`
+}
+
+// GradeValueEntry is one item in the ObjectListPage returned by the grade values endpoint.
+type GradeValueEntry struct {
+	User       GradeUserRef   `json:"User"`
+	GradeValue GradeValueData `json:"GradeValue"`
+}
+
 type FinalGradeValue struct {
 	UserId         int64   `json:"UserId"`
 	OrgUnitId      int64   `json:"OrgUnitId"`
@@ -300,14 +329,19 @@ type FinalGradeValue struct {
 // ---- Class List ------------------------------------------------------------
 
 type ClasslistUser struct {
-	Identifier    int64  `json:"Identifier,string"`
-	ProfileIdentifier string `json:"ProfileIdentifier"`
-	DisplayName   string `json:"DisplayName"`
-	UserName      string `json:"UserName"`
-	OrgDefinedId  string `json:"OrgDefinedId"`
-	Email         string `json:"Email"`
-	FirstName     string `json:"FirstName"`
-	LastName      string `json:"LastName"`
+	Identifier               int64   `json:"Identifier,string"`
+	ProfileIdentifier        string  `json:"ProfileIdentifier"`
+	DisplayName              string  `json:"DisplayName"`
+	UserName                 *string `json:"Username"`
+	OrgDefinedId             string  `json:"OrgDefinedId"`
+	Email                    string  `json:"Email"`
+	FirstName                string  `json:"FirstName"`
+	LastName                 string  `json:"LastName"`
+	RoleId                   int64   `json:"RoleId"`
+	ClasslistRoleDisplayName string  `json:"ClasslistRoleDisplayName"`
+	LastAccessed             *string `json:"LastAccessed"`
+	IsOnline                 bool    `json:"IsOnline"`
+	Pronouns                 *string `json:"Pronouns"`
 }
 
 // ---- News ------------------------------------------------------------------
@@ -413,34 +447,87 @@ type Topic struct {
 }
 
 type Post struct {
-	PostId      int64    `json:"PostId"`
-	TopicId     int64    `json:"TopicId"`
-	ParentPostId *int64  `json:"ParentPostId"`
-	Subject     string   `json:"Subject"`
-	Message     RichText `json:"Message"`
-	IsAnonymous bool     `json:"IsAnonymous"`
-	IsApproved  bool     `json:"IsApproved"`
-	IsDeleted   bool     `json:"IsDeleted"`
-	ThreadId    int64    `json:"ThreadId"`
-	UserId      int64    `json:"UserId"`
-	DatePosted  string   `json:"DatePosted"`
-	LastModified *string `json:"LastModified"`
+	PostId       int64    `json:"PostId"`
+	TopicId      int64    `json:"TopicId"`
+	ForumId      int64    `json:"ForumId"`
+	ParentPostId *int64   `json:"ParentPostId"`
+	Subject      string   `json:"Subject"`
+	Message      RichText `json:"Message"`
+	IsAnonymous  bool     `json:"IsAnonymous"`
+	IsApproved   bool     `json:"IsApproved"`
+	IsDeleted    bool     `json:"IsDeleted"`
+	ThreadId     int64    `json:"ThreadId"`
+	UserId       int64    `json:"PostingUserId"`
+	DatePosted   string   `json:"DatePosted"`
+	LastModified *string  `json:"LastModified"`
 }
 
 // ---- Dropbox ---------------------------------------------------------------
 
+type RubricLevel struct {
+	Id     int64   `json:"Id"`
+	Name   string  `json:"Name"`
+	Points float64 `json:"Points"`
+}
+
+type RubricCell struct {
+	Description RichText `json:"Description"`
+	Feedback    RichText `json:"Feedback"`
+	Points      *float64 `json:"Points"`
+	LevelId     int64    `json:"LevelId"`
+}
+
+type RubricCriterion struct {
+	Id    int64        `json:"Id"`
+	Name  string       `json:"Name"`
+	Cells []RubricCell `json:"Cells"`
+}
+
+type RubricCriteriaGroup struct {
+	Name       string            `json:"Name"`
+	Levels     []RubricLevel     `json:"Levels"`
+	Criteria   []RubricCriterion `json:"Criteria"`
+	LevelSetId int64             `json:"LevelSetId"`
+}
+
+type RubricOverallLevel struct {
+	Id          int64    `json:"Id"`
+	Name        string   `json:"Name"`
+	RangeStart  float64  `json:"RangeStart"`
+	Description RichText `json:"Description"`
+	Feedback    RichText `json:"Feedback"`
+}
+
+type DropboxRubric struct {
+	RubricId       int64                 `json:"RubricId"`
+	Name           string                `json:"Name"`
+	Description    RichText              `json:"Description"`
+	RubricType     int                   `json:"RubricType"`
+	ScoringMethod  int                   `json:"ScoringMethod"`
+	CriteriaGroups []RubricCriteriaGroup `json:"CriteriaGroups"`
+	OverallLevels  []RubricOverallLevel  `json:"OverallLevels"`
+}
+
+type DropboxAssessment struct {
+	ScoreDenominator *float64       `json:"ScoreDenominator"`
+	Rubrics          []DropboxRubric `json:"Rubrics"`
+}
+
 type DropboxFolder struct {
-	Id                 int64    `json:"Id"`
-	CategoryId         *int64   `json:"CategoryId"`
-	Name               string   `json:"Name"`
-	CustomInstructions RichText `json:"CustomInstructions"`
-	TotalFiles         int      `json:"TotalFiles"`
-	UnreadFiles        int      `json:"UnreadFiles"`
-	FlaggedFiles       int      `json:"FlaggedFiles"`
-	TotalUsers         int      `json:"TotalUsers"`
-	IsHidden           bool     `json:"IsHidden"`
-	DueDate            *string  `json:"DueDate"`
-	DisplayInCalendar  bool     `json:"DisplayInCalendar"`
+	Id                 int64             `json:"Id"`
+	CategoryId         *int64            `json:"CategoryId"`
+	Name               string            `json:"Name"`
+	CustomInstructions RichText          `json:"CustomInstructions"`
+	TotalFiles         int               `json:"TotalFiles"`
+	UnreadFiles        int               `json:"UnreadFiles"`
+	FlaggedFiles       int               `json:"FlaggedFiles"`
+	TotalUsers         int               `json:"TotalUsers"`
+	IsHidden           bool              `json:"IsHidden"`
+	DueDate            *string           `json:"DueDate"`
+	DisplayInCalendar  bool              `json:"DisplayInCalendar"`
+	DropboxType        int               `json:"DropboxType"`
+	GroupTypeId        *int64            `json:"GroupTypeId"`
+	Assessment         DropboxAssessment `json:"Assessment"`
 }
 
 type DropboxCategory struct {
@@ -449,17 +536,63 @@ type DropboxCategory struct {
 }
 
 type SubmissionFile struct {
+	FileId   int64  `json:"FileId"`
+	FileName string `json:"FileName"`
+	Size     int64  `json:"Size"`
+}
+
+// DropboxEntity is the user entity at the top level of a submission group.
+// User entities use "DisplayName"; Group entities use "Name".
+type DropboxEntity struct {
+	DisplayName string `json:"DisplayName"`
+	Name        string `json:"Name"`
+	EntityId    int64  `json:"EntityId"`
+	EntityType  string `json:"EntityType"`
+	Active      bool   `json:"Active"`
+}
+
+// DropboxFeedback holds instructor feedback for a user's folder submission.
+type DropboxFeedback struct {
+	Score        *float64               `json:"Score"`
+	Feedback     *RichText              `json:"Feedback"`
+	IsGraded     bool                   `json:"IsGraded"`
+	GradedSymbol *string                `json:"GradedSymbol"`
+	Files        []DropboxSubmissionFile `json:"Files"`
+}
+
+// DropboxSubmitter is the per-submission submitter reference (Identifier is a string user ID).
+type DropboxSubmitter struct {
+	Identifier  string `json:"Identifier"`
+	DisplayName string `json:"DisplayName"`
+}
+
+// DropboxSubmissionFile is a file attached to a dropbox submission entry.
+type DropboxSubmissionFile struct {
 	FileId    int64  `json:"FileId"`
 	FileName  string `json:"FileName"`
 	Size      int64  `json:"Size"`
+	IsRead    bool   `json:"IsRead"`
+	IsFlagged bool   `json:"IsFlagged"`
+	IsDeleted bool   `json:"IsDeleted"`
 }
 
-type Submission struct {
-	Id              int64           `json:"Id"`
-	SubmittedBy     UserData        `json:"SubmittedBy"`
-	Files           []SubmissionFile `json:"Files"`
-	SubmissionDate  string          `json:"SubmissionDate"`
-	Comment         string          `json:"Comment"`
+// DropboxSubmissionEntry is a single submission within a UserSubmissions group.
+type DropboxSubmissionEntry struct {
+	Id             int64                   `json:"Id"`
+	SubmittedBy    DropboxSubmitter        `json:"SubmittedBy"`
+	SubmissionDate string                  `json:"SubmissionDate"`
+	Comment        RichText                `json:"Comment"`
+	Files          []DropboxSubmissionFile `json:"Files"`
+}
+
+// UserSubmissions groups all submissions (and feedback) for one user in a dropbox folder.
+// This is the element type returned by GetDropboxSubmissions.
+type UserSubmissions struct {
+	Entity         DropboxEntity            `json:"Entity"`
+	Status         int                      `json:"Status"`
+	Feedback       DropboxFeedback          `json:"Feedback"`
+	Submissions    []DropboxSubmissionEntry `json:"Submissions"`
+	CompletionDate string                   `json:"CompletionDate"`
 }
 
 // ---- Survey ----------------------------------------------------------------

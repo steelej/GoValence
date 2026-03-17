@@ -36,10 +36,10 @@ func (c *Client) GetTopic(orgUnitId, forumId, topicId int64) (*Topic, error) {
 
 // GetPosts returns all posts in a discussion topic.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/discussions/forums/{forumId}/topics/{topicId}/posts/
-func (c *Client) GetPosts(orgUnitId, forumId, topicId int64, params url.Values) (*PagedResultSet[Post], error) {
-	var out PagedResultSet[Post]
+func (c *Client) GetPosts(orgUnitId, forumId, topicId int64, params url.Values) ([]Post, error) {
+	var out []Post
 	err := c.get(c.lePath("%d/discussions/forums/%d/topics/%d/posts/", orgUnitId, forumId, topicId), params, &out)
-	return &out, err
+	return out, err
 }
 
 // GetPost returns a specific discussion post.
@@ -52,8 +52,8 @@ func (c *Client) GetPost(orgUnitId, forumId, topicId, postId int64) (*Post, erro
 
 // GetPostReplies returns all replies to a specific post.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/discussions/forums/{forumId}/topics/{topicId}/posts/{postId}/Replies
-func (c *Client) GetPostReplies(orgUnitId, forumId, topicId, postId int64, params url.Values) (*PagedResultSet[Post], error) {
-	var out PagedResultSet[Post]
+func (c *Client) GetPostReplies(orgUnitId, forumId, topicId, postId int64, params url.Values) ([]Post, error) {
+	var out []Post
 	err := c.get(c.lePath("%d/discussions/forums/%d/topics/%d/posts/%d/Replies", orgUnitId, forumId, topicId, postId), params, &out)
-	return &out, err
+	return out, err
 }
