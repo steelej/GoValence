@@ -4,10 +4,10 @@ import "net/url"
 
 // GetDropboxFolders returns all dropbox folders for an org unit.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/
-func (c *Client) GetDropboxFolders(orgUnitId int64, params url.Values) (*PagedResultSet[DropboxFolder], error) {
-	var out PagedResultSet[DropboxFolder]
+func (c *Client) GetDropboxFolders(orgUnitId int64, params url.Values) ([]DropboxFolder, error) {
+	var out []DropboxFolder
 	err := c.get(c.lePath("%d/dropbox/folders/", orgUnitId), params, &out)
-	return &out, err
+	return out, err
 }
 
 // GetDropboxFolder returns a specific dropbox folder.

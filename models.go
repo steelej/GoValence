@@ -45,7 +45,7 @@ type OrgUnitTypeInfo struct {
 }
 
 type OrgUnit struct {
-	Identifier int64           `json:"Identifier"`
+	Identifier int64           `json:"Identifier,string"`
 	Name       string          `json:"Name"`
 	Code       string          `json:"Code"`
 	Type       OrgUnitTypeInfo `json:"Type"`
@@ -141,7 +141,7 @@ type EnrollmentData struct {
 // ---- Course ----------------------------------------------------------------
 
 type CourseOffering struct {
-	Identifier       int64    `json:"Identifier"`
+	Identifier       int64    `json:"Identifier,string"`
 	Name             string   `json:"Name"`
 	Code             string   `json:"Code"`
 	IsActive         bool     `json:"IsActive"`
@@ -181,7 +181,7 @@ type GroupCategory struct {
 	GroupCategoryId         int64    `json:"GroupCategoryId"`
 	Name                    string   `json:"Name"`
 	Description             RichText `json:"Description"`
-	EnrollmentStyle         int      `json:"EnrollmentStyle"`
+	EnrollmentStyle         string   `json:"EnrollmentStyle"`
 	EnrollmentQuantity      *int     `json:"EnrollmentQuantity"`
 	AutoEnroll              bool     `json:"AutoEnroll"`
 	RandomizeEnrollments    bool     `json:"RandomizeEnrollments"`
@@ -189,7 +189,7 @@ type GroupCategory struct {
 	MaxUsersPerGroup        *int     `json:"MaxUsersPerGroup"`
 	AllocateAfterExpiry     bool     `json:"AllocateAfterExpiry"`
 	SelfEnrollmentExpiryDate *string `json:"SelfEnrollmentExpiryDate"`
-	Groups                  []Group  `json:"Groups"`
+	Groups                  []int64  `json:"Groups"`
 	RestrictedByOrgUnitId   *int64   `json:"RestrictedByOrgUnitId"`
 }
 
@@ -204,8 +204,8 @@ type Section struct {
 }
 
 type SectionPropertyData struct {
-	EnrollmentStyle    int  `json:"EnrollmentStyle"`
-	EnrollmentQuantity *int `json:"EnrollmentQuantity"`
+	EnrollmentStyle    string `json:"EnrollmentStyle"`
+	EnrollmentQuantity *int   `json:"EnrollmentQuantity"`
 	AutoEnroll         bool `json:"AutoEnroll"`
 	RandomizeEnrollments bool `json:"RandomizeEnrollments"`
 }
@@ -300,7 +300,7 @@ type FinalGradeValue struct {
 // ---- Class List ------------------------------------------------------------
 
 type ClasslistUser struct {
-	Identifier    int64  `json:"Identifier"`
+	Identifier    int64  `json:"Identifier,string"`
 	ProfileIdentifier string `json:"ProfileIdentifier"`
 	DisplayName   string `json:"DisplayName"`
 	UserName      string `json:"UserName"`
