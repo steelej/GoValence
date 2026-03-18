@@ -60,7 +60,7 @@ type OrgUnit struct {
 }
 
 type OrgUnitProperties struct {
-	Identifier   int64           `json:"Identifier"`
+	Identifier   int64           `json:"Identifier,string"`
 	Name         string          `json:"Name"`
 	Code         string          `json:"Code"`
 	Type         OrgUnitTypeInfo `json:"Type"`
