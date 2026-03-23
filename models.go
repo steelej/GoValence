@@ -297,12 +297,14 @@ type GradeUserRef struct {
 
 // GradeValueData is the grade value data embedded in a GradeValueEntry.
 type GradeValueData struct {
-	PointsNumerator     *float64 `json:"PointsNumerator"`
-	PointsDenominator   *float64 `json:"PointsDenominator"`
-	WeightedNumerator   *float64 `json:"WeightedNumerator"`
-	WeightedDenominator *float64 `json:"WeightedDenominator"`
-	DisplayedGrade      string   `json:"DisplayedGrade"`
-	GradeObjectIdentifier string `json:"GradeObjectIdentifier"`
+	PointsNumerator       *float64 `json:"PointsNumerator"`
+	PointsDenominator     *float64 `json:"PointsDenominator"`
+	WeightedNumerator     *float64 `json:"WeightedNumerator"`
+	WeightedDenominator   *float64 `json:"WeightedDenominator"`
+	DisplayedGrade        string   `json:"DisplayedGrade"`
+	GradeObjectIdentifier string   `json:"GradeObjectIdentifier"`
+	GradeObjectName       string   `json:"GradeObjectName"`
+	GradeObjectType       int      `json:"GradeObjectType"`
 }
 
 // GradeValueEntry is one item in the ObjectListPage returned by the grade values endpoint.
@@ -315,7 +317,7 @@ type FinalGradeValue struct {
 	UserId         int64   `json:"UserId"`
 	OrgUnitId      int64   `json:"OrgUnitId"`
 	DisplayedGrade string  `json:"DisplayedGrade"`
-	GradeObjectIdentifier int64 `json:"GradeObjectIdentifier"`
+	GradeObjectIdentifier string `json:"GradeObjectIdentifier"`
 	GradeObjectName string `json:"GradeObjectName"`
 	PointsNumerator *float64 `json:"PointsNumerator"`
 	PointsDenominator *float64 `json:"PointsDenominator"`
@@ -324,6 +326,13 @@ type FinalGradeValue struct {
 	Comments        *RichText `json:"Comments"`
 	PrivateComments *RichText `json:"PrivateComments"`
 	Released        bool     `json:"Released"`
+}
+
+// FinalGradeValueEntry is one item returned by the paginated final grade values list endpoint.
+// GradeValue is nil when no final grade has been assigned.
+type FinalGradeValueEntry struct {
+	User       GradeUserRef    `json:"User"`
+	GradeValue *GradeValueData `json:"GradeValue"`
 }
 
 // ---- Class List ------------------------------------------------------------
@@ -667,10 +676,13 @@ type LTIDeploymentSharingData struct {
 
 // ---- Tools -----------------------------------------------------------------
 
+// OrgUnitInformation block returned by GET /d2l/api/lp/(version)/tools/orgUnits/(orgUnitId)
 type ToolInfo struct {
-	ToolId    int64  `json:"ToolId"`
-	ToolName  string `json:"ToolName"`
-	IsEnabled bool   `json:"IsEnabled"`
+	ToolId           string `json:"ToolId"`
+	DisplayName      string `json:"DisplayName"`
+	OrgUnitId        int64  `json:"OrgUnitId"`
+	Status           bool   `json:"Status"`
+	CustomNavbarName string `json:"CustomNavbarName"`
 }
 
 // ---- Config Variables ------------------------------------------------------

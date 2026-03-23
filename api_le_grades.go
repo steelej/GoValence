@@ -49,3 +49,20 @@ func (c *Client) GetFinalGradeValue(orgUnitId, userId int64) (*FinalGradeValue, 
 	err := c.get(c.lePath("%d/grades/final/values/%d", orgUnitId, userId), nil, &out)
 	return &out, err
 }
+
+// GetFinalCalculatedGradeValue returns the final calculated grade for a specific user.
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/final/values/{userId}?gradeType=calculated
+func (c *Client) GetFinalCalculatedGradeValue(orgUnitId, userId int64) (*FinalGradeValue, error) {
+	var out FinalGradeValue
+	params := url.Values{"gradeType": []string{"calculated"}}
+	err := c.get(c.lePath("%d/grades/final/values/%d", orgUnitId, userId), params, &out)
+	return &out, err
+}
+
+// GetFinalGradeValues returns final grade values for all users in an org unit (paginated).
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/final/values/
+func (c *Client) GetFinalGradeValues(orgUnitId int64, params url.Values) (*ObjectListPage[FinalGradeValueEntry], error) {
+	var out ObjectListPage[FinalGradeValueEntry]
+	err := c.get(c.lePath("%d/grades/final/values/", orgUnitId), params, &out)
+	return &out, err
+}
