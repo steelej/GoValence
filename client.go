@@ -38,7 +38,7 @@ type Config struct {
 func New(cfg Config) *Client {
 	hc := cfg.HTTPClient
 	if hc == nil {
-		hc = &http.Client{Timeout: 60 * time.Second}
+		hc = &http.Client{Timeout: 0}
 	}
 	return &Client{
 		baseURL:    cfg.BaseURL,
