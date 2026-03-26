@@ -127,7 +127,7 @@ func (c *Client) get(path string, params url.Values, out any) error {
 }
 
 // getRaw executes a GET request and returns the raw body bytes (for binary downloads).
-func (c *Client) getRaw(path string, params url.Values) ([]byte, error) {
+func (c *Client) getRaw(path string, params url.Values) (io.ReadCloser, error) {
 	fullURL := c.baseURL + path
 	if len(params) > 0 {
 		fullURL += "?" + params.Encode()
@@ -151,18 +151,20 @@ func (c *Client) getRaw(path string, params url.Values) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
 
 	c.rateLimit.update(resp)
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-
-	c.stats.record(elapsed, wait, int64(len(body)))
+	c.stats.record(elapsed, wait, resp.ContentLength)
 
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		//read the body for the error
+		body, err := io.ReadAll(resp.Body)
+		defer resp.Body.Close()
+
+		if err != nil {
+			return nil, err
+		}
+
 		return nil, &APIError{
 			StatusCode: resp.StatusCode,
 			Status:     resp.Status,
@@ -170,5 +172,5 @@ func (c *Client) getRaw(path string, params url.Values) ([]byte, error) {
 		}
 	}
 
-	return body, nil
+	return resp.Body, nil
 }

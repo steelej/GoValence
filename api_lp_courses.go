@@ -1,6 +1,9 @@
 package valence
 
-import "net/url"
+import (
+	"io"
+	"net/url"
+)
 
 // GetCourse returns a specific course offering.
 // GET /d2l/api/lp/{lpVersion}/courses/{orgUnitId}
@@ -12,7 +15,7 @@ func (c *Client) GetCourse(orgUnitId int64) (*CourseOffering, error) {
 
 // GetCourseImage returns the raw bytes of a course's image.
 // GET /d2l/api/lp/{lpVersion}/courses/{orgUnitId}/image
-func (c *Client) GetCourseImage(orgUnitId int64) ([]byte, error) {
+func (c *Client) GetCourseImage(orgUnitId int64) (io.ReadCloser, error) {
 	return c.getRaw(c.lpPath("courses/%d/image", orgUnitId), nil)
 }
 

@@ -1,6 +1,7 @@
 package valence
 
 import (
+	"io"
 	"net/url"
 	"strings"
 )
@@ -39,14 +40,14 @@ func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) ([
 
 // GetDropboxSubmissionFile returns the raw bytes of a submission file.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/submissions/{submissionId}/files/{fileId}
-func (c *Client) GetDropboxSubmissionFile(orgUnitId, folderId, submissionId, fileId int64) ([]byte, error) {
+func (c *Client) GetDropboxSubmissionFile(orgUnitId, folderId, submissionId, fileId int64) (io.ReadCloser, error) {
 	return c.getRaw(c.lePath("%d/dropbox/folders/%d/submissions/%d/files/%d", orgUnitId, folderId, submissionId, fileId), nil)
 }
 
 // GetDropboxFeedbackFile returns the raw bytes of a feedback attachment file.
 // entityType should be "user" or "group" (case-insensitive; will be lowercased).
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/feedback/{entityType}/{entityId}/attachments/{fileId}
-func (c *Client) GetDropboxFeedbackFile(orgUnitId, folderId int64, entityType string, entityId, fileId int64) ([]byte, error) {
+func (c *Client) GetDropboxFeedbackFile(orgUnitId, folderId int64, entityType string, entityId, fileId int64) (io.ReadCloser, error) {
 	return c.getRaw(c.lePath("%d/dropbox/folders/%d/feedback/%s/%d/attachments/%d", orgUnitId, folderId, strings.ToLower(entityType), entityId, fileId), nil)
 }
 
