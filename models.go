@@ -152,13 +152,17 @@ type CourseOffering struct {
 	Name            string   `json:"Name"`
 	Code            string   `json:"Code"`
 	IsActive        bool     `json:"IsActive"`
+	Path            string   `json:"Path"`
 	CourseTemplate  OrgUnit  `json:"CourseTemplate"`
 	Semester        *OrgUnit `json:"Semester"`
+	Department      *OrgUnit `json:"Department"`
 	StartDate       *string  `json:"StartDate"`
 	EndDate         *string  `json:"EndDate"`
 	LocaleId        *int64   `json:"LocaleId"`
 	ForceLocale     bool     `json:"ForceLocale"`
 	ShowAddressBook bool     `json:"ShowAddressBook"`
+	Description     RichText `json:"Description"`
+	CanSelfRegister bool     `json:"CanSelfRegister"`
 }
 
 type CourseTemplate struct {
