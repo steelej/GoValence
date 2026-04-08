@@ -751,6 +751,12 @@ type CourseImportJobData struct {
 	JobToken string `json:"JobToken"`
 }
 
+type CourseImportJobStatus struct {
+	JobToken        string `json:"JobToken"`
+	TargetOrgUnitId int64  `json:"TargetOrgUnitId"`
+	Status          string `json:"Status"`
+}
+
 // ---- Badges ----------------------------------------------------------------
 
 type IssuedBadge struct {

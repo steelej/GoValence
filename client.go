@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
+	"net/textproto"
 	"net/url"
 	"time"
 )
@@ -173,4 +175,85 @@ func (c *Client) getRaw(path string, params url.Values) (io.ReadCloser, error) {
 	}
 
 	return resp.Body, nil
+}
+
+// postMultipartFile executes a multipart/form-data POST with a streamed file upload.
+func (c *Client) postMultipartFile(path string, params url.Values, fieldName, fileName, contentType string, body io.Reader, out any) error {
+	fullURL := c.baseURL + path
+	if len(params) > 0 {
+		fullURL += "?" + params.Encode()
+	}
+
+	pr, pw := io.Pipe()
+	mw := multipart.NewWriter(pw)
+
+	go func() {
+		defer pw.Close()
+
+		headers := make(textproto.MIMEHeader)
+		headers.Set("Content-Disposition", fmt.Sprintf(`form-data; name="%s"; filename="%s"`, fieldName, fileName))
+		headers.Set("Content-Type", contentType)
+
+		part, err := mw.CreatePart(headers)
+		if err != nil {
+			_ = pw.CloseWithError(err)
+			return
+		}
+
+		if _, err := io.Copy(part, body); err != nil {
+			_ = pw.CloseWithError(err)
+			return
+		}
+
+		if err := mw.Close(); err != nil {
+			_ = pw.CloseWithError(err)
+		}
+	}()
+
+	req, err := http.NewRequest(http.MethodPost, fullURL, pr)
+	if err != nil {
+		_ = pr.Close()
+		return err
+	}
+	req.Header.Set("Content-Type", mw.FormDataContentType())
+
+	if err := c.auth.AuthenticateRequest(req); err != nil {
+		_ = pr.Close()
+		return err
+	}
+
+	wait := c.rateLimit.waitIfNeeded()
+
+	start := time.Now()
+	resp, err := c.httpClient.Do(req)
+	elapsed := time.Since(start)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	c.rateLimit.update(resp)
+
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	c.stats.record(elapsed, wait, int64(len(respBody)))
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return &APIError{
+			StatusCode: resp.StatusCode,
+			Status:     resp.Status,
+			Body:       string(respBody),
+		}
+	}
+
+	if out != nil && len(respBody) > 0 {
+		if err := json.Unmarshal(respBody, out); err != nil {
+			return fmt.Errorf("decoding response: %w", err)
+		}
+	}
+
+	return nil
 }
