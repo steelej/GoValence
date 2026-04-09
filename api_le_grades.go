@@ -18,6 +18,22 @@ func (c *Client) GetGradeCategories(orgUnitId int64) ([]GradeCategory, error) {
 	return out, err
 }
 
+// GetGradeSchemes returns all grade schemes for an org unit.
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/schemes/
+func (c *Client) GetGradeSchemes(orgUnitId int64) ([]GradeScheme, error) {
+	var out []GradeScheme
+	err := c.get(c.lePath("%d/grades/schemes/", orgUnitId), nil, &out)
+	return out, err
+}
+
+// GetGradeSetup returns gradebook setup information for an org unit.
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/setup/
+func (c *Client) GetGradeSetup(orgUnitId int64) (*GradeSetupInfo, error) {
+	var out GradeSetupInfo
+	err := c.get(c.lePath("%d/grades/setup/", orgUnitId), nil, &out)
+	return &out, err
+}
+
 // GetGradeValue returns a specific user's value for a grade object.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/grades/{gradeObjectId}/values/{userId}
 func (c *Client) GetGradeValue(orgUnitId, gradeObjectId, userId int64) (*GradeValue, error) {

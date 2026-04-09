@@ -1,5 +1,7 @@
 package valence
 
+import "encoding/json"
+
 // ---- Common ----------------------------------------------------------------
 
 // RichText holds a value in both plain-text and HTML forms.
@@ -230,6 +232,26 @@ type GradeSchemeRange struct {
 	AssignedValue float64 `json:"AssignedValue"`
 }
 
+type GradeScheme struct {
+	Id        int64              `json:"Id"`
+	Name      string             `json:"Name"`
+	ShortName string             `json:"ShortName"`
+	Ranges    []GradeSchemeEntry `json:"Ranges"`
+}
+
+type GradeSchemeEntry struct {
+	PercentStart  float64  `json:"PercentStart"`
+	Symbol        string   `json:"Symbol"`
+	AssignedValue *float64 `json:"AssignedValue"`
+	Colour        string   `json:"Colour"`
+}
+
+type GradeSetupInfo struct {
+	GradingSystem        string `json:"GradingSystem"`
+	IsNullGradeZero      bool   `json:"IsNullGradeZero"`
+	DefaultGradeSchemeId int64  `json:"DefaultGradeSchemeId"`
+}
+
 type GradeSchemeInfo struct {
 	Id   int64  `json:"Id"`
 	Name string `json:"Name"`
@@ -240,6 +262,8 @@ type GradeObject struct {
 	CanExceedMaxPoints    bool             `json:"CanExceedMaxPoints"`
 	IsBonus               bool             `json:"IsBonus"`
 	ExcludeFromFinalGrade bool             `json:"ExcludeFromFinalGrade"`
+	GradeSchemeId         *int64           `json:"GradeSchemeId"`
+	GradeSchemeUrl        string           `json:"GradeSchemeUrl"`
 	GradeScheme           *GradeSchemeInfo `json:"GradeScheme"`
 	Id                    int64            `json:"Id"`
 	Name                  string           `json:"Name"`
@@ -250,6 +274,7 @@ type GradeObject struct {
 	GradeObjectTypeId     int              `json:"GradeObjectTypeId"`
 	ActivityId            *string          `json:"ActivityId"`
 	AssociatedTool        *AssociatedTool  `json:"AssociatedTool"`
+	IsHidden              bool             `json:"IsHidden"`
 }
 
 type AssociatedTool struct {
@@ -377,6 +402,9 @@ type QuizReadData struct {
 	Name                string       `json:"Name"`
 	IsActive            bool         `json:"IsActive"`
 	SortOrder           int          `json:"SortOrder"`
+	AutoExportToGrades  *bool        `json:"AutoExportToGrades"`
+	GradeItemId         *int64       `json:"GradeItemId"`
+	IsAutoSetGraded     bool         `json:"IsAutoSetGraded"`
 	SubmissionTimeLimit TimeLimit    `json:"SubmissionTimeLimit"`
 	StartDate           *string      `json:"StartDate"`
 	EndDate             *string      `json:"EndDate"`
@@ -421,6 +449,12 @@ type QuizQuestion struct {
 	Bonus          bool     `json:"Bonus"`
 	Mandatory      bool     `json:"Mandatory"`
 	QuestionTypeId int      `json:"QuestionTypeId"`
+	Hint           RichText `json:"Hint"`
+	Feedback       RichText `json:"Feedback"`
+	LastModified   *string  `json:"LastModified"`
+	LastModifiedBy *int64   `json:"LastModifiedBy"`
+	SectionId      *int64   `json:"SectionId"`
+	QuestionInfo   json.RawMessage `json:"QuestionInfo"`
 }
 
 type QuizSpecialAccessData struct {
@@ -575,20 +609,28 @@ type DropboxAssessment struct {
 }
 
 type DropboxFolder struct {
-	Id                 int64             `json:"Id"`
-	CategoryId         *int64            `json:"CategoryId"`
-	Name               string            `json:"Name"`
-	CustomInstructions RichText          `json:"CustomInstructions"`
-	TotalFiles         int               `json:"TotalFiles"`
-	UnreadFiles        int               `json:"UnreadFiles"`
-	FlaggedFiles       int               `json:"FlaggedFiles"`
-	TotalUsers         int               `json:"TotalUsers"`
-	IsHidden           bool              `json:"IsHidden"`
-	DueDate            *string           `json:"DueDate"`
-	DisplayInCalendar  bool              `json:"DisplayInCalendar"`
-	DropboxType        int               `json:"DropboxType"`
-	GroupTypeId        *int64            `json:"GroupTypeId"`
-	Assessment         DropboxAssessment `json:"Assessment"`
+	Id                        int64             `json:"Id"`
+	CategoryId                *int64            `json:"CategoryId"`
+	Name                      string            `json:"Name"`
+	CustomInstructions        RichText          `json:"CustomInstructions"`
+	Attachments               []SubmissionFile  `json:"Attachments"`
+	TotalFiles                int               `json:"TotalFiles"`
+	UnreadFiles               int               `json:"UnreadFiles"`
+	FlaggedFiles              int               `json:"FlaggedFiles"`
+	TotalUsers                int               `json:"TotalUsers"`
+	TotalUsersWithSubmissions int               `json:"TotalUsersWithSubmissions"`
+	TotalUsersWithFeedback    int               `json:"TotalUsersWithFeedback"`
+	IsHidden                  bool              `json:"IsHidden"`
+	IsAnonymous               bool              `json:"IsAnonymous"`
+	DueDate                   *string           `json:"DueDate"`
+	DisplayInCalendar         bool              `json:"DisplayInCalendar"`
+	DropboxType               int               `json:"DropboxType"`
+	SubmissionType            *int              `json:"SubmissionType"`
+	CompletionType            *int              `json:"CompletionType"`
+	GroupTypeId               *int64            `json:"GroupTypeId"`
+	GradeItemId               *int64            `json:"GradeItemId"`
+	ActivityId                *string           `json:"ActivityId"`
+	Assessment                DropboxAssessment `json:"Assessment"`
 }
 
 type DropboxCategory struct {
@@ -705,7 +747,23 @@ type LTILink struct {
 	Title       string `json:"Title"`
 	Url         string `json:"Url"`
 	Description string `json:"Description"`
-	IsHidden    bool   `json:"IsHidden"`
+	Key         string `json:"Key"`
+	IsVisible   bool   `json:"IsVisible"`
+	SignMessage bool   `json:"SignMessage"`
+	SignWithTc  bool   `json:"SignWithTc"`
+	SendTcInfo  bool   `json:"SendTcInfo"`
+	SendContextInfo bool `json:"SendContextInfo"`
+	SendUserId bool    `json:"SendUserId"`
+	SendUserName bool  `json:"SendUserName"`
+	SendUserEmail bool `json:"SendUserEmail"`
+	SendLinkTitle bool `json:"SendLinkTitle"`
+	SendLinkDescription bool `json:"SendLinkDescription"`
+	SendD2LUserName bool `json:"SendD2LUserName"`
+	SendD2LOrgDefinedId bool `json:"SendD2LOrgDefinedId"`
+	SendD2LOrgRoleId bool `json:"SendD2LOrgRoleId"`
+	SendSectionCode bool `json:"SendSectionCode"`
+	UseToolProviderSecuritySettings bool `json:"UseToolProviderSecuritySettings"`
+	CustomParameters []LTICustomParameter `json:"CustomParameters"`
 }
 
 type LTIAdvantageLink struct {
@@ -718,6 +776,33 @@ type LTIAdvantageLink struct {
 type LTISharingData struct {
 	OrgUnitId int64  `json:"OrgUnitId"`
 	Name      string `json:"Name"`
+}
+
+type LTICustomParameter struct {
+	Name  string `json:"Name"`
+	Value string `json:"Value"`
+}
+
+type LTIToolProvider struct {
+	TpId                  int64   `json:"TpId"`
+	Name                  string  `json:"Name"`
+	Description           string  `json:"Description"`
+	Domain                string  `json:"Domain"`
+	Url                   string  `json:"Url"`
+	Key                   string  `json:"Key"`
+	Secret                string  `json:"Secret"`
+	SendTcInfo            bool    `json:"SendTcInfo"`
+	SendContextInfo       bool    `json:"SendContextInfo"`
+	SendUserId            bool    `json:"SendUserId"`
+	SendUserName          bool    `json:"SendUserName"`
+	SendUserEmail         bool    `json:"SendUserEmail"`
+	SendLinkTitle         bool    `json:"SendLinkTitle"`
+	SendLinkDescription   bool    `json:"SendLinkDescription"`
+	SendD2LUserName       bool    `json:"SendD2LUserName"`
+	SendD2LOrgDefinedId   bool    `json:"SendD2LOrgDefinedId"`
+	SendD2LOrgRoleId      bool    `json:"SendD2LOrgRoleId"`
+	SendSectionCode       bool    `json:"SendSectionCode"`
+	CustomParameters      []LTICustomParameter `json:"CustomParameters"`
 }
 
 type LTIDeploymentSharingData struct {
@@ -735,6 +820,98 @@ type ToolInfo struct {
 	OrgUnitId        int64  `json:"OrgUnitId"`
 	Status           bool   `json:"Status"`
 	CustomNavbarName string `json:"CustomNavbarName"`
+}
+
+// ---- Rubrics ---------------------------------------------------------------
+
+type Rubric struct {
+	RubricId                    int64                 `json:"RubricId"`
+	Name                        string                `json:"Name"`
+	Description                 RichText              `json:"Description"`
+	RubricType                  int                   `json:"RubricType"`
+	RubricStateId               int                   `json:"RubricStateId"`
+	ScoringMethod               int                   `json:"ScoringMethod"`
+	Visibility                  *int                  `json:"Visibility"`
+	IsScoreVisibleToAssessedUsers bool                `json:"IsScoreVisibleToAssessedUsers"`
+	ReverseLevelDisplayOrder    bool                  `json:"ReverseLevelDisplayOrder"`
+	CriteriaGroups              []RubricCriteriaGroup `json:"CriteriaGroups"`
+	OverallLevels               []RubricOverallLevel  `json:"OverallLevels"`
+}
+
+// ---- Release Conditions ----------------------------------------------------
+
+type ReleaseConditionsData struct {
+	Expression ExpressionData `json:"Expression"`
+}
+
+type ExpressionData struct {
+	Operator string            `json:"Operator"`
+	Operands []json.RawMessage `json:"Operands"`
+}
+
+// ---- Intelligent Agents ----------------------------------------------------
+
+type IntelligentAgent struct {
+	AgentId     *int64                  `json:"AgentId"`
+	Name        string                  `json:"Name"`
+	Description string                  `json:"Description"`
+	IsEnabled   bool                    `json:"IsEnabled"`
+	Schedule    *IntelligentAgentSchedule `json:"Schedule"`
+	Action      *IntelligentAgentAction   `json:"Action"`
+	Condition   *IntelligentAgentCondition `json:"Condition"`
+	LastRunDate *string                 `json:"LastRunDate"`
+	NextRunDate *string                 `json:"NextRunDate"`
+	CategoryId  *int64                  `json:"CategoryId"`
+}
+
+type IntelligentAgentSchedule struct {
+	IsEnabled     bool     `json:"IsEnabled"`
+	Type          *int     `json:"Type"`
+	StartDate     *string  `json:"StartDate"`
+	EndDate       *string  `json:"EndDate"`
+	RepeatsEvery  *int     `json:"RepeatsEvery"`
+	RepeatsOnDay  *int     `json:"RepeatsOnDay"`
+	RepeatsOnDays []string `json:"RepeatsOnDays"`
+	RepeatsOnMonth *int    `json:"RepeatsOnMonth"`
+}
+
+type IntelligentAgentAction struct {
+	RepeatType       int                           `json:"RepeatType"`
+	EmailAction      *IntelligentAgentEmailAction  `json:"EmailAction"`
+	EnrollmentAction *IntelligentAgentEnrollAction `json:"EnrollmentAction"`
+}
+
+type IntelligentAgentEmailAction struct {
+	IsEnabled bool   `json:"IsEnabled"`
+	To        string `json:"To"`
+	Cc        string `json:"Cc"`
+	Bcc       string `json:"Bcc"`
+	Subject   string `json:"Subject"`
+	Message   string `json:"Message"`
+	IsHtml    bool   `json:"IsHtml"`
+}
+
+type IntelligentAgentEnrollAction struct {
+	IsEnabled      bool   `json:"IsEnabled"`
+	EnrollmentType *int   `json:"EnrollmentType"`
+	OrgUnitId      *int64 `json:"OrgUnitId"`
+	RoleId         *int64 `json:"RoleId"`
+}
+
+type IntelligentAgentCondition struct {
+	LoginActivity   *IntelligentAgentDateCondition    `json:"LoginActivity"`
+	CourseActivity  *IntelligentAgentDateCondition    `json:"CourseActivity"`
+	ReleaseCondition *IntelligentAgentReleaseCondition `json:"ReleaseCondition"`
+	RoleIds         []int64                           `json:"RoleIds"`
+}
+
+type IntelligentAgentDateCondition struct {
+	Type int `json:"Type"`
+	Days int `json:"Days"`
+}
+
+type IntelligentAgentReleaseCondition struct {
+	ConditionSetId *int64 `json:"ConditionSetId"`
 }
 
 // ---- Config Variables ------------------------------------------------------

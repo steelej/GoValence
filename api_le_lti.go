@@ -8,6 +8,14 @@ func (c *Client) GetLTILinks(orgUnitId int64) ([]LTILink, error) {
 	return out, err
 }
 
+// GetLTILink returns a specific LTI link for an org unit.
+// GET /d2l/api/le/{leVersion}/lti/link/{orgUnitId}/{ltiLinkId}
+func (c *Client) GetLTILink(orgUnitId, linkId int64) (*LTILink, error) {
+	var out LTILink
+	err := c.get(c.lePath("lti/link/%d/%d", orgUnitId, linkId), nil, &out)
+	return &out, err
+}
+
 // GetLTILinkSharing returns sharing info for an LTI link.
 // GET /d2l/api/le/{leVersion}/lti/link/{orgUnitId}/{linkId}/sharing/
 func (c *Client) GetLTILinkSharing(orgUnitId, linkId int64) ([]LTISharingData, error) {
@@ -22,6 +30,22 @@ func (c *Client) GetLTIToolProviderSharing(sourceOrgUnitId, tpId int64) ([]LTISh
 	var out []LTISharingData
 	err := c.get(c.lePath("lti/tp/%d/%d/sharing/", sourceOrgUnitId, tpId), nil, &out)
 	return out, err
+}
+
+// GetLTIToolProviders returns all LTI tool providers for an org unit.
+// GET /d2l/api/le/{leVersion}/lti/tp/{orgUnitId}/
+func (c *Client) GetLTIToolProviders(orgUnitId int64) ([]LTIToolProvider, error) {
+	var out []LTIToolProvider
+	err := c.get(c.lePath("lti/tp/%d/", orgUnitId), nil, &out)
+	return out, err
+}
+
+// GetLTIToolProvider returns a specific LTI tool provider.
+// GET /d2l/api/le/{leVersion}/lti/tp/{orgUnitId}/{tpId}
+func (c *Client) GetLTIToolProvider(orgUnitId, tpId int64) (*LTIToolProvider, error) {
+	var out LTIToolProvider
+	err := c.get(c.lePath("lti/tp/%d/%d", orgUnitId, tpId), nil, &out)
+	return &out, err
 }
 
 // GetLTIAdvantageLinks returns all LTI Advantage links for an org unit.

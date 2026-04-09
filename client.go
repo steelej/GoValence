@@ -69,6 +69,11 @@ func (c *Client) lePath(format string, args ...any) string {
 	return fmt.Sprintf("/d2l/api/le/"+c.LEVersion+"/"+format, args...)
 }
 
+// leUnstablePath builds a path for an LE API route on the unstable contract.
+func (c *Client) leUnstablePath(format string, args ...any) string {
+	return fmt.Sprintf("/d2l/api/le/unstable/"+format, args...)
+}
+
 // basPath builds a path for a BAS API route.
 func (c *Client) basPath(format string, args ...any) string {
 	return fmt.Sprintf("/d2l/api/bas/"+c.BASVersion+"/"+format, args...)

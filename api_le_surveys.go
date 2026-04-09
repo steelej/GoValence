@@ -33,3 +33,11 @@ func (c *Client) GetSurveyAttempt(orgUnitId, surveyId, attemptId int64) (*Survey
 	err := c.get(c.lePath("%d/surveys/%d/attempts/%d", orgUnitId, surveyId, attemptId), nil, &out)
 	return &out, err
 }
+
+// GetSurveyQuestions returns all questions for a survey.
+// GET /d2l/api/le/{leVersion}/{orgUnitId}/surveys/{surveyId}/questions/
+func (c *Client) GetSurveyQuestions(orgUnitId, surveyId int64, params url.Values) (*ObjectListPage[QuizQuestion], error) {
+	var out ObjectListPage[QuizQuestion]
+	err := c.get(c.lePath("%d/surveys/%d/questions/", orgUnitId, surveyId), params, &out)
+	return &out, err
+}
