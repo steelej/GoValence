@@ -26,6 +26,14 @@ func (c *Client) GetOrgUnits(params url.Values) (*PagedResultSet[OrgUnitProperti
 	return &out, err
 }
 
+// GetOrgUnitDescendantsPaged returns a paged list of descendants for a given org unit.
+// GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/descendants/paged/
+func (c *Client) GetOrgUnitDescendantsPaged(orgUnitId int64, params url.Values) (*PagedResultSet[OrgUnit], error) {
+	var out PagedResultSet[OrgUnit]
+	err := c.get(c.lpPath("orgstructure/%d/descendants/paged/", orgUnitId), params, &out)
+	return &out, err
+}
+
 // GetOrgUnitParents returns the parents of a given org unit.
 // GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/parents/
 func (c *Client) GetOrgUnitParents(orgUnitId int64) ([]OrgUnitProperties, error) {
@@ -48,4 +56,12 @@ func (c *Client) GetSemesterOrgUnitType() (*OrgUnitTypeInfo, error) {
 	var out OrgUnitTypeInfo
 	err := c.get(c.lpPath("outypes/semester"), nil, &out)
 	return &out, err
+}
+
+// GetOrgUnitTypes returns all visible org unit types.
+// GET /d2l/api/lp/{lpVersion}/outypes/
+func (c *Client) GetOrgUnitTypes() ([]OrgUnitTypeInfo, error) {
+	var out []OrgUnitTypeInfo
+	err := c.get(c.lpPath("outypes/"), nil, &out)
+	return out, err
 }
