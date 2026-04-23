@@ -1,6 +1,9 @@
 package valence
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"strconv"
+)
 
 // ---- Common ----------------------------------------------------------------
 
@@ -95,6 +98,9 @@ type UserData struct {
 	OrgDefinedId     string             `json:"OrgDefinedId"`
 	UniqueIdentifier string             `json:"UniqueIdentifier"`
 	Activation       UserActivationData `json:"Activation"`
+	DisplayName      string             `json:"DisplayName"`
+	LastAccessedDate *string            `json:"LastAccessedDate"`
+	FirstLoginDate   *string            `json:"FirstLoginDate"`
 }
 
 // ---- Role ------------------------------------------------------------------
@@ -129,11 +135,53 @@ type AccessInfo struct {
 }
 
 type OrgUnitUser struct {
-	Identifier   int64    `json:"Identifier"`
-	DisplayName  string   `json:"DisplayName"`
-	UserName     string   `json:"UserName"`
-	OrgDefinedId string   `json:"OrgDefinedId"`
-	Role         RoleInfo `json:"Role"`
+	User         OrgUnitUserInfo `json:"User"`
+	Identifier   int64           `json:"Identifier"`
+	DisplayName  string          `json:"DisplayName"`
+	UserName     string          `json:"UserName"`
+	OrgDefinedId string          `json:"OrgDefinedId"`
+	Role         RoleInfo        `json:"Role"`
+}
+
+type OrgUnitUserInfo struct {
+	Identifier   string `json:"Identifier"`
+	DisplayName  string `json:"DisplayName"`
+	UserName     string `json:"UserName"`
+	OrgDefinedId string `json:"OrgDefinedId"`
+}
+
+func (o *OrgUnitUser) UnmarshalJSON(data []byte) error {
+	type alias OrgUnitUser
+	var raw struct {
+		User *OrgUnitUserInfo `json:"User"`
+		*alias
+	}
+	raw.alias = (*alias)(o)
+
+	if err := json.Unmarshal(data, &raw); err != nil {
+		return err
+	}
+
+	if raw.User == nil {
+		return nil
+	}
+
+	o.User = *raw.User
+	o.DisplayName = raw.User.DisplayName
+	o.UserName = raw.User.UserName
+	o.OrgDefinedId = raw.User.OrgDefinedId
+
+	if raw.User.Identifier == "" {
+		return nil
+	}
+
+	id, err := strconv.ParseInt(raw.User.Identifier, 10, 64)
+	if err != nil {
+		return nil
+	}
+
+	o.Identifier = id
+	return nil
 }
 
 type UserEnrollmentData struct {
@@ -441,19 +489,19 @@ type QuizAttemptData struct {
 }
 
 type QuizQuestion struct {
-	QuestionId     int64    `json:"QuestionId"`
-	Name           string   `json:"Name"`
-	QuestionText   RichText `json:"QuestionText"`
-	Points         float64  `json:"Points"`
-	Difficulty     int      `json:"Difficulty"`
-	Bonus          bool     `json:"Bonus"`
-	Mandatory      bool     `json:"Mandatory"`
-	QuestionTypeId int      `json:"QuestionTypeId"`
-	Hint           RichText `json:"Hint"`
-	Feedback       RichText `json:"Feedback"`
-	LastModified   *string  `json:"LastModified"`
-	LastModifiedBy *int64   `json:"LastModifiedBy"`
-	SectionId      *int64   `json:"SectionId"`
+	QuestionId     int64           `json:"QuestionId"`
+	Name           string          `json:"Name"`
+	QuestionText   RichText        `json:"QuestionText"`
+	Points         float64         `json:"Points"`
+	Difficulty     int             `json:"Difficulty"`
+	Bonus          bool            `json:"Bonus"`
+	Mandatory      bool            `json:"Mandatory"`
+	QuestionTypeId int             `json:"QuestionTypeId"`
+	Hint           RichText        `json:"Hint"`
+	Feedback       RichText        `json:"Feedback"`
+	LastModified   *string         `json:"LastModified"`
+	LastModifiedBy *int64          `json:"LastModifiedBy"`
+	SectionId      *int64          `json:"SectionId"`
 	QuestionInfo   json.RawMessage `json:"QuestionInfo"`
 }
 
@@ -743,27 +791,27 @@ type SelfAssessmentAttempt struct {
 // ---- LTI -------------------------------------------------------------------
 
 type LTILink struct {
-	LtiLinkId   int64  `json:"LtiLinkId"`
-	Title       string `json:"Title"`
-	Url         string `json:"Url"`
-	Description string `json:"Description"`
-	Key         string `json:"Key"`
-	IsVisible   bool   `json:"IsVisible"`
-	SignMessage bool   `json:"SignMessage"`
-	SignWithTc  bool   `json:"SignWithTc"`
-	SendTcInfo  bool   `json:"SendTcInfo"`
-	SendContextInfo bool `json:"SendContextInfo"`
-	SendUserId bool    `json:"SendUserId"`
-	SendUserName bool  `json:"SendUserName"`
-	SendUserEmail bool `json:"SendUserEmail"`
-	SendLinkTitle bool `json:"SendLinkTitle"`
-	SendLinkDescription bool `json:"SendLinkDescription"`
-	SendD2LUserName bool `json:"SendD2LUserName"`
-	SendD2LOrgDefinedId bool `json:"SendD2LOrgDefinedId"`
-	SendD2LOrgRoleId bool `json:"SendD2LOrgRoleId"`
-	SendSectionCode bool `json:"SendSectionCode"`
-	UseToolProviderSecuritySettings bool `json:"UseToolProviderSecuritySettings"`
-	CustomParameters []LTICustomParameter `json:"CustomParameters"`
+	LtiLinkId                       int64                `json:"LtiLinkId"`
+	Title                           string               `json:"Title"`
+	Url                             string               `json:"Url"`
+	Description                     string               `json:"Description"`
+	Key                             string               `json:"Key"`
+	IsVisible                       bool                 `json:"IsVisible"`
+	SignMessage                     bool                 `json:"SignMessage"`
+	SignWithTc                      bool                 `json:"SignWithTc"`
+	SendTcInfo                      bool                 `json:"SendTcInfo"`
+	SendContextInfo                 bool                 `json:"SendContextInfo"`
+	SendUserId                      bool                 `json:"SendUserId"`
+	SendUserName                    bool                 `json:"SendUserName"`
+	SendUserEmail                   bool                 `json:"SendUserEmail"`
+	SendLinkTitle                   bool                 `json:"SendLinkTitle"`
+	SendLinkDescription             bool                 `json:"SendLinkDescription"`
+	SendD2LUserName                 bool                 `json:"SendD2LUserName"`
+	SendD2LOrgDefinedId             bool                 `json:"SendD2LOrgDefinedId"`
+	SendD2LOrgRoleId                bool                 `json:"SendD2LOrgRoleId"`
+	SendSectionCode                 bool                 `json:"SendSectionCode"`
+	UseToolProviderSecuritySettings bool                 `json:"UseToolProviderSecuritySettings"`
+	CustomParameters                []LTICustomParameter `json:"CustomParameters"`
 }
 
 type LTIAdvantageLink struct {
@@ -784,25 +832,25 @@ type LTICustomParameter struct {
 }
 
 type LTIToolProvider struct {
-	TpId                  int64   `json:"TpId"`
-	Name                  string  `json:"Name"`
-	Description           string  `json:"Description"`
-	Domain                string  `json:"Domain"`
-	Url                   string  `json:"Url"`
-	Key                   string  `json:"Key"`
-	Secret                string  `json:"Secret"`
-	SendTcInfo            bool    `json:"SendTcInfo"`
-	SendContextInfo       bool    `json:"SendContextInfo"`
-	SendUserId            bool    `json:"SendUserId"`
-	SendUserName          bool    `json:"SendUserName"`
-	SendUserEmail         bool    `json:"SendUserEmail"`
-	SendLinkTitle         bool    `json:"SendLinkTitle"`
-	SendLinkDescription   bool    `json:"SendLinkDescription"`
-	SendD2LUserName       bool    `json:"SendD2LUserName"`
-	SendD2LOrgDefinedId   bool    `json:"SendD2LOrgDefinedId"`
-	SendD2LOrgRoleId      bool    `json:"SendD2LOrgRoleId"`
-	SendSectionCode       bool    `json:"SendSectionCode"`
-	CustomParameters      []LTICustomParameter `json:"CustomParameters"`
+	TpId                int64                `json:"TpId"`
+	Name                string               `json:"Name"`
+	Description         string               `json:"Description"`
+	Domain              string               `json:"Domain"`
+	Url                 string               `json:"Url"`
+	Key                 string               `json:"Key"`
+	Secret              string               `json:"Secret"`
+	SendTcInfo          bool                 `json:"SendTcInfo"`
+	SendContextInfo     bool                 `json:"SendContextInfo"`
+	SendUserId          bool                 `json:"SendUserId"`
+	SendUserName        bool                 `json:"SendUserName"`
+	SendUserEmail       bool                 `json:"SendUserEmail"`
+	SendLinkTitle       bool                 `json:"SendLinkTitle"`
+	SendLinkDescription bool                 `json:"SendLinkDescription"`
+	SendD2LUserName     bool                 `json:"SendD2LUserName"`
+	SendD2LOrgDefinedId bool                 `json:"SendD2LOrgDefinedId"`
+	SendD2LOrgRoleId    bool                 `json:"SendD2LOrgRoleId"`
+	SendSectionCode     bool                 `json:"SendSectionCode"`
+	CustomParameters    []LTICustomParameter `json:"CustomParameters"`
 }
 
 type LTIDeploymentSharingData struct {
@@ -825,17 +873,17 @@ type ToolInfo struct {
 // ---- Rubrics ---------------------------------------------------------------
 
 type Rubric struct {
-	RubricId                    int64                 `json:"RubricId"`
-	Name                        string                `json:"Name"`
-	Description                 RichText              `json:"Description"`
-	RubricType                  int                   `json:"RubricType"`
-	RubricStateId               int                   `json:"RubricStateId"`
-	ScoringMethod               int                   `json:"ScoringMethod"`
-	Visibility                  *int                  `json:"Visibility"`
-	IsScoreVisibleToAssessedUsers bool                `json:"IsScoreVisibleToAssessedUsers"`
-	ReverseLevelDisplayOrder    bool                  `json:"ReverseLevelDisplayOrder"`
-	CriteriaGroups              []RubricCriteriaGroup `json:"CriteriaGroups"`
-	OverallLevels               []RubricOverallLevel  `json:"OverallLevels"`
+	RubricId                      int64                 `json:"RubricId"`
+	Name                          string                `json:"Name"`
+	Description                   RichText              `json:"Description"`
+	RubricType                    int                   `json:"RubricType"`
+	RubricStateId                 int                   `json:"RubricStateId"`
+	ScoringMethod                 int                   `json:"ScoringMethod"`
+	Visibility                    *int                  `json:"Visibility"`
+	IsScoreVisibleToAssessedUsers bool                  `json:"IsScoreVisibleToAssessedUsers"`
+	ReverseLevelDisplayOrder      bool                  `json:"ReverseLevelDisplayOrder"`
+	CriteriaGroups                []RubricCriteriaGroup `json:"CriteriaGroups"`
+	OverallLevels                 []RubricOverallLevel  `json:"OverallLevels"`
 }
 
 // ---- Release Conditions ----------------------------------------------------
@@ -852,27 +900,27 @@ type ExpressionData struct {
 // ---- Intelligent Agents ----------------------------------------------------
 
 type IntelligentAgent struct {
-	AgentId     *int64                  `json:"AgentId"`
-	Name        string                  `json:"Name"`
-	Description string                  `json:"Description"`
-	IsEnabled   bool                    `json:"IsEnabled"`
-	Schedule    *IntelligentAgentSchedule `json:"Schedule"`
-	Action      *IntelligentAgentAction   `json:"Action"`
+	AgentId     *int64                     `json:"AgentId"`
+	Name        string                     `json:"Name"`
+	Description string                     `json:"Description"`
+	IsEnabled   bool                       `json:"IsEnabled"`
+	Schedule    *IntelligentAgentSchedule  `json:"Schedule"`
+	Action      *IntelligentAgentAction    `json:"Action"`
 	Condition   *IntelligentAgentCondition `json:"Condition"`
-	LastRunDate *string                 `json:"LastRunDate"`
-	NextRunDate *string                 `json:"NextRunDate"`
-	CategoryId  *int64                  `json:"CategoryId"`
+	LastRunDate *string                    `json:"LastRunDate"`
+	NextRunDate *string                    `json:"NextRunDate"`
+	CategoryId  *int64                     `json:"CategoryId"`
 }
 
 type IntelligentAgentSchedule struct {
-	IsEnabled     bool     `json:"IsEnabled"`
-	Type          *int     `json:"Type"`
-	StartDate     *string  `json:"StartDate"`
-	EndDate       *string  `json:"EndDate"`
-	RepeatsEvery  *int     `json:"RepeatsEvery"`
-	RepeatsOnDay  *int     `json:"RepeatsOnDay"`
-	RepeatsOnDays []string `json:"RepeatsOnDays"`
-	RepeatsOnMonth *int    `json:"RepeatsOnMonth"`
+	IsEnabled      bool     `json:"IsEnabled"`
+	Type           *int     `json:"Type"`
+	StartDate      *string  `json:"StartDate"`
+	EndDate        *string  `json:"EndDate"`
+	RepeatsEvery   *int     `json:"RepeatsEvery"`
+	RepeatsOnDay   *int     `json:"RepeatsOnDay"`
+	RepeatsOnDays  []string `json:"RepeatsOnDays"`
+	RepeatsOnMonth *int     `json:"RepeatsOnMonth"`
 }
 
 type IntelligentAgentAction struct {
@@ -899,10 +947,10 @@ type IntelligentAgentEnrollAction struct {
 }
 
 type IntelligentAgentCondition struct {
-	LoginActivity   *IntelligentAgentDateCondition    `json:"LoginActivity"`
-	CourseActivity  *IntelligentAgentDateCondition    `json:"CourseActivity"`
+	LoginActivity    *IntelligentAgentDateCondition    `json:"LoginActivity"`
+	CourseActivity   *IntelligentAgentDateCondition    `json:"CourseActivity"`
 	ReleaseCondition *IntelligentAgentReleaseCondition `json:"ReleaseCondition"`
-	RoleIds         []int64                           `json:"RoleIds"`
+	RoleIds          []int64                           `json:"RoleIds"`
 }
 
 type IntelligentAgentDateCondition struct {
