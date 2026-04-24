@@ -877,9 +877,15 @@ type LTIDeploymentSharingData struct {
 type ToolInfo struct {
 	ToolId           string `json:"ToolId"`
 	DisplayName      string `json:"DisplayName"`
-	OrgUnitId        int64  `json:"OrgUnitId"`
+	OrgUnitId        int64  `json:"OrgUnitId,string"`
 	Status           bool   `json:"Status"`
 	CustomNavbarName string `json:"CustomNavbarName"`
+}
+
+// ToolWithName block returned by tool listing routes when namesOnly is true.
+type ToolWithName struct {
+	ToolId      string `json:"ToolId"`
+	DisplayName string `json:"DisplayName"`
 }
 
 // ---- Rubrics ---------------------------------------------------------------
