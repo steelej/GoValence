@@ -224,6 +224,18 @@ type CourseTemplate struct {
 	HomeUrl    string `json:"HomeUrl"`
 }
 
+type FileSystemObjectType int
+
+const (
+	FileSystemObjectTypeFolder FileSystemObjectType = 1
+	FileSystemObjectTypeFile   FileSystemObjectType = 2
+)
+
+type FileSystemObject struct {
+	Name                 string               `json:"Name"`
+	FileSystemObjectType FileSystemObjectType `json:"FileSystemObjectType"`
+}
+
 // ---- Group -----------------------------------------------------------------
 
 type GroupEnrollment struct {
