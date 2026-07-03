@@ -13,6 +13,12 @@ func (c *Client) GetCourse(orgUnitId int64) (*CourseOffering, error) {
 	return &out, err
 }
 
+// DeleteCourse deletes a course offering.
+// DELETE /d2l/api/lp/{lpVersion}/courses/{orgUnitId}
+func (c *Client) DeleteCourse(orgUnitId int64) error {
+	return c.delete(c.lpPath("courses/%d", orgUnitId), nil)
+}
+
 // GetCourseImage returns the raw bytes of a course's image.
 // GET /d2l/api/lp/{lpVersion}/courses/{orgUnitId}/image
 func (c *Client) GetCourseImage(orgUnitId int64) (io.ReadCloser, error) {

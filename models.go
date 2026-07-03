@@ -43,7 +43,7 @@ type ProductVersions struct {
 // ---- Organization ----------------------------------------------------------
 
 type OrganizationInfo struct {
-	Identifier int64  `json:"Identifier"`
+	Identifier int64  `json:"Identifier,string"`
 	Name       string `json:"Name"`
 	TimeZone   string `json:"TimeZone"`
 }

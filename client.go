@@ -182,6 +182,52 @@ func (c *Client) getRaw(path string, params url.Values) (io.ReadCloser, error) {
 	return resp.Body, nil
 }
 
+// delete executes a DELETE request, handles rate limiting and stats.
+func (c *Client) delete(path string, params url.Values) error {
+	fullURL := c.baseURL + path
+	if len(params) > 0 {
+		fullURL += "?" + params.Encode()
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, fullURL, nil)
+	if err != nil {
+		return err
+	}
+
+	if err := c.auth.AuthenticateRequest(req); err != nil {
+		return err
+	}
+
+	wait := c.rateLimit.waitIfNeeded()
+
+	start := time.Now()
+	resp, err := c.httpClient.Do(req)
+	elapsed := time.Since(start)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	c.rateLimit.update(resp)
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	c.stats.record(elapsed, wait, int64(len(body)))
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return &APIError{
+			StatusCode: resp.StatusCode,
+			Status:     resp.Status,
+			Body:       string(body),
+		}
+	}
+
+	return nil
+}
+
 // postMultipartFile executes a multipart/form-data POST with a streamed file upload.
 func (c *Client) postMultipartFile(path string, params url.Values, fieldName, fileName, contentType string, body io.Reader, out any) error {
 	fullURL := c.baseURL + path

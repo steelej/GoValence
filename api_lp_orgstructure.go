@@ -34,6 +34,14 @@ func (c *Client) GetOrgUnitDescendantsPaged(orgUnitId int64, params url.Values) 
 	return &out, err
 }
 
+// GetOrgUnitChildrenPaged returns a paged list of children for a given org unit.
+// GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/children/paged/
+func (c *Client) GetOrgUnitChildrenPaged(orgUnitId int64, params url.Values) (*PagedResultSet[OrgUnit], error) {
+	var out PagedResultSet[OrgUnit]
+	err := c.get(c.lpPath("orgstructure/%d/children/paged/", orgUnitId), params, &out)
+	return &out, err
+}
+
 // GetOrgUnitParents returns the parents of a given org unit.
 // GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/parents/
 func (c *Client) GetOrgUnitParents(orgUnitId int64) ([]OrgUnitProperties, error) {
