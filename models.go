@@ -13,6 +13,12 @@ type RichText struct {
 	Html string `json:"Html"`
 }
 
+// RichTextInput is the input form used by Valence write operations.
+type RichTextInput struct {
+	Content string `json:"Content"`
+	Type    string `json:"Type"`
+}
+
 // PagingInfo is embedded in paged result sets.
 type PagingInfo struct {
 	Bookmark     string `json:"Bookmark"`
@@ -23,6 +29,24 @@ type PagingInfo struct {
 type PagedResultSet[T any] struct {
 	PagingInfo PagingInfo `json:"PagingInfo"`
 	Items      []T        `json:"Items"`
+}
+
+// NumberOrString accepts Valence fields that are documented as numbers but may
+// be returned by some tenants as symbolic strings.
+type NumberOrString string
+
+func (v *NumberOrString) UnmarshalJSON(data []byte) error {
+	var text string
+	if err := json.Unmarshal(data, &text); err == nil {
+		*v = NumberOrString(text)
+		return nil
+	}
+	var number int
+	if err := json.Unmarshal(data, &number); err == nil {
+		*v = NumberOrString(strconv.Itoa(number))
+		return nil
+	}
+	return nil
 }
 
 // ObjectListPage is the generic paging wrapper for endpoints that return an "Objects" array.
@@ -101,6 +125,20 @@ type UserData struct {
 	DisplayName      string             `json:"DisplayName"`
 	LastAccessedDate *string            `json:"LastAccessedDate"`
 	FirstLoginDate   *string            `json:"FirstLoginDate"`
+}
+
+type CreateUserData struct {
+	OrgDefinedId      *string `json:"OrgDefinedId"`
+	FirstName         string  `json:"FirstName"`
+	MiddleName        *string `json:"MiddleName"`
+	LastName          string  `json:"LastName"`
+	ExternalEmail     *string `json:"ExternalEmail"`
+	UserName          string  `json:"UserName"`
+	RoleId            int64   `json:"RoleId"`
+	IsActive          bool    `json:"IsActive"`
+	SendCreationEmail bool    `json:"SendCreationEmail"`
+	Pronouns          *string `json:"Pronouns"`
+	PasswordData      any     `json:"PasswordData"`
 }
 
 // ---- Role ------------------------------------------------------------------
@@ -190,9 +228,17 @@ type UserEnrollmentData struct {
 }
 
 type EnrollmentData struct {
-	OrgUnitId int64    `json:"OrgUnitId"`
-	UserId    int64    `json:"UserId"`
-	Role      RoleInfo `json:"Role"`
+	OrgUnitId   int64    `json:"OrgUnitId"`
+	UserId      int64    `json:"UserId"`
+	Role        RoleInfo `json:"Role"`
+	IsCascading bool     `json:"IsCascading"`
+}
+
+type CreateEnrollmentData struct {
+	OrgUnitId           int64 `json:"OrgUnitId"`
+	UserId              int64 `json:"UserId"`
+	RoleId              int64 `json:"RoleId"`
+	SendEnrollmentEmail *bool `json:"SendEnrollmentEmail"`
 }
 
 // ---- Course ----------------------------------------------------------------
@@ -215,6 +261,37 @@ type CourseOffering struct {
 	CanSelfRegister bool     `json:"CanSelfRegister"`
 }
 
+// CourseOfferingInfo is the complete replacement block for updating course offering information.
+type CourseOfferingInfo struct {
+	Name            string        `json:"Name"`
+	Code            string        `json:"Code"`
+	StartDate       *string       `json:"StartDate"`
+	EndDate         *string       `json:"EndDate"`
+	LocaleId        *int64        `json:"LocaleId"`
+	ForceLocale     bool          `json:"ForceLocale"`
+	ShowAddressBook bool          `json:"ShowAddressBook"`
+	IsActive        bool          `json:"IsActive"`
+	Description     RichTextInput `json:"Description"`
+	CanSelfRegister *bool         `json:"CanSelfRegister"`
+}
+
+// CreateCourseOffering is the input block for creating a course offering.
+type CreateCourseOffering struct {
+	Name             string        `json:"Name"`
+	Code             string        `json:"Code"`
+	Path             string        `json:"Path"`
+	CourseTemplateId int64         `json:"CourseTemplateId"`
+	SemesterId       *int64        `json:"SemesterId"`
+	StartDate        *string       `json:"StartDate"`
+	EndDate          *string       `json:"EndDate"`
+	LocaleId         *int64        `json:"LocaleId"`
+	ForceLocale      bool          `json:"ForceLocale"`
+	ShowAddressBook  bool          `json:"ShowAddressBook"`
+	Description      RichTextInput `json:"Description"`
+	CanSelfRegister  *bool         `json:"CanSelfRegister"`
+	IsActive         bool          `json:"IsActive"`
+}
+
 type CourseTemplate struct {
 	Identifier int64  `json:"Identifier"`
 	Name       string `json:"Name"`
@@ -222,6 +299,18 @@ type CourseTemplate struct {
 	IsActive   bool   `json:"IsActive"`
 	Path       string `json:"Path"`
 	HomeUrl    string `json:"HomeUrl"`
+}
+
+type CourseTemplateInfo struct {
+	Name string `json:"Name"`
+	Code string `json:"Code"`
+}
+
+type CreateCourseTemplate struct {
+	Name             string  `json:"Name"`
+	Code             string  `json:"Code"`
+	Path             string  `json:"Path"`
+	ParentOrgUnitIds []int64 `json:"ParentOrgUnitIds"`
 }
 
 type FileSystemObjectType int
@@ -242,6 +331,12 @@ type GroupEnrollment struct {
 	UserId int64 `json:"UserId"`
 }
 
+type GroupData struct {
+	Name        string        `json:"Name"`
+	Code        string        `json:"Code"`
+	Description RichTextInput `json:"Description"`
+}
+
 type Group struct {
 	GroupId     int64    `json:"GroupId"`
 	Name        string   `json:"Name"`
@@ -251,19 +346,47 @@ type Group struct {
 }
 
 type GroupCategory struct {
-	GroupCategoryId          int64    `json:"GroupCategoryId"`
-	Name                     string   `json:"Name"`
-	Description              RichText `json:"Description"`
-	EnrollmentStyle          int      `json:"EnrollmentStyle"`
-	EnrollmentQuantity       *int     `json:"EnrollmentQuantity"`
-	AutoEnroll               bool     `json:"AutoEnroll"`
-	RandomizeEnrollments     bool     `json:"RandomizeEnrollments"`
-	NumberOfGroups           *int     `json:"NumberOfGroups"`
-	MaxUsersPerGroup         *int     `json:"MaxUsersPerGroup"`
-	AllocateAfterExpiry      bool     `json:"AllocateAfterExpiry"`
-	SelfEnrollmentExpiryDate *string  `json:"SelfEnrollmentExpiryDate"`
-	Groups                   []int64  `json:"Groups"`
-	RestrictedByOrgUnitId    *int64   `json:"RestrictedByOrgUnitId"`
+	GroupCategoryId          int64          `json:"GroupCategoryId"`
+	Name                     string         `json:"Name"`
+	Description              RichText       `json:"Description"`
+	EnrollmentStyle          NumberOrString `json:"EnrollmentStyle"`
+	EnrollmentQuantity       *int           `json:"EnrollmentQuantity"`
+	AutoEnroll               bool           `json:"AutoEnroll"`
+	RandomizeEnrollments     bool           `json:"RandomizeEnrollments"`
+	NumberOfGroups           *int           `json:"NumberOfGroups"`
+	MaxUsersPerGroup         *int           `json:"MaxUsersPerGroup"`
+	AllocateAfterExpiry      bool           `json:"AllocateAfterExpiry"`
+	SelfEnrollmentExpiryDate *string        `json:"SelfEnrollmentExpiryDate"`
+	Groups                   []int64        `json:"Groups"`
+	RestrictedByOrgUnitId    *int64         `json:"RestrictedByOrgUnitId"`
+}
+
+type GroupCategoryData struct {
+	Name                          string        `json:"Name"`
+	Description                   RichTextInput `json:"Description"`
+	EnrollmentStyle               int           `json:"EnrollmentStyle"`
+	EnrollmentQuantity            *int          `json:"EnrollmentQuantity"`
+	AutoEnroll                    bool          `json:"AutoEnroll"`
+	RandomizeEnrollments          bool          `json:"RandomizeEnrollments"`
+	NumberOfGroups                *int          `json:"NumberOfGroups"`
+	MaxUsersPerGroup              *int          `json:"MaxUsersPerGroup"`
+	AllocateAfterExpiry           bool          `json:"AllocateAfterExpiry"`
+	SelfEnrollmentStartDate       *string       `json:"SelfEnrollmentStartDate"`
+	SelfEnrollmentExpiryDate      *string       `json:"SelfEnrollmentExpiryDate"`
+	GroupPrefix                   *string       `json:"GroupPrefix"`
+	RestrictedByOrgUnitId         *int64        `json:"RestrictedByOrgUnitId"`
+	DescriptionsVisibleToEnrolees bool          `json:"DescriptionsVisibleToEnrolees"`
+}
+
+type GroupsJobData struct {
+	OrgUnitId  int64  `json:"OrgUnitId"`
+	CategoryId int64  `json:"CategoryId"`
+	SubmitDate string `json:"SubmitDate"`
+	Status     int    `json:"Status"`
+}
+
+type GroupCategoryJobStatus struct {
+	Status int `json:"Status"`
 }
 
 // ---- Section ---------------------------------------------------------------
@@ -274,6 +397,12 @@ type Section struct {
 	Code        string   `json:"Code"`
 	Description RichText `json:"Description"`
 	Enrollments []int64  `json:"Enrollments"`
+}
+
+type SectionData struct {
+	Name        string        `json:"Name"`
+	Code        string        `json:"Code"`
+	Description RichTextInput `json:"Description"`
 }
 
 type SectionPropertyData struct {
@@ -363,7 +492,7 @@ type GradeValue struct {
 	UserId                int64     `json:"UserId"`
 	OrgUnitId             int64     `json:"OrgUnitId"`
 	DisplayedGrade        string    `json:"DisplayedGrade"`
-	GradeObjectIdentifier int64     `json:"GradeObjectIdentifier"`
+	GradeObjectIdentifier string    `json:"GradeObjectIdentifier"`
 	GradeObjectName       string    `json:"GradeObjectName"`
 	GradeObjectType       int       `json:"GradeObjectType"`
 	GradeObjectTypeName   string    `json:"GradeObjectTypeName"`
@@ -374,7 +503,7 @@ type GradeValue struct {
 	Comments              *RichText `json:"Comments"`
 	PrivateComments       *RichText `json:"PrivateComments"`
 	LastModified          *string   `json:"LastModified"`
-	LastModifiedBy        *UserData `json:"LastModifiedBy"`
+	LastModifiedBy        *int64    `json:"LastModifiedBy"`
 	Released              bool      `json:"Released"`
 }
 
@@ -871,6 +1000,12 @@ type LTIDeploymentSharingData struct {
 	IsShared  bool   `json:"IsShared"`
 }
 
+type LTIAdvantageCreateSharingRuleData struct {
+	SharingOrgUnitId     int64 `json:"SharingOrgUnitId"`
+	ShareWithOrgUnit     bool  `json:"ShareWithOrgUnit"`
+	ShareWithDescendants bool  `json:"ShareWithDescendants"`
+}
+
 // ---- Tools -----------------------------------------------------------------
 
 // OrgUnitInformation block returned by GET /d2l/api/lp/(version)/tools/orgUnits/(orgUnitId)
@@ -988,7 +1123,32 @@ type ConfigVariableValue struct {
 	Value        string `json:"Value"`
 }
 
-// ---- Course Import ---------------------------------------------------------
+type SpecifiedOrgUnitValue struct {
+	OrgUnitValue *string `json:"OrgUnitValue"`
+}
+
+type UpdateStatus struct {
+	Status bool `json:"Status"`
+}
+
+// ---- Course Import / Copy --------------------------------------------------
+
+type CreateCopyJobRequest struct {
+	SourceOrgUnitId int64    `json:"SourceOrgUnitId"`
+	Components      []string `json:"Components"`
+	CallbackUrl     *string  `json:"CallbackUrl,omitempty"`
+}
+
+type CreateCopyJobResponse struct {
+	JobToken string `json:"JobToken"`
+}
+
+type GetCopyJobResponse struct {
+	JobToken        string `json:"JobToken"`
+	SourceOrgUnitId int64  `json:"SourceOrgUnitId"`
+	TargetOrgUnitId int64  `json:"TargetOrgUnitId"`
+	Status          string `json:"Status"`
+}
 
 type CourseImportJobData struct {
 	JobToken string `json:"JobToken"`

@@ -79,3 +79,11 @@ func (c *Client) GetLTIAdvantageDeploymentOrgUnitSharing(deploymentId, sharingOr
 	err := c.get(c.lePath("ltiadvantage/deployment/%d/sharing/%d", deploymentId, sharingOrgUnitId), nil, &out)
 	return &out, err
 }
+
+// AddLTIAdvantageDeploymentSharingRule creates a sharing rule for an LTI Advantage deployment.
+// POST /d2l/api/le/{leVersion}/ltiadvantage/deployment/{deploymentId}/sharing/
+func (c *Client) AddLTIAdvantageDeploymentSharingRule(deploymentId string, data LTIAdvantageCreateSharingRuleData) (*LTIAdvantageCreateSharingRuleData, error) {
+	var out LTIAdvantageCreateSharingRuleData
+	err := c.postJSON(c.lePath("ltiadvantage/deployment/%s/sharing/", deploymentId), nil, data, &out)
+	return &out, err
+}

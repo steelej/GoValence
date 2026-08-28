@@ -6,14 +6,28 @@ import (
 	"path/filepath"
 )
 
-// GetCourseCopyJobStatus returns the status of a course copy job.
-// The jobToken is returned when a copy job is initiated (POST).
-// This GET variant polls the job status.
+// CreateCourseCopyJob queues a Brightspace course copy job.
+// POST /d2l/api/le/{leVersion}/import/{orgUnitId}/copy/
+func (c *Client) CreateCourseCopyJob(orgUnitId int64, data CreateCopyJobRequest) (*CreateCopyJobResponse, error) {
+	var out CreateCopyJobResponse
+	err := c.postJSON(c.lePath("import/%d/copy/", orgUnitId), nil, data, &out)
+	return &out, err
+}
+
+// GetCourseCopyJobs returns the copy jobs for a target course offering.
 // GET /d2l/api/le/{leVersion}/import/{orgUnitId}/copy/
 func (c *Client) GetCourseCopyJobs(orgUnitId int64) ([]CourseImportJobData, error) {
 	var out []CourseImportJobData
 	err := c.get(c.lePath("import/%d/copy/", orgUnitId), nil, &out)
 	return out, err
+}
+
+// GetCourseCopyJob returns the status of a queued course copy job request.
+// GET /d2l/api/le/{leVersion}/import/{orgUnitId}/copy/{jobToken}
+func (c *Client) GetCourseCopyJob(orgUnitId int64, jobToken string) (*GetCopyJobResponse, error) {
+	var out GetCopyJobResponse
+	err := c.get(c.lePath("import/%d/copy/%s", orgUnitId, jobToken), nil, &out)
+	return &out, err
 }
 
 // CreateCourseImportJob uploads a course package and creates a new import job.

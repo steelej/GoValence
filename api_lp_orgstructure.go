@@ -50,6 +50,12 @@ func (c *Client) GetOrgUnitParents(orgUnitId int64) ([]OrgUnitProperties, error)
 	return out, err
 }
 
+// AddOrgUnitParent attaches an existing org unit as a parent of another org unit.
+// POST /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/parents/
+func (c *Client) AddOrgUnitParent(orgUnitId, parentOrgUnitId int64) error {
+	return c.postJSON(c.lpPath("orgstructure/%d/parents/", orgUnitId), nil, parentOrgUnitId, nil)
+}
+
 // GetOrgRecycleBin returns org units in the recycle bin.
 // GET /d2l/api/lp/{lpVersion}/orgstructure/recyclebin/
 func (c *Client) GetOrgRecycleBin(params url.Values) (*PagedResultSet[OrgUnitProperties], error) {

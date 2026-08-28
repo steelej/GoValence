@@ -1,6 +1,7 @@
 package valence
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -182,8 +183,8 @@ func (c *Client) getRaw(path string, params url.Values) (io.ReadCloser, error) {
 	return resp.Body, nil
 }
 
-// delete executes a DELETE request, handles rate limiting and stats.
-func (c *Client) delete(path string, params url.Values) error {
+// delete executes a DELETE request, handles rate limiting, stats, and optional JSON decoding.
+func (c *Client) delete(path string, params url.Values, out ...any) error {
 	fullURL := c.baseURL + path
 	if len(params) > 0 {
 		fullURL += "?" + params.Encode()
@@ -222,6 +223,85 @@ func (c *Client) delete(path string, params url.Values) error {
 			StatusCode: resp.StatusCode,
 			Status:     resp.Status,
 			Body:       string(body),
+		}
+	}
+
+	if len(out) > 0 && out[0] != nil && len(body) > 0 {
+		if err := json.Unmarshal(body, out[0]); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+// postJSON executes a JSON POST request, handles rate limiting, stats, and JSON decoding.
+func (c *Client) postJSON(path string, params url.Values, in, out any) error {
+	return c.jsonRequest(http.MethodPost, path, params, in, out)
+}
+
+// putJSON executes a JSON PUT request, handles rate limiting, stats, and JSON decoding.
+func (c *Client) putJSON(path string, params url.Values, in, out any) error {
+	return c.jsonRequest(http.MethodPut, path, params, in, out)
+}
+
+func (c *Client) jsonRequest(method, path string, params url.Values, in, out any) error {
+	fullURL := c.baseURL + path
+	if len(params) > 0 {
+		fullURL += "?" + params.Encode()
+	}
+
+	var body io.Reader
+	if in != nil {
+		payload, err := json.Marshal(in)
+		if err != nil {
+			return fmt.Errorf("encoding request: %w", err)
+		}
+		body = bytes.NewReader(payload)
+	}
+
+	req, err := http.NewRequest(method, fullURL, body)
+	if err != nil {
+		return err
+	}
+	if in != nil {
+		req.Header.Set("Content-Type", "application/json")
+	}
+
+	if err := c.auth.AuthenticateRequest(req); err != nil {
+		return err
+	}
+
+	wait := c.rateLimit.waitIfNeeded()
+
+	start := time.Now()
+	resp, err := c.httpClient.Do(req)
+	elapsed := time.Since(start)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	c.rateLimit.update(resp)
+
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	c.stats.record(elapsed, wait, int64(len(respBody)))
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return &APIError{
+			StatusCode: resp.StatusCode,
+			Status:     resp.Status,
+			Body:       string(respBody),
+		}
+	}
+
+	if out != nil && len(respBody) > 0 {
+		if err := json.Unmarshal(respBody, out); err != nil {
+			return fmt.Errorf("decoding response: %w", err)
 		}
 	}
 

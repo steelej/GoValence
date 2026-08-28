@@ -8,6 +8,14 @@ func (c *Client) GetSections(orgUnitId int64) ([]Section, error) {
 	return out, err
 }
 
+// CreateSection creates a new section in an org unit.
+// POST /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/
+func (c *Client) CreateSection(orgUnitId int64, data SectionData) (*Section, error) {
+	var out Section
+	err := c.postJSON(c.lpPath("%d/sections/", orgUnitId), nil, data, &out)
+	return &out, err
+}
+
 // GetSection returns a specific section.
 // GET /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/{sectionId}
 func (c *Client) GetSection(orgUnitId, sectionId int64) (*Section, error) {

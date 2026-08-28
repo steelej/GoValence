@@ -33,3 +33,19 @@ func (c *Client) GetUserEnrollments(userId int64, params url.Values) (*PagedResu
 	err := c.get(c.lpPath("enrollments/users/%d/orgUnits/", userId), params, &out)
 	return &out, err
 }
+
+// CreateEnrollment enrolls a user in an org unit.
+// POST /d2l/api/lp/{lpVersion}/enrollments/
+func (c *Client) CreateEnrollment(data CreateEnrollmentData) (*EnrollmentData, error) {
+	var out EnrollmentData
+	err := c.postJSON(c.lpPath("enrollments/"), nil, data, &out)
+	return &out, err
+}
+
+// DeleteEnrollment removes a user's enrollment from an org unit.
+// DELETE /d2l/api/lp/{lpVersion}/enrollments/orgUnits/{orgUnitId}/users/{userId}
+func (c *Client) DeleteEnrollment(orgUnitId, userId int64) (*EnrollmentData, error) {
+	var out EnrollmentData
+	err := c.delete(c.lpPath("enrollments/orgUnits/%d/users/%d", orgUnitId, userId), nil, &out)
+	return &out, err
+}

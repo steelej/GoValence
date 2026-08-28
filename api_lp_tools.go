@@ -73,3 +73,11 @@ func (c *Client) GetOrgUnitToolNames(orgUnitId int64) ([]ToolWithName, error) {
 	}
 	return all, nil
 }
+
+// UpdateOrgUnitToolStatus updates whether a tool is enabled for an org unit.
+// PUT /d2l/api/lp/{lpVersion}/tools/orgUnits/{orgUnitId}/tool/{toolId}
+func (c *Client) UpdateOrgUnitToolStatus(orgUnitId, toolId int64, data UpdateStatus) (*ToolInfo, error) {
+	var out ToolInfo
+	err := c.putJSON(c.lpPath("tools/orgUnits/%d/tool/%d", orgUnitId, toolId), nil, data, &out)
+	return &out, err
+}
