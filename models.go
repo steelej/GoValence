@@ -149,6 +149,24 @@ type RoleInfo struct {
 	Name string `json:"Name"`
 }
 
+// Role describes a user role returned by the LP roles service. The fields after
+// Code are only populated when the role is retrieved through LP's unstable
+// contract.
+type Role struct {
+	Identifier            string `json:"Identifier"`
+	DisplayName           string `json:"DisplayName"`
+	Code                  string `json:"Code"`
+	Description           string `json:"Description"`
+	RoleAlias             string `json:"RoleAlias"`
+	IsCascading           bool   `json:"IsCascading"`
+	AccessFutureCourses   bool   `json:"AccessFutureCourses"`
+	AccessInactiveCourses bool   `json:"AccessInactiveCourses"`
+	AccessPastCourses     bool   `json:"AccessPastCourses"`
+	ShowInGrades          bool   `json:"ShowInGrades"`
+	ShowInUserProgress    bool   `json:"ShowInUserProgress"`
+	InClassList           bool   `json:"InClassList"`
+}
+
 // ---- Enrollment ------------------------------------------------------------
 
 type OrgUnitInfo struct {
