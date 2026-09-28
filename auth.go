@@ -9,6 +9,8 @@ import (
 	"net/url"
 	"strings"
 	"time"
+
+	"golang.org/x/oauth2"
 )
 
 // Authenticator modifies an outgoing request to add authentication.
@@ -71,6 +73,28 @@ func (a *OAuthAuth) AuthenticateRequest(req *http.Request) error {
 	return nil
 }
 
+// OAuthTokenSourceAuth uses an OAuth2 token source to authenticate each request.
+// The source may refresh expired tokens; acquiring and storing credentials is the
+// caller's responsibility.
+type OAuthTokenSourceAuth struct {
+	Source oauth2.TokenSource
+}
+
+func (a *OAuthTokenSourceAuth) AuthenticateRequest(req *http.Request) error {
+	if a == nil || a.Source == nil {
+		return fmt.Errorf("OAuth token source is nil")
+	}
+	token, err := a.Source.Token()
+	if err != nil {
+		return fmt.Errorf("getting OAuth token: %w", err)
+	}
+	if token == nil || token.AccessToken == "" {
+		return fmt.Errorf("OAuth token source returned no access token")
+	}
+	req.Header.Set("Authorization", "Bearer "+token.AccessToken)
+	return nil
+}
+
 // NewD2LAuth constructs a D2LAuth authenticator.
 func NewD2LAuth(appID, appKey, userID, userKey string) *D2LAuth {
 	return &D2LAuth{AppID: appID, AppKey: appKey, UserID: userID, UserKey: userKey}
@@ -79,6 +103,12 @@ func NewD2LAuth(appID, appKey, userID, userKey string) *D2LAuth {
 // NewOAuthAuth constructs an OAuthAuth authenticator.
 func NewOAuthAuth(token string) *OAuthAuth {
 	return &OAuthAuth{Token: token}
+}
+
+// NewOAuthTokenSourceAuth constructs an authenticator using the supplied token
+// source. For example, pass an oauth2.Config.TokenSource to enable token refresh.
+func NewOAuthTokenSourceAuth(source oauth2.TokenSource) *OAuthTokenSourceAuth {
+	return &OAuthTokenSourceAuth{Source: source}
 }
 
 // buildURL constructs a full URL from the client base URL and path segments,
