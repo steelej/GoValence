@@ -16,9 +16,9 @@ const (
 
 // rateLimitState tracks the current rate-limit window state.
 type rateLimitState struct {
-	mu        sync.Mutex
-	remaining int
-	resetAt   time.Time
+	mu          sync.Mutex
+	remaining   int
+	resetAt     time.Time
 	initialised bool
 }
 
