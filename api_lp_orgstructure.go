@@ -12,8 +12,8 @@ func (c *Client) GetOrganizationInfo() (*OrganizationInfo, error) {
 
 // GetOrgUnit returns a specific org unit by ID.
 // GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}
-func (c *Client) GetOrgUnit(orgUnitId int64) (*OrgUnitProperties, error) {
-	var out OrgUnitProperties
+func (c *Client) GetOrgUnit(orgUnitId int64) (*OrgUnit, error) {
+	var out OrgUnit
 	err := c.get(c.lpPath("orgstructure/%d", orgUnitId), nil, &out)
 	return &out, err
 }
@@ -44,8 +44,8 @@ func (c *Client) GetOrgUnitChildrenPaged(orgUnitId int64, params url.Values) (*P
 
 // GetOrgUnitParents returns the parents of a given org unit.
 // GET /d2l/api/lp/{lpVersion}/orgstructure/{orgUnitId}/parents/
-func (c *Client) GetOrgUnitParents(orgUnitId int64) ([]OrgUnitProperties, error) {
-	var out []OrgUnitProperties
+func (c *Client) GetOrgUnitParents(orgUnitId int64) ([]OrgUnit, error) {
+	var out []OrgUnit
 	err := c.get(c.lpPath("orgstructure/%d/parents/", orgUnitId), nil, &out)
 	return out, err
 }
@@ -66,16 +66,16 @@ func (c *Client) GetOrgRecycleBin(params url.Values) (*PagedResultSet[OrgUnitPro
 
 // GetSemesterOrgUnitType returns the org unit type info for semesters.
 // GET /d2l/api/lp/{lpVersion}/outypes/semester
-func (c *Client) GetSemesterOrgUnitType() (*OrgUnitTypeInfo, error) {
-	var out OrgUnitTypeInfo
+func (c *Client) GetSemesterOrgUnitType() (*OrgUnitType, error) {
+	var out OrgUnitType
 	err := c.get(c.lpPath("outypes/semester"), nil, &out)
 	return &out, err
 }
 
 // GetOrgUnitTypes returns all visible org unit types.
 // GET /d2l/api/lp/{lpVersion}/outypes/
-func (c *Client) GetOrgUnitTypes() ([]OrgUnitTypeInfo, error) {
-	var out []OrgUnitTypeInfo
+func (c *Client) GetOrgUnitTypes() ([]OrgUnitType, error) {
+	var out []OrgUnitType
 	err := c.get(c.lpPath("outypes/"), nil, &out)
 	return out, err
 }

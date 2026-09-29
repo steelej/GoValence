@@ -169,7 +169,7 @@ func TestCreateEnrollmentUsesDocumentedRouteAndBody(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		_, _ = w.Write([]byte(`{"OrgUnitId":123,"UserId":456,"Role":{"Id":88,"Code":"test-student","Name":"Test Student"},"IsCascading":false}`))
+		_, _ = w.Write([]byte(`{"OrgUnitId":123,"UserId":456,"RoleId":88,"IsCascading":false}`))
 	})
 	defer closeServer()
 
@@ -181,7 +181,26 @@ func TestCreateEnrollmentUsesDocumentedRouteAndBody(t *testing.T) {
 	if err != nil {
 		t.Fatalf("CreateEnrollment returned error: %v", err)
 	}
-	if got.OrgUnitId != 123 || got.UserId != 456 || got.Role.Id != 88 {
+	if got.OrgUnitId != 123 || got.UserId != 456 || got.RoleId != 88 || got.IsCascading {
+		t.Fatalf("unexpected enrollment: %+v", got)
+	}
+}
+
+func TestGetUserOrgUnitEnrollmentUsesDocumentedResponse(t *testing.T) {
+	client, closeServer := newTestClient(func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet || r.URL.Path != "/d2l/api/lp/1.50/enrollments/orgUnits/123/users/456" {
+			t.Errorf("unexpected request: %s %s", r.Method, r.URL.Path)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"OrgUnitId":123,"UserId":456,"RoleId":88,"IsCascading":true}`))
+	})
+	defer closeServer()
+
+	got, err := client.GetUserOrgUnitEnrollment(123, 456)
+	if err != nil {
+		t.Fatalf("GetUserOrgUnitEnrollment returned error: %v", err)
+	}
+	if got.OrgUnitId != 123 || got.UserId != 456 || got.RoleId != 88 || !got.IsCascading {
 		t.Fatalf("unexpected enrollment: %+v", got)
 	}
 }
@@ -222,7 +241,7 @@ func TestDeleteEnrollmentUsesDocumentedRoute(t *testing.T) {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		_, _ = w.Write([]byte(`{"OrgUnitId":123,"UserId":456,"Role":{"Id":88,"Code":"staff","Name":"Staff"},"IsCascading":false}`))
+		_, _ = w.Write([]byte(`{"OrgUnitId":123,"UserId":456,"RoleId":88,"IsCascading":true}`))
 	})
 	defer closeServer()
 
@@ -230,7 +249,7 @@ func TestDeleteEnrollmentUsesDocumentedRoute(t *testing.T) {
 	if err != nil {
 		t.Fatalf("DeleteEnrollment returned error: %v", err)
 	}
-	if got.OrgUnitId != 123 || got.UserId != 456 || got.Role.Id != 88 {
+	if got.OrgUnitId != 123 || got.UserId != 456 || got.RoleId != 88 || !got.IsCascading {
 		t.Fatalf("unexpected deleted enrollment: %+v", got)
 	}
 }
@@ -421,8 +440,8 @@ func TestUpdateConfigVariableValueUsesDocumentedRouteAndBody(t *testing.T) {
 	if err != nil {
 		t.Fatalf("UpdateConfigVariableValue returned error: %v", err)
 	}
-	if got.Value != "on" {
-		t.Fatalf("Value = %s, want on", got.Value)
+	if got.Value == nil || *got.Value != "on" {
+		t.Fatalf("Value = %v, want on", got.Value)
 	}
 }
 
@@ -446,8 +465,8 @@ func TestGetEffectiveConfigVariableValueUsesDocumentedRoute(t *testing.T) {
 	if err != nil {
 		t.Fatalf("GetEffectiveConfigVariableValue returned error: %v", err)
 	}
-	if got.Value != "on" {
-		t.Fatalf("Value = %s, want on", got.Value)
+	if got.Value == nil || *got.Value != "on" {
+		t.Fatalf("Value = %v, want on", got.Value)
 	}
 }
 

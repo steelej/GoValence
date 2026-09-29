@@ -30,12 +30,12 @@ func (c *Client) GetDropboxSubmissions(orgUnitId, folderId int64) ([]UserSubmiss
 	return out, err
 }
 
-// GetDropboxUserSubmissions returns submissions for a specific user in a dropbox folder.
+// GetDropboxUserSubmissions returns a user's submissions and feedback in a dropbox folder.
 // GET /d2l/api/le/{leVersion}/{orgUnitId}/dropbox/folders/{folderId}/submissions/user/{userId}
-func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) ([]DropboxSubmissionEntry, error) {
-	var out []DropboxSubmissionEntry
+func (c *Client) GetDropboxUserSubmissions(orgUnitId, folderId, userId int64) (*UserSubmissions, error) {
+	var out UserSubmissions
 	err := c.get(c.lePath("%d/dropbox/folders/%d/submissions/user/%d", orgUnitId, folderId, userId), nil, &out)
-	return out, err
+	return &out, err
 }
 
 // GetDropboxSubmissionFile returns the raw bytes of a submission file.

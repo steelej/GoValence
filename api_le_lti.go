@@ -50,26 +50,26 @@ func (c *Client) GetLTIToolProvider(orgUnitId, tpId int64) (*LTIToolProvider, er
 
 // GetLTIAdvantageLinks returns all LTI Advantage links for an org unit.
 // GET /d2l/api/le/{leVersion}/ltiadvantage/links/orgunit/{orgUnitId}/
-func (c *Client) GetLTIAdvantageLinks(orgUnitId int64) ([]LTIAdvantageLink, error) {
-	var out []LTIAdvantageLink
+func (c *Client) GetLTIAdvantageLinks(orgUnitId int64) (*ObjectListPage[LTIAdvantageLink], error) {
+	var out ObjectListPage[LTIAdvantageLink]
 	err := c.get(c.lePath("ltiadvantage/links/orgunit/%d/", orgUnitId), nil, &out)
-	return out, err
+	return &out, err
 }
 
 // GetLTIAdvantageQuickLink returns a specific LTI Advantage quick link.
 // GET /d2l/api/le/{leVersion}/ltiadvantage/quicklinks/orgunit/{orgUnitId}/link/{linkId}
-func (c *Client) GetLTIAdvantageQuickLink(orgUnitId, linkId int64) (*LTIAdvantageLink, error) {
-	var out LTIAdvantageLink
+func (c *Client) GetLTIAdvantageQuickLink(orgUnitId, linkId int64) (*LTIAdvantageQuicklink, error) {
+	var out LTIAdvantageQuicklink
 	err := c.get(c.lePath("ltiadvantage/quicklinks/orgunit/%d/link/%d", orgUnitId, linkId), nil, &out)
 	return &out, err
 }
 
 // GetLTIAdvantageDeploymentSharing returns sharing info for an LTI Advantage deployment.
 // GET /d2l/api/le/{leVersion}/ltiadvantage/deployment/{deploymentId}/sharing/
-func (c *Client) GetLTIAdvantageDeploymentSharing(deploymentId int64) ([]LTIDeploymentSharingData, error) {
-	var out []LTIDeploymentSharingData
+func (c *Client) GetLTIAdvantageDeploymentSharing(deploymentId int64) (*ObjectListPage[LTIDeploymentSharingData], error) {
+	var out ObjectListPage[LTIDeploymentSharingData]
 	err := c.get(c.lePath("ltiadvantage/deployment/%d/sharing/", deploymentId), nil, &out)
-	return out, err
+	return &out, err
 }
 
 // GetLTIAdvantageDeploymentOrgUnitSharing returns sharing for a specific org unit on a deployment.
