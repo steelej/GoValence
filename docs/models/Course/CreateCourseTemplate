@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CreateCourseTemplate
+
+{
+    "Name": <string>,
+    "Code": <string>,
+    "Path": <string>,
+    "ParentOrgUnitIds": [ <number:D2LID>, ... ]
+}

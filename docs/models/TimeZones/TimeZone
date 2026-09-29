@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/locale.html#TimeZones.TimeZone
+
+{
+   "Identifier": <string:TimeZone>,
+   "SimpleName": <string>,
+   "Name": <string>,
+   "CurrentOffset": <string:TimeSpan>,
+   "CurrentStandardOffset": <string:TimeSpan>
+}

@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseOfferingInfo
+
+{
+    "Name": <string>,
+    "Code": <string>,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "LocaleId": <number:D2LID>|null, // Added with LP API v1.54
+    "ForceLocale": <boolean>, // Added with LP API v1.54
+    "ShowAddressBook": <boolean>, // Added with LP API v1.54
+    "IsActive": <boolean>,
+    "Description": { <composite:RichTextInput> },
+    "CanSelfRegister": <boolean>|null
+}

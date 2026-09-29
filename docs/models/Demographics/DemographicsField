@@ -1,0 +1,19 @@
+https://docs.valence.desire2learn.com/res/demographics.html#Demographics.DemographicsField
+
+{
+    "Name": <string>,
+    "Description": <string>,
+    "DataTypeId": <string:GUID>
+}
+
+{
+    "FieldId": <number:D2LID>,
+    "Name": <string>,
+    "Description": <string>,
+    "DataTypeId": <string:GUID>
+}
+
+{
+    "Name": <string>,
+    "Description": <string>
+}

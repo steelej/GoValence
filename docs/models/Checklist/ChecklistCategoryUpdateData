@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/checklist.html#Checklist.ChecklistCategoryUpdateData
+
+{
+   "Name": <string>,
+   "Description": { <composite:RichTextInput> },
+   "SortOrder": <number>
+}

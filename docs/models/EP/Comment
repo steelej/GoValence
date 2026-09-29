@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/epcomment.html#EP.Comment
+
+{
+    "ObjectId": <number:D2LID>,
+    "CommentId": <number:D2LID>,
+    "UserId": <number:D2LID>,
+    "CreatedDate": <string:UTCDateTime>|null,
+    "Body": <string>
+}

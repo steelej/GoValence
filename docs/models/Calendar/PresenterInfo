@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.PresenterInfo
+
+{
+    "UserId": <number:D2LID>,
+    "Name": <string>,
+    "DisplayName": <string>,
+    "Role": <string>,
+    "DisplayRole": <string>,
+    "Duration": <number>,
+    "Visible": <boolean>
+}

@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.ReofferCourse
+
+{
+   "OrgUnitId": <number:D2LID>,
+   "CourseCode": <string>,
+   "CourseName": <string>,
+   "DateCreated": <string:UTCDateTime>,
+   "EndDate": <string:UTCDateTime>|null,
+   "StartDate": <string:UTCDateTime>|null,
+   "IsActive": <boolean>,
+   "Deleted": <boolean>
+}

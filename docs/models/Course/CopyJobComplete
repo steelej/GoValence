@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CopyJobComplete
+
+{
+    "JobToken": <string>,
+    "SourceOrgUnitId": <number:D2LID>,
+    "TargetOrgUnitId": <number:D2LID>,
+    "Status": <string:COPYJOBSTATUS_T>
+}

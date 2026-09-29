@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/groups.html#Group.GroupsJobData
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "CategoryId": <number:D2LID>,
+    "SubmitDate": <string:UTCDateTime>,
+    "Status": <int:GROUPSJOBSTATUS_T>
+}

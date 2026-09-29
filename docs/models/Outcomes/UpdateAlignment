@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.UpdateAlignment
+
+{
+     "Action": "add|remove|replace",
+     "OutcomeIds": [ <string:GUID>, ... ]
+}

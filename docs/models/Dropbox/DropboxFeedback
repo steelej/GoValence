@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.DropboxFeedback
+
+{
+    "Score": <number:decimal>|null,
+    "Feedback": { <composite:RichText> },
+    "RubricAssessments": [ // Array of RubricAssessment blocks
+        { <composite:RubricAssessment> },
+        { <composite:RubricAssessment> }, ...
+    ],
+    "IsGraded": <boolean>,
+    "GradedSymbol": <string>|null
+}

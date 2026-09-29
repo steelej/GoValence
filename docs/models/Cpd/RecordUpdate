@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.RecordUpdate
+
+{
+   "Name": <string>,
+   "CategoryId": <number:D2LID>,
+   "IsStructured": <boolean>,
+   "MethodId": <number:D2LID>,
+   "CreditMinutes": <number>,
+   "Answers": [ // Array of AnswerUpdate blocks
+      {
+         "QuestionId": <number:D2LID>,
+         "Text": <string>
+      },
+      { <composite:AnswerUpdate> }, ...
+   ],
+   "DateCompleted": <string:UtcDateTime>,
+   "RecordStateId": <number:RECORDSTATE_T>|null
+}

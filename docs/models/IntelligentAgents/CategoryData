@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.CategoryData
+
+{
+    "CategoryId": <number:D2LID>|null,
+    "Name": <string>,
+    "SortOrder": <number>|null
+}

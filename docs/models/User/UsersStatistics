@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/user.html#User.UsersStatistics
+
+{
+    "TotalUsers": <number>,
+    "ActiveUsers": <number>,
+    "InactiveUsers": <number>,
+    "LockedUsers": <number>,
+    "UnenrolledUsers": <number>,
+    "OnlineUsers": <number>,
+    "NeverLoggedInUsers": <number>
+}

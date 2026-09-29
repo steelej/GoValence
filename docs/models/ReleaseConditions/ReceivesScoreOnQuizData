@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ReceivesScoreOnQuizData
+
+{
+    "Type": "ReceivesScoreOnQuiz",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "ReceivesScoreOnQuizParams": { <composite:ReceivesScoreOnQuizParams> }
+}

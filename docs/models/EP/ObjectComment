@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.ObjectComment
+
+{
+    "CommentId": <number:D2LID>,
+    "UserId": <number:D2LID>|null,
+    "FirstName": <string>,
+    "LastName": <string>,
+    "CommentBody": <string>,
+    "CreatedDate": <string:UTCDateTime>,
+    "CommentedObjectId": <number:D2LID>,
+    "ContextObjectId": <number:D2LID>|null,
+    "ContextObjectTypeId": <number>|null
+}

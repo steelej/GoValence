@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.RecurrenceInfo
+
+{
+    "RepeatType": <number:REPEAT_T>,
+    "RepeatEvery": <number>,
+    "RepeatOnInfo": { <composite:Calendar.RepeatOnInfo> },
+    "RepeatUntilDate": <string:UTCDateTime>
+}

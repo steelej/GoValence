@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.AwardAssociated
+
+{
+    "AssociationId": <number:D2LID>|null,
+    "Award": { <composite:Awards.Award> }
+}

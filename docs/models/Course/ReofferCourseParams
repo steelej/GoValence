@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.ReofferCourseParams
+
+{
+   "Name": <string>,
+   "Code": <string>,
+   "IsActive": <boolean>,
+   "StartDate": <string:UTCDateTime>|null,
+   "EndDate": <string:UTCDateTime>|null,
+   "Semesters": [ <number:D2LID>, ... ]|null
+}

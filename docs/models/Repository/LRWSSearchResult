@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSSearchResult
+
+{
+    "RepositoryId": <number>,
+    "IdentId": <number>,
+    "Version": <number>,
+    "URL": <string>,
+    "Title": <string>,
+    "OrgId": <number>,
+    "TypeId": <number:LR_OBJECT_T>
+}

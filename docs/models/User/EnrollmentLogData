@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/user.html#User.EnrollmentLogData
+
+{
+    "LogId": <number:D2LID>,
+    "Date": <string:UTCDateTime>,
+    "Action": <number>,
+    "OrgUnitId": <number:D2LID>,
+    "OrgUnitTypeId": <number:D2LID>,
+    "OrgUnitName": <string>,
+    "OrgUnitCode": <string>,
+    "RoleId": <number:D2LID>,
+    "EnrolledBy": <number:D2LID>|null
+}

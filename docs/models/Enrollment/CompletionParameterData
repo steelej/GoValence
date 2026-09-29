@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.CompletionParameterData
+
+{
+    "Completion": <boolean>,
+    "CompletionDate": <string:UTCDateTime>|null,
+    "Overwrite": <boolean>|null,
+}

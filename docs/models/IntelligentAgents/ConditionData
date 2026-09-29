@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.ConditionData
+
+{
+    "LoginActivity": { <composite:IntelligentAgents.DateCondition> }|null,
+    "CourseActivity": { <composite:IntelligentAgents.DateCondition> }|null,
+    "ReleaseCondition": { <composite:IntelligentAgents.ReleaseCondition> }|null,
+    "RoleIds": [ <number:D2LID>, ... ]|null
+}

@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeObjectValue
+
+{
+   "PointsNumerator": <number:decimal>|null,
+   "PointsDenominator": <number:decimal>|null,
+   "WeightedNumerator": <number:decimal>|null,
+   "WeightedDenominator": <number:decimal>|null,
+   "GradeText": <string>|null,
+   "SchemeRangeId": <number:D2LID>|null,
+   "DisplayValue": <string>
+}

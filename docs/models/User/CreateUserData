@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/user.html#User.CreateUserData
+
+{
+    "OrgDefinedId": <string>|null,
+    "FirstName": <string>,
+    "MiddleName": <string>|null,
+    "LastName": <string>,
+    "ExternalEmail": <string>|null,
+    "UserName": <string>,
+    "RoleId": <number>,
+    "IsActive": <boolean>,
+    "SendCreationEmail": <boolean>,
+    "Pronouns": <string>|null,
+    "PasswordData": { <composite:User.UserPasswordData> }|null  // Added with LP API v1.57
+}

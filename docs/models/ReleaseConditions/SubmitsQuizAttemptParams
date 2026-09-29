@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#SubmitsQuizAttemptParams
+
+{
+    "QuizId": <number:D2LID>,
+    "NumberOfAttempts": <number>
+}

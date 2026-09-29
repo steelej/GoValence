@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#AuthorsPostsInTopicParams
+
+{
+    "ForumId": <number:D2LID>,
+    "TopicId": <number:D2LID>,
+    "NumberOfPosts": <number>,
+    "PostsType": <string:POSTS_T>
+}

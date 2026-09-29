@@ -1,0 +1,5 @@
+https://docs.valence.desire2learn.com/res/groups.html#Group.GroupCategoryJobStatus
+
+{
+    "Status": <int:GROUPSJOBSTATUS_T>
+}

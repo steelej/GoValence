@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ExpressionData
+
+{
+    "Type": "Expression",
+    "State": null,
+    "ExpressionParams": { <composite:ExpressionParams> },
+    "Text": { <composite:RichText> }
+}

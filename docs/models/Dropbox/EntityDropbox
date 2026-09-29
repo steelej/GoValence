@@ -1,0 +1,30 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.EntityDropbox
+
+{
+    "Entity": { <composite:Dropbox.Entity> },
+    "Status": <string:ENTITYDROPBOXSTATUS_T>,
+    "Feedback": { <composite:Dropbox.DropboxFeedbackOut> },
+    "Submissions": [ // Array of Submission blocks
+        {
+            "Id": <number:D2LID>,
+            "SubmittedBy": {
+                "Id": <string>,
+                "DisplayName": <string>
+            },
+            "SubmissionDate": <string:UTCDateTime>|null,
+            "Comment": { <composite:RichText> },
+            "Files": [ // Array of File blocks
+                {
+                    "FileId": <number:D2LID>,
+                    "FileName": <string>,
+                    "Size": <number:long>,
+                    "isRead": <boolean>,
+                    "isFlagged": <boolean>
+                },
+                { <composite:File> }, ...
+            ]
+        },
+        { <composite:Submission> }, ...
+    ],
+    "CompletionDate": <string:UTCDateTime>|null
+}

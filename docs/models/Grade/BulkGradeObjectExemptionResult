@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.BulkGradeObjectExemptionResult
+
+{
+    "Items": [ <composite:BulkGradeObjectExemption>, ... ],
+    "ExemptionAccessDate": <string:UTCDateTime>
+}

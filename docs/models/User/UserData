@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/user.html#User.UserData
+
+{
+    "OrgId": <number:D2LID>,
+    "UserId": <number:D2LID>,
+    "FirstName": <string>,
+    "MiddleName": <string>|null,
+    "LastName": <string>,
+    "UserName": <string>,
+    "ExternalEmail": <string>|null,
+    "OrgDefinedId": <string>|null,
+    "UniqueIdentifier": <string>,
+    "Activation": { <composite:User.UserActivationData> },
+    "DisplayName": <string>,
+    "LastAccessedDate": <string:UTCDateTime>|null,
+    "Pronouns": <string>,
+    "FirstLoginDate": <string:UTCDateTime>|null  // Added with LMS v20.26.2
+}

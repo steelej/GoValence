@@ -1,0 +1,56 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.DropboxFolder
+
+{
+    "Id": <number:D2LID>,
+    "CategoryId": <number:D2LID>|null,
+    "Name": <string>,
+    "CustomInstructions": "{composite:RichText}",
+    "Attachments": [  // Array of File blocks
+        {
+            "FileId": <number:D2LID>,
+            "FileName": <string>,
+            "Size": <number:long>
+        },
+        { <composite:File> }, ...
+    ],
+    "TotalFiles": <number>,
+    "UnreadFiles": <number>,
+    "FlaggedFiles": <number>,
+    "TotalUsers": <number>,
+    "TotalUsersWithSubmissions": <number>,
+    "TotalUsersWithFeedback": <number>,
+    "Availability": null|{
+        "StartDate": <string:UTCDateTime>|null,
+        "EndDate": <string:UTCDateTime>|null,
+        "StartDateAvailabilityType": <string:AVAILABILITY_T>|null,
+        "EndDateAvailabilityType": <string:AVAILABILITY_T>|null
+    },
+    "GroupTypeId": <number:D2LID>|null,
+    "DueDate": <string:UTCDateTime>|null,
+    "DisplayInCalendar": <boolean>,
+    "Assessment": {
+        "ScoreDenominator": <number:decimal>|null,
+        "Rubrics": [  // Array of Rubric blocks
+             { <composite:Rubric.Rubric> },
+             { <composite:Rubric.Rubric> }, ...
+        ]
+    },
+    "NotificationEmail": <string>|null,
+    "IsHidden": <boolean>,
+    "LinkAttachments": [  // Array of Link blocks
+        {
+             "LinkId": <number:D2LID>,
+             "LinkName": <string>,
+             "Href": <string>
+        },
+        { <composite:Link> }, ...
+    ],
+    "ActivityId": <string>|null,
+    "IsAnonymous": <boolean>,
+    "DropboxType": <string:DROPBOXTYPE_T>,
+    "SubmissionType": <string:SUBMISSIONTYPE_T>,
+    "CompletionType": <string:DROPBOX_COMPLETIONTYPE_T>,
+    "SubmissionRule": <string:SUBMISSIONRULE_T>,  // Added with LE API v1.98
+    "GradeItemId": <number:D2LID>|null,
+    "AllowOnlyUsersWithSpecialAccess": <boolean>|null
+}

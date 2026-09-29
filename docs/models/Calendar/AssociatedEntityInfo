@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.AssociatedEntityInfo
+
+{
+    "AssociatedEntityType": <string:ASSOCENTITY_T>,
+    "AssociatedEntityId": <number:D2LID>,
+    "Link": <string>
+}

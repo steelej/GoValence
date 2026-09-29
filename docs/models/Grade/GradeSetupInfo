@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeSetupInfo
+
+{
+    "GradingSystem": <string:GRADINGSYSTEM_T>,
+    "IsNullGradeZero": <boolean>,
+    "DefaultGradeSchemeId": <number:D2LID>
+}

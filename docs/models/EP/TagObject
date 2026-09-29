@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/epcomment.html#EP.TagObject
+
+{
+    "Text": <string>,
+    "Type": <number:TAG_T>
+}

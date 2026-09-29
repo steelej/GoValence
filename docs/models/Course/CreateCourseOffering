@@ -1,0 +1,17 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CreateCourseOffering
+
+{
+    "Name": <string>,
+    "Code": <string>,
+    "Path": <string>,
+    "CourseTemplateId": <number:D2LID>,
+    "SemesterId": <number:D2LID>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "LocaleId": <number:D2LID>|null,
+    "ForceLocale": <boolean>,
+    "ShowAddressBook": <boolean>,
+    "Description": { <composite:RichTextInput> },
+    "CanSelfRegister": <boolean>|null,
+    "IsActive": <boolean>  // Added with LP API v1.59
+}

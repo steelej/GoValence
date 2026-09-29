@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/content.html#Exemptions.ItemExemptionInfo
+
+{
+   "ExemptItems": [ // Array of D2LID numbers
+                    <number:D2LID>,
+                    <number:D2LID>,
+                    <number:D2LID>, ...
+                  ]
+}

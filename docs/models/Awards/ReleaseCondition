@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.ReleaseCondition
+
+{
+    "ConditionId": <number>,
+    "ConditionText": <string>
+}

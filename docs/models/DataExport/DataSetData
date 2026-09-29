@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#DataExport.DataSetData
+
+{
+    "DataSetId": <string:GUID>,
+    "Name": <string>,
+    "Description": <string>,
+    "Category": <string>,
+    "Filters": [ { <composite:DataExport.DataSetFilter> }, ... ]
+}

@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/user.html#Alerts.Alert
+
+{
+    "Id": <number:D2LID>,
+    "OrgUnitId": <number:D2LID>,
+    "Category": <ALERTCATEGORY_T>,
+    "Title": <string>,
+    "Message": <string>,
+    "MessageURL": <string>|null,
+    "IconURL": <string>|null,
+    "AlertDateTime": <string:UTCDateTime>,
+    "FeedMessageSubjectType": <string>|null,
+    "FeedMessageSubjectId": <string>|null
+}

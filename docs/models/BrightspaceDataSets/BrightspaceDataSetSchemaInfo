@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.BrightspaceDataSetSchemaInfo
+
+{
+   "SchemaId": <string:GUID>,
+   "PluginIds": [ <string:GUID>, ... ]
+}

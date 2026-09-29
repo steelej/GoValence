@@ -1,0 +1,5 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseUpdateStatus
+
+{
+   "Status": "PENDING|PROCESSING|COMPLETE|FAILED|CANCELLED"
+}

@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.CriteriaGroupInput
+
+{
+    "Name": <string>,
+    "Levels": [  // Array of LevelInput blocks
+        { <composite:Rubric.LevelInput> },
+        { <composite:Rubric.LevelInput> }, ...
+    ],
+    "Criteria": [  // Array of CriterionInput blocks
+        { <composite:Rubric.CriterionInput> },
+        { <composite:Rubric.CriterionInput> }, ...
+    ]
+}

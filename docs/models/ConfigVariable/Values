@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/config.html#ConfigVariable.Values
+
+{
+    "ConfigId": <string:GUID>,
+    "DefaultValue": <string>,
+    "SystemValue": <string>|null,
+    "OrgValue": <string>|null,
+    "NumOrgUnitValues": <number>,
+    "NumRoleValues": <number>
+}

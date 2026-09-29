@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.RatingData
+
+{
+    "CanRate": <boolean>,
+    "RatingsSum": <number>,
+    "RatingsCount": <number>,
+    "RatingsAverage": <number>,
+    "UserRating": { <composite:Discussion.UserRatingData> }
+}

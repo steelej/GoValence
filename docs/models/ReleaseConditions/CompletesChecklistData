@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#CompletesChecklistData
+
+{
+    "Type": "CompletesChecklist",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "CompletesChecklistParams": { <composite:CompletesChecklistParams> }
+}

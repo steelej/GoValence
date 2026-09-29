@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/config.html#ConfigVariable.OrgUnitValue
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "Value": <string>|null
+}

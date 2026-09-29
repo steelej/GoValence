@@ -1,0 +1,20 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.QuestionData
+
+{
+   "QuestionId": <number:D2LID>,
+   "QuestionTypeId": <number:QUESTION_T>,
+   "Name": <string>|null,
+   "QuestionText": { <composite:RichText> },
+   "Points": <number>,
+   "Difficulty": <number>,
+   "Bonus": <boolean>,
+   "Mandatory": <boolean>,
+   "Hint": { <composite:RichText> },
+   "Feedback": { <composite:RichText> },
+   "LastModified": <utcdatetime>,
+   "LastModifiedBy": <number:D2LID>|null,
+   "SectionId": <number:D2LID>,
+   "QuestionTemplateId": <number:D2LID>,
+   "QuestionTemplateVersionId": <number:D2LID>,
+   "QuestionInfo": { <composite:QuestionInfo> }
+}

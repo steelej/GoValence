@@ -1,0 +1,32 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.Topic
+
+{
+    "ForumId": <number:D2LID>,
+    "TopicId": <number:D2LID>,
+    "Name": <string>,
+    "Description": { <composite:RichText> },
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "UnlockStartDate": <string:UTCDateTime>|null,
+    "UnlockEndDate": <string:UTCDateTime>|null,
+    "IsLocked": <boolean>,
+    "AllowAnonymousPosts": <boolean>,
+    "RequiresApproval": <boolean>,
+    "UnApprovedPostCount": <number>,
+    "PinnedPostCount": <number>,
+    "ScoringType": <string:SCORING_T>,
+    "IsAutoScore": <boolean>,
+    "ScoreOutOf": <number>|null,
+    "IncludeNonScoredValues": <boolean>,
+    "ScoredCount": <number>,
+    "RatingsSum": <number>,
+    "RatingsCount": <number>,
+    "IsHidden": <boolean>,
+    "MustPostToParticipate": <boolean>,
+    "RatingType": <string:RATING_T>,
+    "ActivityId": <string>|null,
+    "GroupTypeId": <number:D2LID>|null,
+    "StartDateAvailabilityType": <string:AVAILABILITY_T>|null,
+    "EndDateAvailabilityType": <string:AVAILABILITY_T>|null,
+    "DueDate": <string:UTCDateTime>|null  // Added with LE API v1.90
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.CreateEnrollmentData
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "UserId": <number:D2LID>,
+    "RoleId": <number:D2LID>,
+    "SendEnrollmentEmail":  <boolean>|null  // Added with LMS v20.25.1
+}

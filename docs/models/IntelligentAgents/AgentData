@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.AgentData
+
+{
+    "AgentId": <number:D2LID>|null,
+    "Name": <string>,
+    "Description": <string>,
+    "IsEnabled": <boolean>,
+    "Schedule": { <composite:IntelligentAgents.ScheduleData> }|null,
+    "Action": { <composite:IntelligentAgents.ActionData> }|null,
+    "Condition": { <composite:IntelligentAgents.ConditionData> }|null,
+    "LastRunDate": <string:UTCDateTime>|null,
+    "NextRunDate": <string:UTCDateTime>|null,
+    "CategoryId": <number:D2LID>|null
+}

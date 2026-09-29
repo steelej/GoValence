@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/content.html#UserProgress.UserProgressData
+
+{
+   "ObjectId": <number:D2LID>,
+   "UserId": <number:D2LID>,
+   "CompletedDate": <string:UTCDateTime>|null,
+   "IsRead": <boolean>,
+   "NumVisits": <number>,
+   "TotalTime": <number>,
+   "LastVisited": <string:UTCDateTime>|null,
+   "Visited": <boolean>,
+   "Completed": <boolean>,
+   "IsExempt": <boolean>
+}

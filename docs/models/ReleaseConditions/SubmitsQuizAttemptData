@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#SubmitsQuizAttemptData
+
+{
+    "Type": "SubmitsQuizAttempt",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "SubmitsQuizAttemptParams": { <composite:SubmitsQuizAttemptParams> }
+}

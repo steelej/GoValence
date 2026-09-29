@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/permissions.html#Permissions.Capability
+
+{
+    "CapabilityId": <string>,  // Appears only on read actions
+    "Name": <string>,
+    "ActorRoleId": <number:D2LID>,
+    "TargetRoleId": <number:D2LID>,
+    "OrgUnitTypeId": <number:D2LID>
+}

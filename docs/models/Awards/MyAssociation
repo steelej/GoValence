@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.MyAssociation
+
+{
+    "AssociationId": <number:D2LID>,
+    "OrgUnitId": <number:D2LID>,
+    "ConditionSet": {
+        "ConditionSetId": <number:D2LID>,
+        "ConditionSetType": <number:D2LID>|null,
+        "ReleaseConditions": [
+            { <composite:Awards.ReleaseCondition> },
+            { <composite:Awards.ReleaseCondition> }, ...
+        ]
+    },
+    "Credit": <number:decimal>|null,
+    "HiddenAward": <boolean>,
+    "Award": { <composite:Awards.Award> },
+    "Issued": <boolean>
+}

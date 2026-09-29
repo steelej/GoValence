@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.BrightspaceDataSetPluginInfo
+
+{
+   "PluginId": <string:GUID>,
+   "Name": <string>,
+   "Description": <string>,
+   "ExtractsLink": <string:APIURL>
+}

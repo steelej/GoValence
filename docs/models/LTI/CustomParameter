@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/lti.html#LTI.CustomParameter
+
+{
+    "Name": <string>,
+    "Value": <string>
+}

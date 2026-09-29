@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/checklist.html#Checklist.ChecklistCategoryReadData
+
+{
+   "CategoryId": <number:D2LID>,
+   "Name": <string>,
+   "Description": { <composite:RichText> },
+   "SortOrder": <number>
+}

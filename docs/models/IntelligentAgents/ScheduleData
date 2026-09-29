@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.ScheduleData
+
+{
+    "IsEnabled": <boolean>,
+    "Type": <number:SCHEDULETYPE_T>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "RepeatsEvery": <number>|null,
+    "RepeatsOnDay": <number>|null,
+    "RepeatsOnDays": [ <string>, ... ]|null,
+    "RepeatsOnMonth": <number>|null,
+    "ScheduledTimeHour": <number>|null,  // Added as of LMS v20.26.6
+    "ScheduledTimeMinute": <number>|null  // Added as of LMS v20.26.6
+}

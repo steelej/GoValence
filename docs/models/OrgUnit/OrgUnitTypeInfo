@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnit.OrgUnitTypeInfo
+
+{
+    "Id": <number:D2LID>,
+    "Code": <string>,
+    "Name": <string>
+}

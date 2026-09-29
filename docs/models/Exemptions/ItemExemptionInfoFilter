@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/content.html#Exemptions.ItemExemptionInfoFilter
+
+{
+   "ExemptStartDate": <string:UTCDateTime>|null,
+   "ExemptEndDate": <string:UTCDateTime>|null,
+   "ExcludeGradedActivities": <boolean>|null,
+   "ExcludeCompleteActivities": <boolean>|null
+}

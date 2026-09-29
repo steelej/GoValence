@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/content.html#ContentCompletions.ContentTopicCompletion
+
+{
+   "UserId": <number:D2LID>,
+   "OrgUnitId": <number:D2LID>,
+   "TopicId": <number:D2LID>,
+   "CompletionType": <number:CONTENT_COMPLETIONTYPE_T>,
+   "CompletionDate": <string:UTCDateTime>|null
+}

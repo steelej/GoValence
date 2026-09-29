@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.BulkGradeObjectCategory
+
+{
+    "Id": <number:D2LID>,
+    "Name": <string>
+}

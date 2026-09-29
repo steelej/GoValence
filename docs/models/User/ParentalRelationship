@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/user.html#User.ParentalRelationship
+
+{
+    "ParentId": <string:D2LID>,
+    "ChildId": <string:D2LID>
+}

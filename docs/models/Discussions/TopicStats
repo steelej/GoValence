@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.TopicStats
+
+{
+    "TotalThreads": <number:int>,
+    "TotalReplies": <number:int>,
+    "PinnedThreads": <number:int>,
+    "UnapprovedPosts": <number:int>,
+    "TotalUpVotes": <number:int>|null,
+    "TotalDownVotes": <number:int>|null,
+    "AverageFiveStarRating": <number:decimal>|null
+}

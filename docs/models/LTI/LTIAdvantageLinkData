@@ -1,0 +1,16 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.LTIAdvantageLinkData
+
+{
+    "LinkId": <D2LID>,
+    "DeploymentId": <GUID>,
+    "IsEnabled": <boolean>,
+    "Name": <string>,
+    "Description": <string>|null,
+    "URL": <string>,
+    "Type": <number:LINK_TYPE_T>,
+    "Height": <int>|null,
+    "Width": <int>|null,
+    "CustomParameters": null|[ { <composite:LTI.CustomParameters> }, ... ],
+    "IsAvailable": <boolean>,
+    "OwnerOrgUnitId": <D2LID>
+}

@@ -1,0 +1,16 @@
+https://docs.valence.desire2learn.com/res/user.html#User.Role
+
+{
+    "Identifier": <string>,
+    "DisplayName": <string>,
+    "Code": <string>,
+    "Description": <string>,  // Available in LP's unstable contract
+    "RoleAlias": <string>,  // Available in LP's unstable contract
+    "IsCascading": <boolean>,  // Available in LP's unstable contract
+    "AccessFutureCourses": <boolean>,  // Available in LP's unstable contract
+    "AccessInactiveCourses": <boolean>,  // Available in LP's unstable contract
+    "AccessPastCourses": <boolean>,  // Available in LP's unstable contract
+    "ShowInGrades": <boolean>,  // Available in LP's unstable contract
+    "ShowInUserProgress": <boolean>,  // Available in LP's unstable contract
+    "InClassList": <boolean>,  // Available in LP's unstable contract
+}

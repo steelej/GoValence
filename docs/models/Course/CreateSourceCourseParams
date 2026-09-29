@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CreateSourceCourseParams
+
+{
+   "Name": <string>,
+   "Code": <string>,
+   "TemplateId": <number:D2LID>
+}

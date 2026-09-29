@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/user.html#User.UserTrackingLog
+
+{
+    "LoginDate": <string:UTCDateTime>,
+    "IpAddress": <string>,
+    "DaysOff": <number>|null
+}

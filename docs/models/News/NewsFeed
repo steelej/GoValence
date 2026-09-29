@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/news.html#News.NewsFeed
+
+{
+    "OrgUnitId": <numeric:D2LID>,
+    "Resource": { <composite:News.NewsItem> }
+}

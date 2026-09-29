@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.QuizCategoryReadData
+
+{
+    "CategoryId": <number:D2LID>,
+    "Name": <string>,
+    "SortOrder": <number>
+}

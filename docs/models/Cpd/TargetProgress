@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.TargetProgress
+
+{
+   "StartDate": <string:UtcDateTime>|null,
+   "EndDate": <string:UtcDateTime>|null,
+   "Structured": {
+      "Numerator": <number>,
+      "Denominator": <number>
+   },
+   "Unstructured": {
+      "Numerator": <number>,
+      "Denominator": <number>
+   },
+   "CategoryProgress": [ // Array of CategoryProgress blocks
+      {
+         "Category": <composite:Category>,
+         "Structured": {
+            "Numerator": <number>,
+            "Denominator": <number>
+         },
+         "Unstructured": {
+            "Numerator": <number>,
+            "Denominator": <number>
+         },
+      },
+      { <composite:CategoryProgress> }, ...
+   ]
+}

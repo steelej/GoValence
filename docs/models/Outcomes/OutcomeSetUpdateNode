@@ -1,0 +1,31 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.OutcomeSetUpdateNode
+
+{
+    "OutcomeId": <string:GUID>,
+    "Children": [  // Array of OutcomeSetUpdateNode blocks
+         { <composite:Outcomes.OutcomeSetUpdateNode> },
+         { <composite:Outcomes.OutcomeSetUpdateNode> }, ...
+    ]
+}
+
+{
+    "Import": {
+        "Source": "asn",
+        "Uri": <string>
+    },
+    "Children": [  // Array of OutcomeSetUpdateNode blocks
+         { <composite:Outcomes.OutcomeSetUpdateNode> },
+         { <composite:Outcomes.OutcomeSetUpdateNode> }, ...
+    ]
+}
+
+{
+    "Create": {
+        "Description": <string>,
+        "ShortCode": <string>  // Optional
+    },
+    "Children": [  // Array of OutcomeSetUpdateNode blocks
+         { <composite:Outcomes.OutcomeSetUpdateNode> },
+         { <composite:Outcomes.OutcomeSetUpdateNode> }, ...
+    ]
+}

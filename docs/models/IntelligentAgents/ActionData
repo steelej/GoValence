@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.ActionData
+
+{
+    "RepeatType": <number>,
+    "EmailAction": { <composite:IntelligentAgents.EmailAction> }|null,
+    "EnrollmentAction": { <composite:IntelligentAgents.EnrollmentAction> }|null
+}

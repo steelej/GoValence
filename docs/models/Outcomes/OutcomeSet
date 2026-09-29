@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.OutcomeSet
+
+{
+    "OutcomeSetId": <number:D2LID>|0,
+    "Name": <string>|null,
+    "Outcomes": [  // Array of Outcome blocks
+         { <composite:Outcomes.Outcome> },
+         { <composite:Outcomes.Outcome> }, ...
+    ]
+}

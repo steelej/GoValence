@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/demographics.html#Demographics.DemographicsEntry
+
+{
+    "Name":<string>,
+    "Values": [
+        <string>,
+        <string>, ...
+    ]
+}

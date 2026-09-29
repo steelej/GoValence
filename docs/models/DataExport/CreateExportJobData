@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#DataExport.CreateExportJobData
+
+{
+    "DataSetId": <string:GUID>,
+    "Filters": [ { <composite:DataExport.ExportJobFilter> }, ... ]
+}

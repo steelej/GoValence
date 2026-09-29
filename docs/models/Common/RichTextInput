@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/basic/conventions.html#term-RichTextInput
+
+{
+   "Content": <string>,
+   "Type": "Text|Html"
+}

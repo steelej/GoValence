@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.BulkAlignment
+
+{
+    "OutcomeSetId": <number:D2LID>|0,
+    "OutcomeId": <string:GUID>,
+    "Activities": [  // Array of activity blocks
+         { <composite:Outcomes.AlignedActivity> },
+         { <composite:Outcomes.AlignedActivity> }, ...
+    ]
+}

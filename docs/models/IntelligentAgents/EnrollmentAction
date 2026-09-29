@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.EnrollmentAction
+
+{
+    "IsEnabled": <boolean>,
+    "EnrollmentType": <number:ENROLLMENTTYPE_T>|null,
+    "OrgUnitId": <number:D2LID>|null,
+    "RoleId": <number:D2LID>|null
+}

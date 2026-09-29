@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.SpecialAccessData
+
+{
+   "StartDate": <string:UTCDateTime>|null,
+   "EndDate": <string:UTCDateTime>|null,
+   "DueDate": <string:UTCDateTime>|null
+}

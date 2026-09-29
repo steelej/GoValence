@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseParents
+
+{
+    "CourseOfferingId": <number:D2LID>,
+    "Semesters": null|[ { <composite:Course.BasicOrgUnit> }, ... ],
+    "Departments": null|[ { <composite:Course.BasicOrgUnit> }, ... ]
+}

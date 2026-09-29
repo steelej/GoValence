@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.BulkGradeObjectExemptionConflict
+
+{
+    "UserId": <number:D2LID>,
+    "Exemption": { <composite:BulkGradeObjectExemption> },
+    "GradingSystem": <number:GRADINGSYSTEM_T>
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/user.html#EdTechConfig.LISRoleMapping
+
+{
+    "D2LRoleId": <string>,
+    "LISRoleUrn": <string:URN>
+}

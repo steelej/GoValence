@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseTemplate
+
+{
+    "Identifier": <string:D2LID>,
+    "Code": <string>,
+    "Name": <string>,
+    "Path": <string>
+}

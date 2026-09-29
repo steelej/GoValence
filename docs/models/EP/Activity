@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/epactivity.html#EP.Activity
+
+{
+    "ActionType": <number:ACTIVITYACTION_T>,
+    "ActivityTime": <string:UTCDateTime>,
+    "ActivityType": <number:ACTIVITY_T>,
+    "ObjectId": <number:D2LID>,
+    "OrgId": <number:D2LID>,
+    "OwnerId": <number:D2LID>,
+    "RefObjectId": <string:D2LID>,
+    "UserId": <number:D2LID>
+}

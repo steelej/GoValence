@@ -1,0 +1,17 @@
+https://docs.valence.desire2learn.com/res/config.html#ConfigVariable.Definition
+
+{
+    "ConfigId": <string:GUID>,
+    "Name": <string>,
+    "Scope": <string:CVSCOPE_T>,
+    "Description": <string>,
+    "DataType": <string:CVTYPE_T>,
+    "DefaultValue": <string>,
+    "CanEditSystemValue": <boolean>,
+    "CanEditOverrideValues": <boolean>,
+    "IsSensitiveData": <boolean>,
+    "AllowedValues": null|[
+        { "Value": <string> },
+        { "Value": <string> }, ...
+    ]
+}

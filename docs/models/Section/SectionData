@@ -1,0 +1,22 @@
+https://docs.valence.desire2learn.com/res/groups.html#Section.SectionData
+
+{
+    "Name": <string>,
+    "Code": <string>,
+    "Description": { <composite:RichTextInput> }
+}
+
+{
+    "SectionId": <number:D2LID>,
+    "Name": <string>,
+    "Code": <string>,
+    "Description": { <composite:RichText> },
+    "Enrollments": [ <number:D2LID>, ... ]
+}
+
+{
+    "SectionId": <number:D2LID>,
+    "Name": <string>,
+    "Code:" <string>,
+    "Description": null|{ <composite:RichText> }
+}

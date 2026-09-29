@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ReceivesScoreOnQuizParams
+
+{
+    "QuizId": <number:D2LID>,
+    "Operator": <string:OPERATOR_T>|null,
+    "Operands": [ <number:decimal>, ... ]|null
+}

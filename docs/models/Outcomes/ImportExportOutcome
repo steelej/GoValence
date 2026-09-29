@@ -1,0 +1,20 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.ImportExportOutcome
+
+{
+    "Source": "asn",
+    "Uri": <string>,
+    "Children": [  // Array of ImportExportOutcome blocks
+         { <composite:Outcomes.ImportExportOutcome> },
+         { <composite:Outcomes.ImportExportOutcome> }, ...
+    ]
+}
+
+{
+    "Source": "lores",
+    "ShortCode": <string>, // Optional when importing
+    "Description": <string>,
+    "Children": [  // Array of ImportExportOutcome blocks
+         { <composite:Outcomes.ImportExportOutcome> },
+         { <composite:Outcomes.ImportExportOutcome> }, ...
+    ]
+}

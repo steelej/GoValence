@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnit.OrgUnitCoreInfo
+
+{
+    "Identifier": <string:D2LID>,
+    "TypeIdentifier": <string>,
+    "Name": <string>,
+    "Code": <string>|null,
+    "Path": <string>,
+    "IsActive": <boolean>,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null
+}

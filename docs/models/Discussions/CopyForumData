@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.CopyForumData
+
+{
+    "IncludeTopics": <boolean>,
+    "IncludePinnedThreads": <boolean>
+}

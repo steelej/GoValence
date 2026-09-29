@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CreateCopyJobRequest
+
+{
+    "SourceOrgUnitId": <number:D2LID>,
+    "Components": [ <string:COURSECOMPONENT_T>, ... ]|null,
+    "CallbackUrl": <string>|null,
+    "DaysToOffsetDates": <number:integer>|null,  // Optional
+    "HoursToOffsetDates": <number:decimal>|null,  // Optional
+    "OffsetByStartDateDifference": <boolean>|null  // Optional
+}

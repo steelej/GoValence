@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/user.html#User.OrgRoleStatistics
+
+{
+    "RoleId": <number:D2LID>,
+    "UserCount": <number>
+}

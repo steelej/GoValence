@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/invite.html#EP.Invite
+
+{
+    "InviteId": <number:D2LID>,
+    "ObjectId": <number:D2LID>,
+    "Subject": <string>,
+    "Message": <string>,
+    "SentDate": <string>,
+    "SenderUserId": <number:D2LID>,
+    "TargetUserId": <number:D2LID>,
+    "InviteType": "Invite",
+    "IsRead": <boolean>
+}

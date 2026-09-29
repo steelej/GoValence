@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.EventCountInfo
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "UserId": <number:D2LID>,
+    "EventCount": <number>,
+}

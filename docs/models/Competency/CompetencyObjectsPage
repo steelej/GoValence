@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/competency.html#Competency.CompetencyObjectsPage
+
+{
+    "Objects": [ { <composite:CompetencyObject> }, ... ],
+    "Next": <string:APIURL>|null
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.Question
+
+{
+   "Id": <number:D2LID>,
+   "QuestionText": <string>,
+   "SortOrder": <number>,
+   "InUse": <boolean>
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/user.html#User.GoogleAppsLinkingItem
+
+{
+    "UserName": <string>,
+    "ExternalUserName": <string>,
+    "Domain": <string>,
+    "ShouldNotify": <boolean>
+}

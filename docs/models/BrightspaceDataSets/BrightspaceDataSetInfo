@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.BrightspaceDataSetInfo
+
+{
+   "SchemaId": <string:GUID>,
+   "Full": <BrightspaceDataSets.BrightspaceDataSetPluginInfo>|null,
+   "Differential": <BrightspaceDataSets.BrightspaceDataSetPluginInfo>|null,
+   "ExtractsLink": <string:APIURL>
+}

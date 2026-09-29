@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/news.html#News.UpdateOrgUnitSharingRuleData
+
+{
+    "ShareWithOrgUnit": <boolean>,
+    "ShareWithDescendants": <boolean>,
+    "ShareWithDescendantsOfType": <number:D2LID>|null
+}

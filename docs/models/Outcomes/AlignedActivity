@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.AlignedActivity
+
+{
+   "ActivityType": <string:ALIGNEDACTIVITYTYPE_T>,
+   "ObjectId": <number>,
+   "RubricId": <number>|null
+}
+
+{
+   "ActivityType": <string:ALIGNEDACTIVITYTYPE_T>,
+   "ObjectId": <number>,
+   "RubricId": <number>|null,
+   "QuestionID": <number>|null
+}

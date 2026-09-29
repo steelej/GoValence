@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.CreateSharingRuleData
+
+{
+    "SharingOrgUnitId":  <number:D2LID>,
+    "ShareWithOrgUnit": <boolean>,
+    "ShareWithDescendants": <boolean>
+}

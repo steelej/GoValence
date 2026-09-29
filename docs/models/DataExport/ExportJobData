@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#DataExport.ExportJobData
+
+{
+    "ExportJobId": <string:GUID>,
+    "DataSetId": <string:GUID>,
+    "Name": <string>,
+    "SubmitDate": <string:UTCDateTime>,
+    "Status": <int:EXPORTJOBSTATUS_T>,
+    "Category": <string>
+}

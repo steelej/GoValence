@@ -1,0 +1,24 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.IssuedAward
+
+{
+     "IssuedId": <number:D2LID>,
+     "OrgUnitId": <number:D2LID>,
+     "Criteria": <string>,
+     "Evidence": <string>,
+     "IssuedDate": <string:AwardDateTime>,
+     "ExpiryDate": <string:AwardDateTime>|null,
+     "IssuedByUserId": <number:D2LID>,
+     "IssuedToUserId": <number:D2LID>,
+     "Credit": <number:decimal>|null,
+     "Share": {
+         "SentToProfile": <boolean>,
+         "SentToMozilla": <boolean>,
+         "SentToEportfolio": <boolean>,
+         "SharedObjectId": <number:D2LID>|null,
+         "WithProfile": <boolean>,
+         "WithMozilla": <boolean>,
+         "WithEportfolio": <boolean>
+     },
+     "Award": { <composite:Awards.Award> },
+     "CertificateId": <string>|null
+}

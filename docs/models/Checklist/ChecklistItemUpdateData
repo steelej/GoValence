@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/checklist.html#Checklist.ChecklistItemUpdateData
+
+{
+   "CategoryId": <number:D2LID>,
+   "Name": <string>,
+   "Description": { <composite:RichTextInput> },
+   "SortOrder": <number>,
+   "DueDate": <string:UTCDateTime>|null
+}

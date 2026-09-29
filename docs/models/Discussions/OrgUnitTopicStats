@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.OrgUnitTopicStats
+
+{
+    "TopicId": <number:long>,
+    "Name": <string>,
+    "Threads": <number:int>,
+    "Replies": <number:int>,
+    "Pinned": <number:int>,
+    "Unapproved": <number:int>,
+    "Scored": <number:int>,
+    "UpVotes": <number:int>|null,
+    "DownVotes": <number:int>|null,
+    "AverageStarRating": <number:decimal>|null,
+    "NumberOfRatings": <number:int>
+}

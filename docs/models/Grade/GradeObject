@@ -1,0 +1,65 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeObject
+
+{
+    "MaxPoints": <number:decimal>,
+    "CanExceedMaxPoints": <boolean>,
+    "IsBonus": <boolean>,
+    "ExcludeFromFinalGradeCalculation": <boolean>,
+    "GradeSchemeId": <number:D2LID>|null,
+    "Id": <number:D2LID>,  // Not on input actions
+    "Name": <string>,
+    "ShortName": <string>,
+    "GradeType": "Numeric",
+    "CategoryId": <number:D2LID>|null,
+    "Description": { <composite:RichText> },  // { <composite:RichTextInput> } on input actions
+    "GradeSchemeUrl": <string:APIURL>,  // Not on input actions
+    "Weight": <number:decimal>,  // Allowed on input only with LE API v1.89+
+    "AssociatedTool": { <composite:AssociatedTool> }|null,
+    "IsHidden": <bool>
+}
+
+{
+    "MaxPoints": <number:decimal>,
+    "IsBonus": <boolean>,
+    "ExcludeFromFinalGradeCalculation": <boolean>,
+    "GradeSchemeId": <number:D2LID>|null,
+    "Id": <number:D2LID>,  // Not on input actions
+    "Name": <string>,
+    "ShortName": <string>,
+    "GradeType": "PassFail",
+    "CategoryId": <number:D2LID>|null,
+    "Description": { <composite:RichText> },  // { <composite:RichTextInput> } on input actions
+    "Weight": <number:decimal>,  // Allowed on input only with LE API v1.89+
+    "GradeSchemeUrl": <string:APIURL>,  // Not on input actions
+    "AssociatedTool": { <composite:AssociatedTool> }|null,
+    "IsHidden": <bool>
+}
+
+{
+    "MaxPoints": <number:decimal>,
+    "IsBonus": <boolean>,
+    "ExcludeFromFinalGradeCalculation": <boolean>,
+    "GradeSchemeId": <number:D2LID>,  // Cannot be null on input actions
+    "Id": <number:D2LID>,  // Not on input actions
+    "Name": <string>,
+    "ShortName": <string>,
+    "GradeType": "SelectBox",
+    "CategoryId": <number:D2LID>|null,
+    "Description": { <composite:RichText> },  // { <composite:RichTextInput> } on input actions
+    "Weight": <number:decimal>,  // Allowed on input only with LE API v1.89+
+    "GradeSchemeUrl": <string:APIURL>,  // Not on input actions
+    "AssociatedTool": { <composite:AssociatedTool> }|null,
+    "IsHidden": <bool>
+}
+
+{
+    "Id": <number:D2LID>,  // Not on input actions
+    "Name": <string>,
+    "ShortName": <string>,
+    "GradeType": "Text",
+    "CategoryId": <number:D2LID>|null,
+    "Description": { <composite:RichText> },  // { <composite:RichTextInput> } on input actions
+    "Weight": <number:decimal>,  // Allowed on input only with LE API v1.89+
+    "AssociatedTool": { <composite:AssociatedTool> }|null,
+    "IsHidden": <bool>
+}

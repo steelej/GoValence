@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/eport.html#EP.EpImportJobResponse
+
+{
+    "ImportJobResultType": <string>,
+    "SuccessfulJobIds": [ <number:D2LID:jobid> ],
+    "FailedUserIds": [ <number:D2LID:userId> ],
+    "ErrorMessages": [ <string> ]
+}

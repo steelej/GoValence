@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/content.html#Captions.CaptionsMetadata
+
+{
+   "Filename": <string>,
+   "LanguageCode": <string>,
+   "LanguageCulture": <string>, // Optional.
+   "LanguageName": <string>
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#NotSubmittedQuizAttemptData
+
+{
+    "Type": "NotSubmittedQuizAttempt",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "NotSubmittedQuizAttemptParams": { <composite:NotSubmittedQuizAttemptParams> }
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#CompletesContentTopicData
+
+{
+    "Type": "CompletesContentTopic",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "CompletesContentTopicParams": { <composite:CompletesContentTopicParams> }
+}

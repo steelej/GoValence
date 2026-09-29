@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#EnrolledInGroupParams
+
+{
+    "GroupId": <number:D2LID>|null,
+    "GroupCategoryId": <number:D2LID>|null
+}

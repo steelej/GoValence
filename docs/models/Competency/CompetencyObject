@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/competency.html#Competency.CompetencyObject
+
+{
+    "Id": <number:D2LID>,
+    "ObjectTypeId": <number:COMPOBJECT_T>,
+    "Name": <string>,
+    "Description": <string>,
+    "ChildrenPage": null|{ <composite:CompetencyObjectsPage> },
+    "MoreChildren": <string:APIURL>|null
+}

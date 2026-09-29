@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.CopyTopicData
+
+{
+    "TargetForumId": <number:D2LID>,
+    "IncludePinnedThreads": <boolean>
+}

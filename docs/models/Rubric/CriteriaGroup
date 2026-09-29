@@ -1,0 +1,24 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.CriteriaGroup
+
+{
+    "Name": <string>,
+    "Levels": [  // Array of Level blocks
+        { <composite:Level> },
+        { <composite:Level> }, ...
+    ],
+    "Criteria": [  // Array of Criterion blocks
+        {
+            "Id": <number:D2LID>,
+            "Name": <string>,
+            "Cells": [  // Array of CriterionCell blocks
+                {
+                    "Feedback": { <composite:RichText> },
+                    "Description": { <composite:RichText> },
+                    "Points": <number:decimal>|null
+                },
+                { <composite:CriterionCell> }, ...
+            ]
+        },
+        { <composite:Criterion> }, ...
+    ]
+}

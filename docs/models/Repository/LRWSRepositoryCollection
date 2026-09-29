@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSRepositoryCollection
+
+{
+    "ExecutionMessage": <string>,
+    "ExecutionStatus": <number:LR_EXEC_STATUS_T>,
+    "Repositories": [ <Repository:LRWSRepository>, ... ]
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/content.html#Pacing.PacingInfo
+
+{
+  "StartDate": <string:ISODate>|null,
+  "EndDate": <string:ISODate>|null
+}

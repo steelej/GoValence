@@ -1,0 +1,22 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.DeletedDiscussionsData
+
+{
+   "DeletedForums": [
+      {
+         "ForumId": <number:D2LID>,
+         "Name": <string>,
+         "DeletedDate": <string:UTCDateTime>,
+         "DeletedByUserId": <number:D2LID>|null,
+         "TopicCount": <number>,
+      }, ...
+   ],
+   "DeletedTopics": [
+      {
+         "TopicId": <number:D2LID>,
+         "ParentForumId": <number:D2LID>,
+         "Name": <string>,
+         "DeletedDate": <string:UTCDateTime>,
+         "DeletedByUserId": <number:D2LID>|null
+      }, ...
+   ]
+}

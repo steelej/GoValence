@@ -1,0 +1,25 @@
+https://docs.valence.desire2learn.com/res/lti.html#LTI.CreateLtiProviderData
+
+{
+    "LaunchPoint": <string>,
+    "Secret": <string>,
+    "UseDefaultTcInfo": <boolean>,
+    "Key": <string>,
+    "Name": <string>,
+    "Description": <string>,
+    "ContactEmail": <string>,
+    "IsVisible": <boolean>,
+    "SendTcInfo": <boolean>,
+    "SendContextInfo": <boolean>,
+    "SendUserId": <boolean>,
+    "SendUserName": <boolean>,
+    "SendUserEmail": <boolean>,
+    "SendLinkTitle": <boolean>,
+    "SendLinkDescription": <boolean>,
+    "SendD2LUserName": <boolean>,
+    "SendD2LOrgDefinedId": <boolean>,
+    "SendD2LOrgRoleId": <boolean>,
+    "SendSectionCode": <boolean>,
+    "OAuthSignatureMethod": <number:OAUTH_SIGNATURE_METHOD_T>,
+    "Version" : <number:LTI_VERSION_T>
+}

@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.Entity
+
+{
+    "EntityId": <number:D2LID>,
+    "EntityType": "User",
+    "DisplayName": <string>
+}
+
+{
+    "EntityId": <number:D2LID>,
+    "EntityType": "Group",
+    "Name": <string>
+}

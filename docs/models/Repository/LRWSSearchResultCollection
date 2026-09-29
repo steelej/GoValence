@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSSearchResultCollection
+
+{
+    "ExecutionMessage": <string>,
+    "ExecutionStatus": <number:LR_EXEC_STATUS_T>,
+    "TotalResults": <number>,
+    "Results": [ <Repository.LRWSSearchResult>, ... ]
+}

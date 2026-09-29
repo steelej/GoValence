@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.MyOrgUnitAccessInfo
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "AccessInfo": {
+        "IsActive": <boolean>,
+        "StartDate": <string:UTCDateTime>|null,
+        "EndDate": <string:UTCDateTime>|null,
+        "CanAccess": <boolean>,
+        "ClasslistRoleName": <string>|null,
+        "LISRoles": [ <string>, ... ],
+        "LastAccessed": <string:UTCDateTime>|null
+    }
+}

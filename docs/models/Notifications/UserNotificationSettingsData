@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/user.html#Notifications.UserNotificationSettingsData
+
+{
+    "SummaryFrequency": <number:NOTIFICATION_FREQUENCY_T>,
+    "IncludeGradeValue": <boolean>,
+    "AllowFutureCoursesToSend": <boolean>
+}

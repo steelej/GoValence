@@ -1,0 +1,30 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.IncomingGradeValue
+
+{
+    "Comments": { <composite:RichTextInput> },
+    "PrivateComments": { <composite:RichTextInput> },
+}
+
+{
+    // Appropriate basic common properties here
+    "GradeObjectType": 1,
+    "PointsNumerator": <number:decimal>
+}
+
+{
+    // Appropriate basic common properties here
+    "GradeObjectType": 2,
+    "Pass": <boolean>
+}
+
+{
+    // Appropriate basic common properties here
+    "GradeObjectType": 3,
+    "Value": <string>
+}
+
+{
+    // Appropriate basic common properties here
+    "GradeObjectType": 4,
+    "Text": <string>
+}

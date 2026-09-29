@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/accommodations.html#Accommodations.UserAccommodations
+
+{
+  "OrgUnitId": <number:D2LID>,
+  "UserId": <number:D2LID>,
+  "QuizzingAccommodations": { <composite:Accommodations.QuizzingAccommodations> }
+}

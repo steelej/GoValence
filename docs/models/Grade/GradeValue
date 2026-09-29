@@ -1,0 +1,26 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeValue
+
+{
+    "DisplayedGrade": <string>,
+    "GradeObjectIdentifier": <string:D2LID>,
+    "GradeObjectName": <string>,
+    "GradeObjectType": <number:GRADEOBJ_T>,
+    "GradeObjectTypeName": <string>|null,
+    "Comments": { <composite:RichText> },
+    "PrivateComments": { <composite:RichText> },
+    "LastModified": <string:UTCDateTime>|null,
+    "LastModifiedBy": <string:D2LID>|null,
+    "ReleasedDate": <string:UTCDateTime>|null
+}
+
+{
+    "PointsNumerator": <number>|null,
+    "PointsDenominator": <number>|null,
+    "WeightedDenominator": <number>|null,
+    "WeightedNumerator": <number>|null
+}
+
+{
+   "UserId": <string:D2LID>,
+   "OrgUnitId": <string:D2LID>,
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/lti.html#LTI.LtiQuickLinkData
+
+{
+    "LtiLinkId": <number:D2LID>,
+    "PublicUrl": <string>
+}

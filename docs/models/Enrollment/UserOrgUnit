@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.UserOrgUnit
+
+{
+    "OrgUnit": { <composite:Enrollment.OrgUnitInfo> },
+    "Role": { <composite:Enrollment.RoleInfo> },
+    "IsCascading": <boolean>,  // Added with LP's unstable contract
+    "EnrolledByUserId": <number:D2LID>|null,  // Added with LP's unstable contract
+    "EnrolledByUserDate": <string:UTCDateTime>|null  // Added with LP's unstable contract
+}

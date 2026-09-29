@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.CriterionInput
+
+{
+    "Name": <string>,
+    "Cells": [  // Array of CriterionCellInput blocks, one per level
+        { <composite:Rubric.CriterionCellInput> },
+        { <composite:Rubric.CriterionCellInput> }, ...
+    ]
+}

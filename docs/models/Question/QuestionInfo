@@ -1,0 +1,109 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Question.QuestionInfo
+
+{
+   "Answers": [
+       {
+       "PartId": <number:D2LID>,
+       "Answer": { <composite:RichText> },
+       "AnswerFeedback": { <composite:RichText> },
+       "Weight": <number>
+       }, ...
+   ],
+   "Randomize": <boolean>,
+   "Enumeration": <number:ENUMERATION_T>
+}
+
+{
+   "TruePartId": <number:D2LID>,
+   "TrueWeight": <number>,
+   "TrueFeedback": { <composite:RichText> },
+   "FalsePartId": <number:D2LID>,
+   "FalseWeight": <number>,
+   "FalseFeedback": { <composite:RichText> },
+   "Enumeration": <number:ENUMERATION_T>
+}
+
+{
+   "Texts": [
+       {
+       "Text": { <composite:RichText> }
+       }, ...
+   ],
+   "Blanks": [
+       {
+       "PartId": <number:D2LID>,
+       "Size": <number>,
+       "Answers": [
+          {
+             "TextAnswer": <string>,
+             "Weight": <number>,
+             "EvaluationType": <number:EVALULATION_T>
+          }, ...
+       ]
+       }, ...
+   ]
+}
+
+{
+    "Answers": [
+        {
+           "PartId": <number:D2LID>,
+           "Answer": { <composite:RichText> },
+           "AnswerFeedback": { <composite:RichText> },
+           "IsCorrect": <boolean>
+        }, ...
+    ],
+    "Randomize": <boolean>,
+    "Enumeration": <number:ENUMERATION_T>,
+    "Style": <number:STYLE_T>,
+    "GradingType": <number:GRADINGRULE_T>
+}
+
+{
+   "PartId": <number:D2LID>,
+   "EnableStudentEditor": <boolean>,
+   "InitialText": { <composite:RichText> },
+   "AnswerKey": { <composite:RichText> },
+   "EnableAttachments": <boolean>
+}
+
+{
+   "Blanks":[
+       {
+       "PartId": <number:D2LID>,
+       "Answers":[
+            {
+            "Text": <string>,
+            "Weight": <number>
+            }, ...
+       ],
+       "EvaluationType": <number:EVALULATION_T>
+       }, ...
+   ],
+   "GradingType": <number:GRADINGRULE_T>
+}
+
+{
+   "Scale": <number:SCALE_T>,
+   "NaOption": <boolean>,
+   "Statements": [
+       {
+           "PartId": <number:D2LID>,
+           "Statement": { <composite:RichText> }
+       }, ...
+   ],
+}
+
+{
+   "PartIds": [ <number:D2LID>, ... ],
+   "Boxes": <number>,
+   "Rows": <number>,
+   "Columns": <number>,
+   "Answers": [
+       {
+       "AnswerText": <string>,
+       "Weight": <number>,
+       "EvaluationType": <number:EVALUATION_T>
+       }, ...
+   ]
+}

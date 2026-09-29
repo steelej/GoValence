@@ -1,0 +1,24 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSTrust
+
+{
+    "CanViewItems": <boolean>,
+    "CanSeeDetails": <boolean>,
+    "CanLinkToLor": <boolean>,
+    "CanRetrieve": <boolean>,
+    "CanManageAllItems": <boolean>,
+    "CanManageMyItems": <boolean>,
+    "CanSeeEventLog": <boolean>,
+    "CanViewFiles": <boolean>,
+    "CanAddReviews": <boolean>,
+    "CanDeleteReviews": <boolean>,
+    "CanManageReviews": <boolean>,
+    "CanClassify": <boolean>,
+    "CanSeeAllHiddenObjects": <boolean>,
+    "CanPublish": <boolean>,
+    "CanPublishOffline": <boolean>,
+    "CanSearch": <boolean>,
+    "CanVersionMyItems": <boolean>,
+    "CanViewMetadata": <boolean>,
+    "CanEditMetadata": <boolean>,
+    "CanManageRepositories": <boolean>
+}

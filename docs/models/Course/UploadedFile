@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.UploadedFile
+
+{
+    "RelativePath": <string>,
+    "FileName": <string>,
+    "Size": <integer>,
+    "LastModifiedBy" : <number:D2LID>,
+    "LastModifiedDate" : <string:UTCDateTime>
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/lti.html#LTI.SharingRuleWithDescendantTypes
+
+{
+    "SharingOrgUnitId":  <number:D2LID>,
+    "ShareWithOrgUnit": <boolean>,
+    "ShareWithDescendants": <boolean>,
+    "DescendantsTypes: null|[ <OrgUnitTypeId>, ...]"
+}

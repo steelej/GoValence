@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.GeoTag
+
+{
+    "Latitude": <number>,
+    "Longitude": <number>,
+    "Altitude": <number>|null,
+    "Bearing": <number>|null,
+    "Precision": <number>|null
+}

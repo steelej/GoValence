@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.OrgUnitUserStats
+
+{
+    "UserId": <number:long>,
+    "DisplayName": <string>,
+    "ThreadsPosted": <number:int>,
+    "RepliesPosted": <number:int>,
+    "PostsReadCount": <number:int>,
+    "UnapprovedPostCount": <number:int>,
+    "ScoredPostCount": <number:int>
+}

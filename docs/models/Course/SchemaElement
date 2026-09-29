@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.SchemaElement
+
+{
+    "Type": { <composite:OrgUnit.OrgUnitTypeInfo> },
+    "IsNotAllowed": <boolean>,
+    "IsRequired": <boolean>
+}

@@ -1,0 +1,17 @@
+https://docs.valence.desire2learn.com/res/content.html#Content.ScheduledItem
+
+{
+    "UserId": <string:D2LID>,
+    "OrgUnitId": <string:D2LID>,
+    "ItemId": <number:D2LID>,
+    "ItemName": <string>,
+    "ItemType": <number:CONTENT_T>,
+    "ItemUrl": <string>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "DueDate": <string:UTCDateTime>|null,
+    "CompletionType": <number:CONTENT_COMPLETIONTYPE_T>,
+    "DateCompleted": <string:UTCDateTime>|null,
+    "ActivityType": <number:CONTENTACTIVITYTYPE_T>,
+    "IsExempt": <boolean>
+}

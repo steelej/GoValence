@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/config.html#ConfigVariable.RoleValue
+
+{
+    "RoleId": <number:D2LID>,
+    "Value": <string>|null
+}

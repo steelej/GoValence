@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.Share
+
+{
+    "ProfileId": <number:D2LID>,
+    "Id": <number:D2LID>,
+    "Type": <number:PERMPROFILE_T>,
+    "Name": <string>,
+    "Permissions": [ <number:OBJRIGHT_T>, ... ]
+}

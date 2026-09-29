@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Version.SupportedVersion
+
+{
+    "Supported": <boolean>,
+    "LatestVersion": <string:D2LVERSION>
+}

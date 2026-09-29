@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/epobjective.html#EP.LearningObjective
+
+[No JSON-like schema in source]
+A Learning Objective EP object’s structure does not differ from the general
+form of the EpObject , except it has an appropriate EPOBJ_T value for the ObjectTypeId property
+( "<number:EPOBJ_T:LearningObjective>" ).

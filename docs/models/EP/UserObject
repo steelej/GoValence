@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.UserObject
+
+{
+    "UserId": <number:D2LID>,
+    "FirstName": <string>,
+    "LastName": <string>
+}

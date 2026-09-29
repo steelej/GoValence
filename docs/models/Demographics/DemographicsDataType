@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/demographics.html#Demographics.DemographicsDataType
+
+{
+    "DataTypeId": <string:GUID>,
+    "DataTypeName": <string>,
+    "DisplayName": <string>
+}

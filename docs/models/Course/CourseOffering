@@ -1,0 +1,19 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseOffering
+
+{
+    "Identifier": <string:D2LID>,
+    "Name": <string>,
+    "Code": <string>,
+    "IsActive": <boolean>,
+    "Path": <string>,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "LocaleId": <number:D2LID>|null,  // Added with LMS v20.25.8
+    "ForceLocale": <boolean>,  // Added with LMS v20.25.8
+    "CourseTemplate": { <composite:Course.BasicOrgUnit> }|null,
+    "Semester": { <composite:Course.BasicOrgUnit> }|null,
+    "Department": { <composite:Course.BasicOrgUnit> }|null,
+    "Description": { <composite:RichText> },
+    "CanSelfRegister": <boolean>,
+    "ShowAddressBook": <boolean>  // Added with LMS v20.26.4
+}

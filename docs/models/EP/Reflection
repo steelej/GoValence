@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/reflection.html#EP.Reflection
+
+[No JSON-like schema in source]
+A Reflection EP object’s structure does not differ from the general form of
+the EpObject , except it has an appropriate EPOBJ_T value for the ObjectTypeId property ( "<number:EPOBJ_T:Reflection>" ). Description Note that the description property for Reflection EP objects, unlike
+other EP objects, is expected by the back end to be lightly marked up
+with HTML (and not just plain text). For example. In order to provide two blocks of text in the description,
+divided as paragraphs, it’s not sufficient to send a string like "This is the first paragraph.\nThis is the second paragraph." Rather, you need to provide <br/> elements, or wrap the text in <p> elements to format the text to provide the line-break: "<p>This is the first paragraph.</p><p>This is the second paragraph." or "This is the first paragraph.<br/>This is the second paragraph." You should also note that leading white space at the beginning of lines
+gets removed as part of HTML-formatted text: if you want to include
+leading space in a line, you must pad with &nbsp; entities. You should HTML-escape your Reflection description strings when providing
+them to the service, so that characters like angle-brackets get used “as
+entered” and do not get stripped out.

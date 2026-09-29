@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.AssociatedTool
+
+{
+    "ToolId": <number:D2LID>,
+    "ToolItemId": <number:D2LID>
+}

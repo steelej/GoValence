@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.OccurrenceInfo
+
+{
+   "RecurrenceId": <number:D2LID>,
+   "CalendarEventId": <number:D2LID>,
+   "StartDateTime": <string:UTCDateTime>|null,
+   "EndDateTime": <string:UTCDateTime>|null,
+   "IsAllDayEvent": <boolean>,
+   "StartDay": <string:LocalDateTime>|null,
+   "EndDay": <string:LocalDateTime>|null,
+}

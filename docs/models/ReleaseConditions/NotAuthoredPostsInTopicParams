@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#NotAuthoredPostsInTopicParams
+
+{
+    "ForumId": <number:D2LID>,
+    "TopicId": <number:D2LID>,
+    "PostsType": <string:POSTS_T>
+}

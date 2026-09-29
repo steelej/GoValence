@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.RepeatOnInfo
+
+{
+    "Monday": <boolean>,
+    "Tuesday": <boolean>,
+    "Wednesday": <boolean>,
+    "Thursday": <boolean>,
+    "Friday": <boolean>,
+    "Saturday": <boolean>,
+    "Sunday": <boolean>
+}

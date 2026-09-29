@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Version.ApiVersion
+
+{
+    "Version": <string:D2LVERSION>,
+    "ProductCode": <string:D2LPRODUCT>
+}

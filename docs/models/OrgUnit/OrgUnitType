@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnit.OrgUnitType
+
+{
+    "Id": <number:D2LID>,
+    "Code": <string>,
+    "Name": <string>,
+    "Description": <string>,
+    "SortOrder": <number>,
+    "Permissions": { <composite:OrgUnit.Permissions> }
+}

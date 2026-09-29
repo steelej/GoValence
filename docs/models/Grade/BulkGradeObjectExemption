@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.BulkGradeObjectExemption
+
+{
+    "GradeObjectCategory": { <composite:BulkGradeObjectCategory> }|null,
+    "GradeObjectId": <number:D2LID>,
+    "GradeObjectName": <string>,
+    "GradeObjectType": <number:GRADEOBJ_T>,
+    "GradeValue": { <composite:GradeObjectValue> },
+    "IsExempt": <boolean>|null
+}

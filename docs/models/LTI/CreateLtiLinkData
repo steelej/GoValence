@@ -1,0 +1,25 @@
+https://docs.valence.desire2learn.com/res/lti.html#LTI.CreateLtiLinkData
+
+{
+    "Title": <string>,
+    "Url": <string>,
+    "Description": <string>,
+    "Key": <string>,
+    "PlainSecret": <string>,
+    "IsVisible": <boolean>,
+    "SignMessage": <boolean>,
+    "SignWithTc": <boolean>,
+    "SendTcInfo": <boolean>,
+    "SendContextInfo": <boolean>,
+    "SendUserId": <boolean>,
+    "SendUserName": <boolean>,
+    "SendUserEmail": <boolean>,
+    "SendLinkTitle": <boolean>,
+    "SendLinkDescription": <boolean>,
+    "SendD2LUserName": <boolean>,
+    "SendD2LOrgDefinedId": <boolean>,
+    "SendD2LOrgRoleId": <boolean>,
+    "SendSectionCode": <boolean>,
+    "UseToolProviderSecuritySettings": <boolean>,
+    "CustomParameters": null|[ <LTI.CustomParameter>, ... ]
+}

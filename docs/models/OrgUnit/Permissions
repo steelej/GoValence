@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnit.Permissions
+
+{
+    "CanDelete": <boolean>,
+    "CanEdit": <boolean>
+}

@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.CriterionCellInput
+
+{
+    "Feedback": { <composite:RichTextInput> }|null,
+    "Description": { <composite:RichTextInput> }|null,
+    "Points": <number:decimal>|null
+}

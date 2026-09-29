@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSObjectProperties
+
+{
+    "ExecutionMessage": <string>,
+    "ExecutionStatus": <number:LR_EXEC_STATUS_T>,
+    "RepositoryId": <number:D2LID>,
+    "Status": <number:LR_OBJECT_STATUS_T>,
+    "HiddenFromSearchResults": <boolean>,
+    "PublicallyAvailable": <boolean>,
+    "IdentId": <number:D2LID>,
+    "Version": <number>,
+    "URL": <string>,
+    "Title": <string>,
+    "Description": <string>,
+    "OwnerId": <number:D2LID>,
+    "Keywords": [ <string>, ... ],
+    "Type": <number:LR_OBJECT_T>
+}

@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.RecordSummary
+
+{
+   "RecordId": <number:D2LID>,
+   "RecordName": <string>,
+   "CategoryName": <string>,
+   "MethodName": <string>,
+   "IsStructured": <boolean>,
+   "RecordStateId": <number:RECORDSTATE_T>,
+   "CreditMinutes": <number>,
+   "DateCompleted": <string:UtcDateTime>
+}

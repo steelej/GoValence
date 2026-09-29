@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.SpecialAccessUserData
+
+{
+   "UserId": <number:D2LID>,
+   "SpecialAccess": <composite:Dropbox.SpecialAccessData>
+}

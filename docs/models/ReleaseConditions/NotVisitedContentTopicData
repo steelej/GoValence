@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#NotVisitedContentTopicData
+
+{
+    "Type": "NotVisitedContentTopic",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "NotVisitedContentTopicParams": { <composite:NotVisitedContentTopicParams> }
+}

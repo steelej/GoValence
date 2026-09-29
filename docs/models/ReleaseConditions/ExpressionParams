@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ExpressionParams
+
+{
+    "Operator": <string:EXPRESSIONOPERATOR_T>,
+    "Operands": [ { <composite:ConditionData> }, ... ]
+}

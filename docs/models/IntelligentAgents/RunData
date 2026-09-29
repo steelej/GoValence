@@ -1,0 +1,13 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.RunData
+
+{
+    "RunId": <number:D2LID>,
+    "RunType": <number:AGENTRUNTYPE_T>,
+    "RunNowUserId": <number:D2LID>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "NumUsers": <number>,
+    "NumUsersWithInfo": <number>,
+    "NumUsersWithWarnings": <number>,
+    "NumUsersWithError": <number>
+}

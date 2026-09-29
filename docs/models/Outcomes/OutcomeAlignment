@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.OutcomeAlignment
+
+{
+    "OutcomeId": <string:GUID>,
+    "AlignedOrgUnits": [ <number:D2LID>, ... ]
+}

@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/user.html#User.User
+
+{
+    "Identifier": <string>|null,
+    "DisplayName": <string>|null,
+    "EmailAddress": <string>|null,
+    "OrgDefinedId": <string>|null,
+    "ProfileBadgeUrl": <string:APIURL>|null,
+    "ProfileIdentifier": <string>|null,
+    "UserName": <string>|null
+}

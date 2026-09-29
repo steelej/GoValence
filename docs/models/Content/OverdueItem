@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/content.html#Content.OverdueItem
+
+{
+   "UserId": <number:D2LID>,
+   "OrgUnitId": <number:D2LID>,
+   "ItemId": <number:D2LID>,
+   "ItemName": <string>,
+   "DueDate": <string:UTCDateTime>
+}

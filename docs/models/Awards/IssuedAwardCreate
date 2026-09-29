@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.IssuedAwardCreate
+
+{
+    "AwardId": <number:D2LID>,
+    "IssuedToUserId": <number:D2LID>,
+    "Criteria": <string>,
+    "Evidence": <string>,
+    "IssuedDate": <string:UTCDateTime>|null
+}

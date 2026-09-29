@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseDatesUpdateInfo
+
+{
+   "StartDate": <string:UTCDateTime>|null,
+   "StartOffsetAmount": <number>|null,
+   "EndDate": <string:UTCDateTime>|null,
+   "EndOffsetAmount": <number>|null,
+   "Status": <boolean>|null
+}

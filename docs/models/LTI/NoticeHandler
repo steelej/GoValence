@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.NoticeHandler
+
+{
+    "NoticeType": <number:NOTICE_TYPE_T>,
+    "Handler": <string>
+}

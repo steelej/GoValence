@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/basic/conventions.html#term-RichText
+
+{
+    "Text": <string:plaintext_form_of_text>,
+    "Html": <string:HTML_form_of_text>|null
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.FileSystemObject
+
+{
+    "Name": <string>,
+    "FileSystemObjectType": <FILESYSTEMOBJECTTYPE_T>
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/user.html#User.Pronouns
+
+{
+    "UserDefinedPronouns": <string>|null,
+    "SystemDefinedPronouns": <string>|null,  // Only on retrieve actions
+    "ShowPronouns": <boolean>,
+    "UseUserDefinedPronouns": <boolean>
+}

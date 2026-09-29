@@ -1,0 +1,27 @@
+https://docs.valence.desire2learn.com/res/groups.html#Section.SectionSettingsData
+
+{
+    "EnrollmentStyle": <number:SECTENROLL_T>,
+    "EnrollmentQuantity": <number>,
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "DescriptionsVisibleToEnrollees": <boolean>
+}
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichText> },
+    "EnrollmentStyle": <number:SECTENROLL_T>,
+    "EnrollmentQuantity": <number>,
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "DescriptionsVisibleToEnrollees": <boolean>
+}
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichTextInput> },
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "DescriptionsVisibleToEnrollees": <boolean>
+}

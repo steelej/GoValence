@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.IssuedAwardUpdate
+
+{
+    "IssuedDate": <string:UTCDateTime>,
+    "ExpiryDate": <string:UTCDateTime>|null
+}

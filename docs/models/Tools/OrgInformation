@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/tools.html#Tools.OrgInformation
+
+{
+    "ToolId": <string:D2LID>,
+    "DisplayName": <string>,
+    "OrgId": <number:D2LID>,
+    "Status": <boolean>,
+    "OUDefault": <boolean>
+}

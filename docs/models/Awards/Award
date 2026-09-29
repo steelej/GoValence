@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.Award
+
+{
+    "AwardId": <number:D2LID>,
+    "CreatedBy": <number:D2LID>,
+    "Title": <string>,
+    "Description": <string>,
+    "ExpiryCalculation": { <composite:Awards.ExpiryCalculation> },
+    "ExpiryNotification": { <composite:Awards.ExpiryNotification> },
+    "IssuerName": <string>,
+    "IssuerUrl": <string:URL>,
+    "IssuerContact": <string>,
+    "AwardType": <number:AWARD_T>,
+    "CertificateData": { <composite:Awards.FileData> },
+    "ImageData": { <composite:Awards.FileData> },
+    "IsDeleted": <boolean>,
+    "Criteria": <string>|null
+}

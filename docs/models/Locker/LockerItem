@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/locker.html#Locker.LockerItem
+
+{
+    "Name": <string>,
+    "Description": <string>|null,
+    "Type": <number:LOCKERITEM_T>,
+    "Size": <number:long>|null,
+    "LastModified": <string:UTCDateTime>|null
+}

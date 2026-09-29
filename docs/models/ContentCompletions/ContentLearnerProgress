@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/content.html#ContentCompletions.ContentLearnerProgress
+
+{
+   "UserId": <string:D2LID>,
+   "OrgUnitId": <string:D2LID>,
+   "RequiredItems": <number>,
+   "CompletedItems": <number>
+}

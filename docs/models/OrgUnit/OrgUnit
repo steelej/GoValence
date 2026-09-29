@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnit.OrgUnit
+
+{
+    "Identifier": <string:D2LID>,
+    "Name": <string>,
+    "Code": <string>|null,
+    "Path": <string>,  // Added with LMS v20.25.1
+    "Type": { <composite:OrgUnit.OrgUnitTypeInfo> }
+}

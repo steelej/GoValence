@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.BrightspaceDataSetReportInfo
+
+{
+   "PluginId": <string:GUID>,
+   "Name": <string>,
+   "Description": <string>,
+   "FullDataSet": <boolean>,
+   "CreatedDate": <string:UTCDateTime>|null,
+   "DownloadLink": <string:APIURL>|null,
+   "DownloadSize": <number>|null,
+   "Version": <string>|null,
+   "PreviousDataSets": [ { <composite:BrightspaceDataSets.BrightspaceDataSetReportInfo> }, ... ]|null,
+   "QueuedForProcessingDate": <string:UTCDateTime>|null,
+   "CurrentlyAvailable": <boolean>
+}

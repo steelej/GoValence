@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/locale.html#Locales.Locale
+
+{
+    "LocaleId": <number:D2LID>,
+    "LocaleName": <string>,
+    "IsDefault": <boolean>,
+    "CultureCode": <string>,
+    "LanguageId": <number:D2LID>
+}

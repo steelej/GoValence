@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.Outcome
+
+{
+    "OutcomeId": <string:GUID>,
+    "SourceType": <string>,
+    "SourceId": <string>,
+    "SourceOrgUnitId": <number:D2LID>|null,
+    "ShortCode": <string>,
+    "Description": <string>,
+    "Children": [  // Array of Outcome blocks
+         { <composite:Outcomes.Outcome> },
+         { <composite:Outcomes.Outcome> }, ...
+    ]
+}

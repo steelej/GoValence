@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/updates.html#Updates.OrgUnitUpdates
+
+{
+    "OrgUnitId": <string:D2LID>,
+    "UserId": <string:D2LID>,
+    "UnreadDiscussions": <number>,
+    "UnapprovedDiscussions": <number>,
+    "UnreadAssignmentFeedback": <number>,
+    "UnattemptedQuizzes": <number>,
+    "UnreadAssignmentSubmissions": <number>,
+    "UngradedQuizzes": <number>
+}

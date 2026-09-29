@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/accommodations.html#Accommodations.QuizzingTimeLimitAccommodation
+
+{
+  "TimeLimitOperation": <number:TIMEOP_T>,
+  "TimeMultiplier": <number:decimal>,
+  "AdditionalTime": <number:integer>
+}

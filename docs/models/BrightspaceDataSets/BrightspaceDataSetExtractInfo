@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.BrightspaceDataSetExtractInfo
+
+{
+   "SchemaId": <string:GUID>,
+   "PluginId": <string:GUID>,
+   "BdsType": <string>,
+   "CreatedDate": <string:UTCDateTime>,
+   "DownloadSize": <number>,
+   "DownloadLink": <string:APIURL>,
+   "QueuedForProcessingDate": <string:UTCDateTime>,
+   "Version": <string>
+}

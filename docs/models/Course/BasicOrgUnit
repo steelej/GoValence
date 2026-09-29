@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.BasicOrgUnit
+
+{
+    "Identifier": <string:D2LID>,
+    "Name": <string>,
+    "Code": <string>
+}

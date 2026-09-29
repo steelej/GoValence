@@ -1,0 +1,49 @@
+https://docs.valence.desire2learn.com/res/groups.html#Group.GroupCategoryData
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichTextInput> },
+    "EnrollmentStyle": <number:GRPENROLL_T>,
+    "EnrollmentQuantity": <number>|null, // Removed as of LP API v1.53
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "NumberOfGroups": <number>|null,
+    "MaxUsersPerGroup": <number>|null,
+    "AllocateAfterExpiry": <boolean>,
+    "SelfEnrollmentStartDate": <string:UTCDateTime>|null, // Added with LP API v1.53
+    "SelfEnrollmentExpiryDate": <string:UTCDateTime>|null,
+    "GroupPrefix": <string>|null,
+    "RestrictedByOrgUnitId": <number:D2LID>|null,
+    "DescriptionsVisibleToEnrolees": <boolean>
+}
+
+{
+    "GroupCategoryId": <number:D2LID>,
+    "Name": <string>,
+    "Description": { <composite:RichText> },
+    "EnrollmentStyle": <number:GRPENROLL_T>,
+    "EnrollmentQuantity": <number>|null, // Removed as of LP API v1.53
+    "MaxUsersPerGroup": <number>|null,
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "Groups": [ <number:D2LID>, ... ],
+    "AllocateAfterExpiry": <boolean>,
+    "SelfEnrollmentStartDate": <string:UTCDateTime>|null, // Added with LP API v1.53
+    "SelfEnrollmentExpiryDate": <string:UTCDateTime>|null,
+    "GroupPrefix": <string>|null, // Added with LP API v1.53
+    "RestrictedByOrgUnitId": <number:D2LID>|null,
+    "DescriptionsVisibleToEnrolees": <boolean>
+}
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichTextInput> },
+    "MaxUsersPerGroup": <number>|null, // Added with LP API v1.53
+    "AutoEnroll": <boolean>,
+    "RandomizeEnrollments": <boolean>,
+    "AllocateAfterExpiry": <boolean>, // Added with LP API v1.53
+    "SelfEnrollmentStartDate": <string:UTCDateTime>|null, // Added with LP API v1.53
+    "SelfEnrollmentExpiryDate": <string:UTCDateTime>|null, // Added with LP API v1.53
+    "GroupPrefix": <string>|null, // Added with LP API v1.53
+    "DescriptionsVisibleToEnrolees": <boolean>
+}

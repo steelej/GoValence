@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/ipsis.html#IPSIS.GradeObjectDetails
+
+{
+   "AcademicSessionOrgUnitId": <number:D2LID>|null,
+   "EndOfCourse": <boolean>,
+   "PowerSchoolGradeType": <number:POWERSCHOOL_GRADE_TYPE_T>|null,
+   "SectionOrgUnitId": <number:D2LID>|null
+}

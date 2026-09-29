@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.OverallLevel
+
+{
+    "Id": <number:D2LID>,
+    "Name": <string>,
+    "RangeStart": <number:decimal>|null,
+    "Description": { <composite:RichText> },
+    "Feedback": { <composite:RichText> }
+}

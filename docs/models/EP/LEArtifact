@@ -1,0 +1,5 @@
+https://docs.valence.desire2learn.com/res/artifact.html#EP.LEArtifact
+
+[No JSON-like schema in source]
+An LEArtifact EP object’s structure does not differ from the general form
+of the EpObject , except it has an appropriate EPOBJ_T value for the ObjectTypeId property ( "<number:EPOBJ_T:LEArtifact>" ).

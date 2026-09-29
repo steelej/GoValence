@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.Record
+
+{
+   "RecordId": <number:D2LID>,
+   "Name": <string>,
+   "UserId": <number:D2LID>,
+   "Category": { <composite:Category> },
+   "Method": { <composite:Method> },
+   "IsStructured": <boolean>,
+   "IssuedId": <number:D2LID>|null,
+   "DateCompleted": <string:UtcDateTime>,
+   "Grade": <number:decimal>|null,
+   "GradeObjectId": <number:D2LID>|null,
+   "CreditMinutes": <number>,
+   "Attachments": null|{
+      "FileSetId": <number:D2LID>,
+      "Files": [ { <composite:FileInfo> }, ... ]
+   },
+   "Answers": [  // Array of Answer blocks
+      {
+         "QuestionId": <number:D2LID>,
+         "Text": <string>,
+         "AnswerId": <number:D2LID>
+      },
+      { <composite:Answer> }, ...
+   ],
+   "RecordStateId": <number:RECORDSTATE_T>
+}

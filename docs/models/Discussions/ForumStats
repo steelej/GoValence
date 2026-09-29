@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.ForumStats
+
+{
+    "TotalThreadsAllForums": <number:int>,
+    "TotalRepliesAllForums": <number:int>,
+    "TotalThreadsThisForum": <number:int>,
+    "TotalRepliesThisForum": <number:int>,
+    "PinnedThreads": <number:int>,
+    "UnapprovedPosts": <number:int>,
+    "TopicIds": [ <number:long>, ... ]
+}

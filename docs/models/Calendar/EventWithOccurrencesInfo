@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.EventWithOccurrencesInfo
+
+{
+   "EventDataInfo": { <composite:Calendar.EventDataInfo> },
+   "Occurrences": [ { <composite:Calendar.OccurrenceInfo> }, ... ]
+}

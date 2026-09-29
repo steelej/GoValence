@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/user.html#Attributes.UserAttributes
+
+{
+    "UserId": <number:D2LID>,
+    "Attributes": [
+        {
+            "AttributeId": <string>,
+            "Value": [ <string>, ... ]
+        }, ...
+    ]
+}

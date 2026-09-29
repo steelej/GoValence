@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/artifact.html#EP.FileArtifact
+
+{
+    "FileSize": <number>,
+    "FileName": <string>,
+    "Extension": <string>,
+    "UploadKey": <string>
+}

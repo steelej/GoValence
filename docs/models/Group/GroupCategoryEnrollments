@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/groups.html#Group.GroupCategoryEnrollments
+
+{
+    "UserId": <number:D2LID>,
+    "GroupId": <number:D2LID>
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.QuizCategoryData
+
+{
+    "Name": <string>,
+    "SortOrder": <number>
+}

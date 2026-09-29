@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/content.html#ContentCompletions.ContentAggregateCompletion
+
+{
+   "UserId": <string:D2LID>,
+   "OrgUnitId": <string:D2LID>,
+   "ObjectId": <number:D2LID>,
+   "Title": <string>,
+   "RequiredItems": <number>,
+   "CompletedItems": <number>
+}

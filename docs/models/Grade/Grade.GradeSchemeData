@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.Grade.GradeSchemeData
+
+{
+   "Name": <string>,
+   "ShortName": <string>,
+   "Ranges": [  // Array of GradeSchemeRange blocks
+      {
+         "PercentStart": <number:decimal>,
+         "Symbol": <string>,
+         "AssignedValue": <number:decimal>|null,
+         "Colour": <string>
+      },
+      { <composite:GradeSchemeRange> }, ...
+   ]
+}

@@ -1,0 +1,20 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.ForumData
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichText> },
+    "ShowDescriptionInTopics": <boolean>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "PostStartDate": <string:UTCDateTime>|null,
+    "PostEndDate": <string:UTCDateTime>|null,
+    "AllowAnonymous": <boolean>,
+    "IsLocked": <boolean>,
+    "IsHidden": <boolean>,
+    "RequiresApproval": <boolean>,
+    "MustPostToParticipate": <boolean>|null,
+    "DisplayInCalendar": <boolean>|null,
+    "DisplayPostDatesInCalendar": <boolean>|null,
+    "StartDateAvailabilityType": <string:AVAILABILITY_T>|null,
+    "EndDateAvailabilityType": <string:AVAILABILITY_T>|null
+}

@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#DaysEnrolledInCurrentOrgUnitData
+
+{
+    "Type": "DaysEnrolledInCurrentOrgUnit",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "DaysEnrolledInCurrentOrgUnitParams": { <composite:DaysEnrolledInCurrentOrgUnitParams> }
+}

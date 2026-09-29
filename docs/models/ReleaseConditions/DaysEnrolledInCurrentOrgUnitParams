@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#DaysEnrolledInCurrentOrgUnitParams
+
+{
+    "NumberOfDays": <number>,
+    "UseMostRecentEnrollment": <boolean>|null  // Added with LMS v20.22.10
+}

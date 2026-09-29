@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/user.html#Attributes.UserAttributeDefinitions
+
+{
+    "UserAttributeDefinitions": [
+        {
+            "AttributeId": <string>,
+            "Name": <string>,
+            "Type": <string>,
+            "AllowMulti": <boolean>
+        }
+    ]
+}

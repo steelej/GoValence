@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSTrustCollection
+
+{
+    "ExecutionMessage": <string>,
+    "ExecutionStatus": <number:LR_EXEC_STATUS_T>,
+    "RepositoryTrusts": {
+        "<string:orgUnitId>" : {
+            "<string:roleId>" : { <composite:LRWSTrust> },
+            "<string:roleId>" : { <composite:LRWSTrust> }, ...
+        },
+        "<string:orgUnitId>" : {
+            "<string:roleId>" : { <composite:LRWSTrust> }, ...
+        }, ...
+    }
+}

@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/checklist.html#Checklist.ChecklistReadData
+
+{
+   "Id": <number:D2LID>,
+   "Name": <string>,
+   "Description": { <composite:RichText> },
+}

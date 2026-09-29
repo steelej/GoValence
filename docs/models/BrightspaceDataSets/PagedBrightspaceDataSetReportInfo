@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/dataExport.html#BrightspaceDataSets.PagedBrightspaceDataSetReportInfo
+
+{
+   "NextPageUrl": <string:APIURL>|null,
+   "PrevPageUrl": <string:APIURL>|null,
+   "BrightspaceDataSets": [ { <composite:BrightspaceDataSets.BrightspaceDataSetReportInfo> }, ... ]
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.CreditSummary
+
+{
+    "BadgeCreditSummary": <number:decimal>|null,
+    "CertificateCreditSummary": <number:decimal>|null
+}

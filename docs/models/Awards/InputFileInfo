@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.InputFileInfo
+
+{
+    "LibraryFileName": <string>,
+    "FilePath": <string>,
+    "Name": <string>,
+    "Content": <string>
+}

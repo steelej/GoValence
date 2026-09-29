@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/locale.html#Language.Language
+
+{
+   "LanguageId": <number:D2LID>,
+   "Name": <string>,
+   "LanguageTypeId": <number:D2LID>,
+   "CultureClass": <string>,
+   "OwnerOrgId": <number:D2LID>
+}

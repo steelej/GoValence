@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.ShareTarget
+
+{
+    "Id": <number:D2LID>,
+    "TargetId": <number:D2LID>,
+    "Name": <string>,
+    "ProfileType": <number:PERMPROFILE_T>
+}

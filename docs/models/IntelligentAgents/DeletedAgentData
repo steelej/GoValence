@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.DeletedAgentData
+
+{
+    "AgentId": <number:D2LID>,
+    "Name": <string>,
+    "Description": <string>,
+    "DateDeleted": <string:UTCDateTime>,
+    "DeletedBy": { <composite:User> }
+}

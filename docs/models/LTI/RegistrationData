@@ -1,0 +1,21 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.RegistrationData
+
+{
+    "ClientId": <GUID>,
+    "IsEnabled": <boolean>,
+    "Name": <string>,
+    "Description": <string>|null,
+    "Domain": <string>,
+    "RedirectUrls": [ <string>, ... ],
+    "OpenIDConnectLoginUrl": <string>,
+    "KeysetUrl": <string>,
+    "EnabledExtensions": [ <number:EXTENSION_T>, ... ],
+    "SendInstitutionRole": <boolean>,
+    "BrightspaceAudience": <string>,
+    "BrightspaceIssuer": <string>,
+    "BrightspaceKeysetUrl": <string>,
+    "BrightspaceOAuth2AccessTokenUrl": <string>,
+    "BrightspaceOIDCAuthenticationEndpoint": <string>,
+    "CustomParameters": [ { <composite:LTI.CustomParameters> }, ... ],
+    "TargetLinkUri": <string>|null
+}

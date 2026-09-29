@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CourseTemplateInfo
+
+{
+    "Name": <string>,
+    "Code": <string>
+}

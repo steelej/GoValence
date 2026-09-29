@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ConditionData
+
+{
+    "Type": <string:CONDITIONDATA_T>,
+    "State": <string>|null,
+    "Text": { <composite:RichText> }
+}

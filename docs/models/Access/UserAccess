@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Access.UserAccess
+
+{
+   "UserId": <number:D2LID>,
+   "HasAccess": <boolean>
+}

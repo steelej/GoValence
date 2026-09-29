@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.LTIAdvantageLinkDataSummary
+
+{
+    "LinkId": <D2LID>,
+    "IsEnabled": <boolean>,
+    "URL": <string>,
+    "Type": <number:LINK_TYPE_T>,
+    "OwnerOrgUnitId": <D2LID>
+}

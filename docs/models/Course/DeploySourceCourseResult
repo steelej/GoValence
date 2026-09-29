@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.DeploySourceCourseResult
+
+{
+   "FailedOrgUnitsWithInfoStr": <string>,
+   "FailedOrgUnitsIds": [ <string:D2LID>, ... ],
+   "SourceCourseDeployId": <number:D2LID>|null
+}

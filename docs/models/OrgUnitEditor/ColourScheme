@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#OrgUnitEditor.ColourScheme
+
+{
+    "Dark": <string>,
+    "Light": <string>,
+    "Soft": <string>
+}

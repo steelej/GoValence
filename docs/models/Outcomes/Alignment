@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.Alignment
+
+{
+     "OutcomeSetId": <number:D2LID>|0,
+     "OutcomeId": <string:GUID>,
+     "Direct": <boolean>
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/tools.html#Tools.ToolWithName
+
+{
+    "ToolId": <string:D2LID>,
+    "DisplayName": <string>
+}

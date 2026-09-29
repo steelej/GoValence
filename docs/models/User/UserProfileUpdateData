@@ -1,0 +1,43 @@
+https://docs.valence.desire2learn.com/res/user.html#User.UserProfileUpdateData
+
+{
+    "Nickname": <string>,
+    "Birthday": {
+        "Month": <number>,
+        "Day": <number>
+    },
+    "HomeTown": <string>,
+    "Email": <string>,
+    "HomePage": <string>,
+    "HomePhone": <string>,
+    "BusinessPhone": <string>,
+    "MobilePhone": <string>,
+    "FaxNumber": <string>,
+    "Address1": <string>,
+    "Address2": <string>,
+    "City": <string>,
+    "Province": <string>,
+    "PostalCode": <string>,
+    "Country": <string>,
+    "Company": <string>,
+    "JobTitle": <string>,
+    "HighSchool": <string>,
+    "University": <string>,
+    "Tagline": <string>,
+    "Hobbies": <string>,
+    "FavMusic": <string>,
+    "FavTVShows": <string>,
+    "FavMovies": <string>,
+    "FavBooks": <string>,
+    "FavQuotations": <string>,
+    "FavWebSites": <string>,
+    "FutureGoals": <string>,
+    "FavMemory": <string>,
+    "SocialMediaUrls": [  // Array of SocialMediaUrl blocks
+        {
+            "Name": <string>,
+            "Url": <string:URL>
+        },
+        { <composite:SocialMediaUrl> }, ...
+    ]
+}

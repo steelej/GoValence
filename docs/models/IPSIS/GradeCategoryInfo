@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/ipsis.html#IPSIS.GradeCategoryInfo
+
+{
+    "ExportToSIS": <boolean>,
+    "AcademicSessionOrgUnitId": <number:D2LID>|null
+}

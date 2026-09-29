@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.SpecialAccessData
+
+{
+   "StartDate": <string:UTCDateTime>|null,
+   "EndDate": <string:UTCDateTime>|null,
+   "DueDate": <string:UTCDateTime>|null,
+   "SubmissionTimeLimit": null|{
+         "IsEnforced": <boolean>,
+         "TimeLimitValue": <number>
+   },
+   "AttemptsAllowed": null|{
+      "IsUnlimited": <boolean>,
+      "NumberOfAttemptsAllowed": <number>|null
+   }
+}

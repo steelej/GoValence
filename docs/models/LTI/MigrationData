@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.MigrationData
+
+{
+    "DeploymentId":  <GUID>,
+    "ToolProviderId": <number:D2LID>|null,
+}

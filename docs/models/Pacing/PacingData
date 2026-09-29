@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/content.html#Pacing.PacingData
+
+{
+  "StartDate": <string:ISODate>|null,
+  "EndDate": <string:ISODate>|null,
+  "SkipWeekends": <boolean>
+}

@@ -1,0 +1,22 @@
+https://docs.valence.desire2learn.com/res/groups.html#Group.GroupData
+
+{
+    "Name": <string>,
+    "Code": <string>,
+    "Description": { <composite:RichTextInput> }
+}
+
+{
+    "GroupId": <number:D2LID>,
+    "Name": <string>,
+    "Code": <string>,
+    "Description": { <composite:RichText> },
+    "Enrollments": [ <number:D2LID>, ... ]
+}
+
+{
+    "GroupId": <number:D2LID>,
+    "Name": <string>,
+    "Code": <string>,
+    "Description": { <composite:RichText> }
+}

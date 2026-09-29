@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/survey.html#Surveys.SpecialAccessData
+
+{
+   "StartDate": <string:UTCDateTime>|null,
+   "EndDate": <string:UTCDateTime>|null
+}

@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.Post
+
+{
+    "ForumId": <number:D2LID>,
+    "PostId": <number:D2LID>,
+    "TopicId": <number:D2LID>,
+    "PostingUserId": <number:D2LID>|null,
+    "PostingUserDisplayName": <string>,
+    "ThreadId": <number:D2LID>,
+    "ParentPostId": <number:D2LID>|null,
+    "Message": { <composite:RichText> },
+    "Subject": <string>,
+    "DatePosted": <string:UTCDateTime>,
+    "IsAnonymous": <boolean>,
+    "RequiresApproval": <boolean>,
+    "IsDeleted": <boolean>,
+    "LastEditedDate": <string:UTCDateTime>|null,
+    "LastEditedBy": <number:D2LID>|null,
+    "CanRate": <boolean>,
+    "ReplyPostIds": [ <number:D2LID>, ... ],
+    "WordCount": <number:D2LID>,
+    "AttachmentCount": <number:D2LID>,
+    "IsRead": <boolean>,  // Added with LE API v1.45
+    "Attachments": [  // Added with LE API v1.95
+        { <composite:Discussions.PostAttachment> }, ...
+    ]
+    "ThreadIsPinned": <boolean>  // Added with LE API v1.95
+}

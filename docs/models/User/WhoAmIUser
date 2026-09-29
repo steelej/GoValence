@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/user.html#User.WhoAmIUser
+
+{
+    "Identifier": <string:D2LID>,
+    "FirstName": <string>,
+    "LastName": <string>,
+    "UniqueName": <string>,
+    "ProfileIdentifier": <string>,
+    "Pronouns": <string>
+}

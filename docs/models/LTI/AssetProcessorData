@@ -1,0 +1,16 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.AssetProcessorData
+
+{
+    "AssetProcessorId": <number:D2LID>,
+    "SettingLinkId": <number:D2LID>,
+    "OrgUnitId": <number:D2LID>,
+    "LtiActivityId": <string>,
+    "Title": <string>|null,
+    "Description": <string>|null,
+    "ReportLinkId": <number:D2LID>|null,
+    "IsEnabled": <boolean>,
+    "ToolId": <number>,
+    "ToolItemId": <number>,
+    "DeploymentId":  <GUID>,
+    "CustomParameters": [ { <composite:LTI.CustomParameters> }, ... ]
+}

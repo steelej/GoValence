@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/settings.html#Settings.LASOverrideData
+
+{
+   "UserId": <number:D2LID>,
+   "TwoFactor": <number:TWOFACTOR_T>,
+   "LocalLogin": <boolean>
+}

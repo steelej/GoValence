@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#RoleInCurrentOrgUnitParams
+
+{
+    "RoleId": <number:D2LID>,
+    "EnrollmentType": <string:CURRENTROLE_T>
+}

@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/epobject.html#EP.EpObject
+
+{
+    "ObjectId": <number:D2LID>,
+    "Name": <string>,
+    "Description": <string>,
+    "Tags": [ <EP.TagObject>, ... ],
+    "GeoTag": { <composite:EP.GeoTag> },
+    "AllowComments": <boolean>
+}
+
+{
+    "ObjectId": <number:D2LID>,
+    "Name": <string>,
+    "Description": <string>,
+    "UserId": <number:D2LID>,
+    "ObjectTypeId": <number:EPOBJ_T>,
+    "ViewLink": <string>,
+    "CommentsCount": <number>,
+    "HasUnreadComments": <boolean>,
+    "Tags": [ <EP.TagObject>, ... ],
+    "Comments": [ <EP.ObjectComment>, ... ],
+    "Created": <string:UTCDateTime>|null,
+    "Modified": <string:UTCDateTime>|null,
+    "GeoTag": { <composite:EP.GeoTag> },
+    "AllowComments": <boolean>,
+    "Permissions": [ <number:OBJRIGHT_T>, ... ]
+}

@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSObjectPropertiesInput
+
+{
+    "RepositoryId": <number:D2LID>,
+    "Status": <number:LR_OBJECT_STATUS_T>,
+    "HiddenFromSearchResults": <boolean>,
+    "PublicallyAvailable": <boolean>,
+    "OwnerId": <number:D2LID>,
+    "Title": <string>,
+    "Description": <string>,
+    "Keywords": [ <string>, ... ]
+}

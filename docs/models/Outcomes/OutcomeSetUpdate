@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.OutcomeSetUpdate
+
+{
+    "Name": <string>|null, // Optional
+    "Outcomes": null|[  // Optional
+         { <composite:Outcomes.OutcomeSetUpdateNode> },
+         { <composite:Outcomes.OutcomeSetUpdateNode> }, ...
+    ]
+}

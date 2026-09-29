@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSPublishStatusResult
+
+{
+    "PublishStatus": <number>,
+    "ErrorMessage": <string>,
+    "LoUrl": <string>
+}

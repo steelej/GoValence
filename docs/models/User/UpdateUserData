@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/user.html#User.UpdateUserData
+
+{
+    "OrgDefinedId": <string>,
+    "FirstName": <string>,
+    "MiddleName": <string>|null,
+    "LastName": <string>,
+    "ExternalEmail": <string>|null,
+    "UserName": <string>,
+    "Activation": { <composite:User.UserActivationData> },
+    "Pronouns": <string>|null
+}

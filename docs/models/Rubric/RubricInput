@@ -1,0 +1,20 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.RubricInput
+
+{
+    "Name": <string>,
+    "Description": { <composite:RichTextInput> },
+    "RubricType": <number:RUBRIC_T>,
+    "RubricStateId": <number:RUBRIC_STATE_ID_M>,
+    "ScoringMethod": <number:SCORING_M>,
+    "Visibility": <number:VISIBILITY_M>,
+    "IsScoreVisibleToAssessedUsers": <boolean>,
+    "ReverseLevelDisplayOrder": <boolean>,
+    "CriteriaGroups": [  // Array of CriteriaGroupInput blocks
+        { <composite:Rubric.CriteriaGroupInput> },
+        { <composite:Rubric.CriteriaGroupInput> }, ...
+    ],
+    "OverallLevels": [  // Array of OverallLevelInput blocks
+        { <composite:Rubric.OverallLevelInput> },
+        { <composite:Rubric.OverallLevelInput> }, ...
+    ]
+}

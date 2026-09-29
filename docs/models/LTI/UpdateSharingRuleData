@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.UpdateSharingRuleData
+
+{
+    "ShareWithOrgUnit": <boolean>,
+    "ShareWithDescendants": <boolean>
+}

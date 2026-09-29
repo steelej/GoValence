@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/news.html#News.NewsItemData
+
+{
+    "Title": <string>,
+    "Body": { <composite:RichText> },
+    "StartDate": <string:UTCDateTime>,
+    "EndDate": <string:UTCDateTime>|null,
+    "IsGlobal": <boolean>,
+    "IsPublished": <boolean>,
+    "ShowOnlyInCourseOfferings": <boolean>,
+    "IsAuthorInfoShown": <boolean>,
+    "IsPinned": <boolean>,
+    "IsStartDateShown": <boolean>,  // Added with LE API v1.75
+    "SortOrder": <number>|null // Added with LE API v1.75
+}

@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/groups.html#Section.SectionEnrollmentPaged
+
+{
+    "SectionId": <number:D2LID>,
+    "UserId": <number:D2LID>
+}

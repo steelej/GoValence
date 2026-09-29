@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.DropboxFolderUpdateData
+
+{
+    "CategoryId": <number:D2LID>|null,
+    "Name": <string>,
+    "CustomInstructions": "{composite:RichTextInput}",
+    "Availability": null|{
+        "StartDate": <string:UTCDateTime>|null,
+        "EndDate": <string:UTCDateTime>|null,
+        "StartDateAvailabilityType": <string:AVAILABILITY_T>|null,
+        "EndDateAvailabilityType": <string:AVAILABILITY_T>|null
+    },
+    "GroupTypeId": <number:D2LID>|null,
+    "DueDate": <string:UTCDateTime>|null,
+    "DisplayInCalendar": <boolean>,
+    "NotificationEmail" : <string>|null,
+    "IsHidden": <boolean>|null,
+    "Assessment": null|{
+        "ScoreDenominator": <number:decimal>|null
+    },
+    "IsAnonymous": <boolean>|null,
+    "DropboxType": <string:DROPBOXTYPE_T>|null,
+    "SubmissionType": <string:SUBMISSIONTYPE_T>|null,
+    "CompletionType": <string:DROPBOX_COMPLETIONTYPE_T>|null,
+    "SubmissionRule": <string:SUBMISSIONRULE_T>|null,  // Added with LE API v1.98
+    "GradeItemId": <number:D2LID>|null,
+    "AllowOnlyUsersWithSpecialAccess": <boolean>|null
+}

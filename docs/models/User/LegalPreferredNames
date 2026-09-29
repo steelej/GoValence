@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/user.html#User.LegalPreferredNames
+
+{
+    "LegalFirstName": <string>,
+    "LegalLastName": <string>,
+    "PreferredFirstName": <string>|null,
+    "PreferredLastName": <string>|null,
+    "SortLastName": <string>|null
+}

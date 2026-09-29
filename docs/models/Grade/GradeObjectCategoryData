@@ -1,0 +1,25 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeObjectCategoryData
+
+{
+    "Name": <string>,
+    "ShortName": <string>,
+    "CanExceedMax": <boolean>,
+    "ExcludeFromFinalGrade": <boolean>,
+    "Description": { <composite:RichTextInput> }|null,  // Added with LE API v1.98
+    "ShowDescription": <boolean>|null,  // Added with LE API v1.98
+    "DisplayClassAverageToUsers": <boolean>|null,  // Added with LE API v1.98
+    "DisplayGradeDistributionToUsers": <boolean>|null,  // Added with LE API v1.98
+    "OverrideDisplayOptions": <boolean>|null,  // Added with LE API v1.98
+    "DisplayPointsToUsers": <boolean>|null,  // Added with LE API v1.98
+    "DisplayWeightToUsers": <boolean>|null,  // Added with LE API v1.98
+    "DisplayGradeSchemeSymbolToUsers": <boolean>|null,  // Added with LE API v1.98
+    "DisplayGradeSchemeColorToUsers": <boolean>|null,  // Added with LE API v1.98
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "Weight": <number:decimal>,
+    "MaxPoints": <number:decimal>,
+    "AutoPoints": <boolean>|null,
+    "WeightDistributionType": <number>|null,
+    "NumberOfHighestToDrop": <number>|null,
+    "NumberOfLowestToDrop": <number>|null
+}

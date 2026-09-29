@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/accommodations.html#Accommodations.QuizzingAccommodations
+
+{
+  "QuizzingControlAccommodation": { <composite:Accommodations.QuizzingControlAccommodation> },
+  "QuizzingTimeLimitAccommodation": { <composite:Accommodations.QuizzingTimeLimitAccommodation> }
+}

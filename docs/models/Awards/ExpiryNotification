@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.ExpiryNotification
+
+{
+    "ExpiryNotifyValue": <number:decimal>|null,
+    "ExpiryNotifyType": <number:EXPIRY_NOTIFICATION_T>|null
+}

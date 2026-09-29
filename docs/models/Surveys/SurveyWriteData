@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/survey.html#Surveys.SurveyWriteData
+
+{
+    "Name": <string>,
+    "HasInstantFeedback": <boolean>,
+    "IsAnonymous": <boolean>,
+    "Description": {
+        "Text": { <composite:RichTextInput> },
+        "IsDisplayed": <boolean>
+    },
+    "Submission": <composite:RichTextInput>,
+    "Footer": {
+        "Text": { <composite:RichTextInput> },
+        "IsDisplayed": <boolean>
+    },
+    "IsActive": <boolean>,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "DisplayInCalendar": <boolean>,
+    "UserResponses": {
+        "AttemptsAllowedTypeId": <number:ATTEMPTSALLOWEDTYPE_T>,
+        "NumberOfAttempts": <number>|null
+    },
+    "CategoryId": <number>|null,
+    "PreventMovingBackwards": <boolean>,
+    "Shuffle": <boolean>,
+    "AllowOnlyUsersWithSpecialAccess": <boolean>
+}

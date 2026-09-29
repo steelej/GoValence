@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.RubricPropertiesUpdate
+
+{
+    "Name": <string>|null,
+    "Description": { <composite:RichTextInput> }|null,
+    "RubricStateId": <number:RUBRIC_STATE_ID_M>|null,
+    "Visibility": <number:VISIBILITY_M>|null,
+    "IsScoreVisibleToAssessedUsers": <boolean>|null,
+    "ReverseLevelDisplayOrder": <boolean>|null
+}

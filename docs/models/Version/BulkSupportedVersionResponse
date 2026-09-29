@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Version.BulkSupportedVersionResponse
+
+{
+    "Supported": <boolean>,
+    "Versions": [ // Array of BulkSupportedVersionResponseItem blocks
+         {
+             "ProductCode": <string:D2LPRODUCT>,
+             "Version": <string:D2LVERSION>,
+             "Supported": <boolean>,
+             "LatestVersion": <string:D2LVERSION>
+         },
+         {  <composite:BulkSupportedVersionResponseItem> }, ...
+    ]
+}

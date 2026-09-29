@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.EmailAction
+
+{
+    "IsEnabled": <boolean>,
+    "To": <string>|null,
+    "Cc": <string>|null,
+    "Bcc": <string>|null,
+    "Subject": <string>|null,
+    "Message": <string>|null,
+    "IsHtml": <boolean>
+}

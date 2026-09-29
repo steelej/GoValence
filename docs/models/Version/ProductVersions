@@ -1,0 +1,11 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Version.ProductVersions
+
+{
+    "ProductCode": <string:D2LPRODUCT>,
+    "LatestVersion": <string:D2LVERSION>,
+    "SupportedVersions": [ // Array of D2LVERSION strings
+        <string:D2LVERSION>,
+        <string:D2LVERSION>,
+        <string:D2LVERSION>, ...
+    ]
+}

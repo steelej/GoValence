@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.IncomingFinalAdjustedGradeValue
+
+{
+    "PointsNumerator": <number:decimal>,
+    "PointsDenominator": <number:decimal>
+}

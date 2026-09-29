@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/orgunit.html#Org.Organization
+
+{
+    "Identifier": <string:D2LID>,
+    "Name": <string>,
+    "TimeZone": <string:TimeZone>
+}

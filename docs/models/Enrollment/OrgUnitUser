@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.OrgUnitUser
+
+{
+    "User": { <composite:User.User> },
+    "Role": { <composite:Enrollment.RoleInfo> }
+}

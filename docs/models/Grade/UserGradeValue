@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.UserGradeValue
+
+{
+   "User": { <composite:User> },
+   "GradeValue": { <composite:GradeValue> }|null
+}

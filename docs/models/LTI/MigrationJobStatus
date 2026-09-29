@@ -1,0 +1,16 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.MigrationJobStatus
+
+{
+    "JobId": <number:D2LID>,  // Added with LMS v20.23.3
+    "Status": <number:MIGRATION_STATUS_T>,
+    "OrgUnitId": <number:D2LID>,
+    "Counts": {
+        "Success": <number>,
+        "Failure": <number>,
+        "NoDomainMatch": <number>
+    },
+    "MigrationType": <number:MIGRATION_TYPE_T>,
+    "QueueDate": <string:UTCDateTime>|null,  // Added with LMS v20.23.3
+    "StartDate": <string:UTCDateTime>|null,  // Added with LMS v20.23.3
+    "CompleteDate": <string:UTCDateTime>|null  // Added with LMS v20.23.3
+}

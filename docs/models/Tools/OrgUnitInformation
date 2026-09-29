@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/tools.html#Tools.OrgUnitInformation
+
+{
+    "ToolId": <string:D2LID>,
+    "DisplayName": <string>,
+    "OrgUnitId": <number:D2LID>,
+    "Status": <boolean>,
+    "CustomNavbarName": <string>
+}

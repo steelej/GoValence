@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/survey.html#Surveys.SurveyCategoryReadData
+
+{
+    "CategoryId": <number:D2LID>,
+    "Name": <string>,
+    "SortOrder": <number>
+}

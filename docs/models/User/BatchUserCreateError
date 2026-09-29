@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/user.html#User.BatchUserCreateError
+
+{
+   "UserName": <string>,
+   "StatusError": <number>,
+   "StatusMessage": <string>
+}

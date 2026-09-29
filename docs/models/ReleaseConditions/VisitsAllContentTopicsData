@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#VisitsAllContentTopicsData
+
+{
+    "Type": "VisitsAllContentTopics",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "VisitsAllContentTopicsParams": {}
+}

@@ -1,0 +1,19 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ReceivesScoreOnGradeItemParams
+
+{
+    "GradeObjectId": <number:D2LID>,
+    "Operator": <string:OPERATOR_T>,
+    "Operands": [ <number:decimal>, ... ]
+}
+
+{
+    "GradeObjectId": <number:D2LID>,
+    "Operator": "GreaterThan",
+    "Operands": [ 0 ]
+}
+
+{
+    "GradeObjectId": <number:D2LID>,
+    "Operator": "EqualTo",
+    "Operands": [ 0 ]
+}

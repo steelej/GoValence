@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/collection.html#EP.Collection
+
+{
+    "ItemsCount": <number>,
+    "ItemIds": [ // Array of D2LID numbers
+        <number:D2LID>,
+        <number:D2LID>,
+        <number:D2LID>, ...
+    ],
+    "Items": [ // Array of EP.EpObject blocks
+        { <composite:EP.EpObject> },
+        { <composite:EP.EpObject> },
+        { <composite:EP.EpObject> }, ...
+    ]
+}

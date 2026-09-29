@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.VisibilityInfo
+
+{
+    "Type": <number:VISIBILITY_T>,
+    "Range": <number>|null,
+    "HiddenRangeUnitType": <number:HIDDENUNIT_T>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+}

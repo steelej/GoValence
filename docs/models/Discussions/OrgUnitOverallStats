@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.OrgUnitOverallStats
+
+{
+    "TotalThreads": <number:int>,
+    "TotalReplies": <number:int>,
+    "TotalPinned": <number:int>,
+    "UnapprovedPosts": <number:int>
+}

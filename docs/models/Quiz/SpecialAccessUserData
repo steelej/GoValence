@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.SpecialAccessUserData
+
+{
+    "UserId": <number:D2LID>,
+    "SpecialAccess": <composite:Quiz.SpecialAccessData>
+}

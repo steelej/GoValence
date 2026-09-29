@@ -1,0 +1,23 @@
+https://docs.valence.desire2learn.com/res/quiz.html#Quiz.QuizAttemptData
+
+{
+     "AttemptId": <number:D2LID>,
+     "QuizId": <number:D2LID>,
+     "UserId": <number:D2LID>,
+     "AttemptNumber": <number>,
+     "Score": <number:decimal>|null,
+     "Started": <string:UTCDateTime>,
+     "Completed": <string:UTCDateTime>|null,
+     "AttemptFeedback": { <composite:RichText> },
+     "FeedbackLastModified": <string:UTCDateTime>|null,
+     "IsPublished":  <boolean>,
+     "IsRetakeIncorrectOnly": <boolean>,
+     "AttemptDueDate": <string:UTCDateTime>|null,
+     "AttemptEnforceTimeLimit": <boolean>,
+     "AttemptSubmissionTimeLimit": <number>,
+     "AttemptSubmissionGraceLimit": <number>,
+     "AttemptSubmissionLateTypeId": <number>,
+     "AttemptSubmissionLateData": <number>,
+     "AttemptIsSynchronous": <boolean>,
+     "DeductionPercentage": <number>|null
+}

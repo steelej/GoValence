@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#ReleasedFinalGradeData
+
+{
+    "Type": "ReleasedFinalGrade",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "ReleasedFinalGradeParams": { <composite:ReleasedFinalGradeParams> }
+}

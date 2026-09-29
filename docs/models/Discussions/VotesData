@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.VotesData
+
+{
+   "NumUpVotes": <number>,
+   "NumDwnVotes": <number>,
+   "UserVote": { <composite:Discussion.UserVoteData> }
+}

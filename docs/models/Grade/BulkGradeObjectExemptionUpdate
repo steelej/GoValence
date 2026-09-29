@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.BulkGradeObjectExemptionUpdate
+
+{
+    "ExemptedIds": [ <number:D2LID>, ... ],
+    "UnexemptedIds": [ <number:D2LID>, ... ],
+    "ExemptionAccessDate": <string:UTCDateTime>
+}

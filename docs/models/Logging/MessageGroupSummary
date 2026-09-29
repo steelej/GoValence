@@ -1,0 +1,16 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Logging.MessageGroupSummary
+
+{
+    "LogMessageId": <string>,
+    "LogLevel": <string:LOGLEVEL_T>,
+    "DeveloperMessage": <string>,
+    "LoggerAssembly": <string>,
+    "LoggerType": <string>,
+    "ExceptionAssembly": <string>,
+    "ExceptionType": <string>,
+    "ExceptionMessage": <string>,
+    "MessageGroupId": <number:D2LID>,
+    "MessageCount": <number>,
+    "UserId": <number:D2LID>|null,
+    "OrgUnitId": <number:D2LID>|null
+}

@@ -1,0 +1,27 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeObjectCategory
+
+{
+    "Id": <number:D2LID>,
+    "Grades": [ <Grade.GradeObject>, ... ],
+    "Name": <string>,
+    "ShortName": <string>,
+    "CanExceedMax": <boolean>,
+    "ExcludeFromFinalGrade": <boolean>,
+    "Description": { <composite:RichTextInput> }|null,  // Added with LMS v20.26.9
+    "ShowDescription": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayClassAverageToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayGradeDistributionToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "OverrideDisplayOptions": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayPointsToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayWeightToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayGradeSchemeSymbolToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "DisplayGradeSchemeColorToUsers": <boolean>|null,  // Added with LMS v20.26.9
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "Weight": <number:decimal>|null,
+    "MaxPoints": <number:decimal>|null,
+    "AutoPoints": <boolean>|null,
+    "WeightDistributionType": <number>|null,
+    "NumberOfHighestToDrop": <number>|null,
+    "NumberOfLowestToDrop": <number>|null
+}

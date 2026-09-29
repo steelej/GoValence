@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/permissions.html#Permissions.ClaimGrant
+
+{
+    "GrantId": <string>,
+    "ClaimId": <string>,
+    "RoleId": <number:D2LID>,
+    "OrgUnitTypeId": <number:D2LID>,
+    "Allowed": <boolean>
+}

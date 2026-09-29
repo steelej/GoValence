@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.DropboxCategoryWithFolders
+
+{
+    "Id": <number:D2LID>,
+    "Name": <string>,
+    "Folders": [ // Array of DropboxFolder blocks
+        { <composite:Dropbox.DropboxFolder> },
+        { <composite:Dropbox.DropboxFolder> }, ...
+    ],
+    "LastModifiedByUserId": <number:D2LID>|null,
+    "LastModifiedDate": <string:UTCDateTime>|null,
+}

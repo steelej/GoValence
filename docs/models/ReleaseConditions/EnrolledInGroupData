@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/releaseconditions.html#EnrolledInGroupData
+
+{
+    "Type": "EnrolledInGroup",
+    "State": <string>|null,
+    "Text": { <composite:RichText> },
+    "EnrolledInGroupParams": { <composite:EnrolledInGroupParams> }
+}

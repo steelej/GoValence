@@ -1,0 +1,38 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.Configuration
+
+{
+    "Permissions": {
+        "SeeAwards": <boolean>,
+        "EarnAwards": <boolean>,
+        "AssociateAwards": <boolean>,
+        "IssueAwards": <boolean>,
+        "RevokeIssuedAwards": <boolean>,
+        "ManageMyAwards": <boolean>,
+        "ManageAllAwards": <boolean>,
+        "SeeBadges": <boolean>,
+        "AssociateBadges": <boolean>,
+        "EarnBadges": <boolean>,
+        "IssueBadges": <boolean>,
+        "RevokeIssuedBadges": <boolean>,
+        "ManageMyBadges": <boolean>,
+        "ManageAllBadges": <boolean>,
+        "SeeCertificates": <boolean>,
+        "AssociateCertificates": <boolean>,
+        "EarnCertificates": <boolean>,
+        "IssueCertificates": <boolean>,
+        "RevokeIssuedCertificates": <boolean>,
+        "ManageMyCertificates": <boolean>,
+        "ManageAllCertificates": <boolean>,
+        "ManageLibraryIcons": <boolean>,
+        "ManageLibraryCertificateTemplates": <boolean>,
+        "DownloadOtherUsersCertificates": <boolean>
+    },
+    "DefaultIssuerName": <string>,
+    "DefaultIssuerUrl": <string>,
+    "DefaultIssuerContact": <string>,
+    "D2LProfileIntegrationEnabled": <boolean>,
+    "IconCreationUrl": <string>,
+    "DefaultClasslistSortField": <string>,
+    "DefaultClasslistSortAscending": <boolean>,
+    "UserTimezone": <string>
+}

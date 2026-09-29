@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.GradeStatisticsInfo
+
+{
+    "OrgUnitId": <number:D2LID>,
+    "GradeObjectId": <number:D2LID>,
+    "Minimum": <number:decimal>|null,
+    "Maximum": <number:decimal>|null,
+    "Average": <number:decimal>|null,
+    "Mode": [ <number:decimal>, ... ],
+    "Median": <number:decimal>|null,
+    "StandardDeviation": <number:decimal>|null,
+}

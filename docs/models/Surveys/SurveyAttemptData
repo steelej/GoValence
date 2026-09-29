@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/survey.html#Surveys.SurveyAttemptData
+
+{
+     "AttemptId": <number:D2LID>,
+     "SurveyId": <number:D2LID>,
+     "UserId": <number:D2LID>|null,
+     "AttemptNumber": <number>,
+     "Started": <string:UTCDateTime>,
+     "Completed": <string:UTCDateTime>|null,
+}

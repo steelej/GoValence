@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/demographics.html#Demographics.DemographicsEntryData
+
+{
+    "EntryValues": [  // Array of DemographicsEntry blocks
+        {
+            "Name": <string>,
+            "Values": [
+                <string>,
+                <string>, ...
+            ]
+        },
+        { <composite:DemographicsEntry> }, ...
+    ]
+}

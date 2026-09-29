@@ -1,0 +1,29 @@
+https://docs.valence.desire2learn.com/res/dropbox.html#Dropbox.DropboxFeedbackOut
+
+{
+    "Score": <number:decimal>|null,
+    "Feedback": { <composite:RichText> },
+    "RubricAssessments": [ // Array of RubricAssessment blocks
+        { <composite:RubricAssessment> },
+        { <composite:RubricAssessment> }, ...
+    ],
+    "IsGraded": <boolean>,
+    "Files": [ // Array of File blocks
+        {
+            "FileId": <number:D2LID>,
+            "FileName": <string>,
+            "Size": <number:long>
+        },
+        { <composite:File> }, ...
+    ],
+    "Links": [ // Array of Link blocks
+        {
+            "Type": <string:DROPBOX_LINK_ATTACHMENT_T>,
+            "LinkId": <number:D2LID>,
+            "LinkName": <string>,
+            "Href": <string>|null
+        },
+        { <composite:Link> }, ...
+    ],
+   "GradedSymbol": <string>|null
+}

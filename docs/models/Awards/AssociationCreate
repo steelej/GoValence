@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.AssociationCreate
+
+{
+    "AwardId": <number:D2LID>,
+    "Credit": <number:decimal>|null,
+    "HiddenAward": <boolean>
+}

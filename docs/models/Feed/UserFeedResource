@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/news.html#Feed.UserFeedResource
+
+{
+    "Type": <string>,
+    "MessageMetaData": {
+        "Identifier": <string>,
+        "Title": <string>,
+        "Summary": { <composite:RichText> },
+        "Date": <string:UTCDateTime>,
+        "ApiViewUrl": <string:URL>,
+        "WebViewUrl": <string:URL>
+    },
+    "Resource": { <composite> }
+}

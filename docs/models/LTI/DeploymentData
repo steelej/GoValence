@@ -1,0 +1,31 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.DeploymentData
+
+{
+    "DeploymentId": <GUID>,
+    "ClientId": <GUID>,
+    "IsEnabled": <boolean>,
+    "Name": <string>,
+    "Description": <string>|null,
+    "EnabledExtensions ": [ <number:EXTENSION_T>, ... ],
+    "AvailableExtensions": [ <number:EXTENSION_T>, ... ],
+    "Anonymous": <boolean>,
+    "SendOrgUnitInformation": <boolean>,
+    "SendUserFirstName": <boolean>,
+    "SendUserMiddleName": <boolean>,
+    "SendUserLastName": <boolean>,
+    "SendUserEmail": <boolean>,
+    "SendD2LUserId": <boolean>,
+    "SendD2LUsername": <boolean>,
+    "SendD2LOrgDefinedId": <boolean>,
+    "SendLinkTitle": <boolean>,
+    "SendLinkDescription": <boolean>,
+    "PreProvisioning": <boolean>,
+    "IsAvailable": <boolean>,
+    "CustomParameters": [ { <composite:LTI.CustomParameters> }, ... ],
+    "OpenAsExternal": <boolean>,
+    "IncludeInFinalGrade": <boolean>,
+    "AutoMigrateLinks": <boolean>,  // Added with LE API v1.67
+    "AutoCreateGrade": <boolean>,  // Added with LE API v1.68
+    "EnabledNoticeTypes": [ <number:NOTICE_TYPE_T>, ... ],  // Added with LE API v1.76
+    "NoticeHandlers": [ { <composite:LTI.NoticeHandler> }, ... ]  // Added with LMS v20.25.8
+}

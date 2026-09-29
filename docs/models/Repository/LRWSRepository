@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSRepository
+
+{
+    "RepositoryId": <number:D2LID>,
+    "Name": <string>,
+    "Description": <string>,
+    "Type": <string>,
+    "OrgId": <number:D2LID>,
+    "ObjectCount": <number>
+}

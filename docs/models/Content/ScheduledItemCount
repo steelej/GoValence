@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/content.html#Content.ScheduledItemCount
+
+{
+   "OrgUnitId": <string:D2LID>,
+   "UserId": <string:D2LID>,
+   "ItemCount": <number>
+}

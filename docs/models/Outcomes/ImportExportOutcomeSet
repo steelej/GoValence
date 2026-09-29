@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/res/outcomes.html#Outcomes.ImportExportOutcomeSet
+
+{
+    "Name": <string>|null,
+    "ImportId": <string>,
+    "Outcomes": [  // Array of ImportExportOutcome blocks
+         { <composite:Outcomes.ImportExportOutcome> },
+         { <composite:Outcomes.ImportExportOutcome> }, ...
+    ]
+}

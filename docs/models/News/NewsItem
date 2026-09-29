@@ -1,0 +1,30 @@
+https://docs.valence.desire2learn.com/res/news.html#News.NewsItem
+
+{
+    "Id": <number:D2LID>,
+    "IsHidden": <boolean>,
+    "Attachments": [ // Array of File blocks
+        {
+            "FileId": <number:D2LID>,
+            "FileName": <string>,
+            "FileSize": <number>
+        },
+        { <composite:File> }, ...
+    ],
+    "Title": <string>,
+    "Body": { <composite:RichText> },
+    "CreatedBy": <number:D2LID>|null,
+    "CreatedDate": <string:UTCDateTime>|null,
+    "LastModifiedBy": <number:D2LID>|null,
+    "LastModifiedDate": <string:UTCDateTime>|null,
+    "StartDate": <string:UTCDateTime>|null,
+    "EndDate": <string:UTCDateTime>|null,
+    "IsGlobal": <boolean>,
+    "IsPublished": <boolean>,
+    "ShowOnlyInCourseOfferings": <boolean>,
+    "IsAuthorInfoShown": <boolean>,
+    "IsPinned": <boolean>,
+    "PinnedDate": <string:UTCDateTime>|null,  // Added with LE API v1.81
+    "IsStartDateShown": <boolean>,  // Added with LE API v1.75
+    "SortOrder": <number>  // Added with LE API v1.75
+}

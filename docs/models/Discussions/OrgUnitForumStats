@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.OrgUnitForumStats
+
+{
+    "ForumId": <number:long>,
+    "Name": <string>,
+    "Threads": <number:int>,
+    "Replies": <number:int>,
+    "Pinned": <number:int>,
+    "Unapproved": <number:int>,
+    "Scored": <number:int>,
+    "TopicStatistics": [ { <composite:Discussions.OrgUnitTopicStats> }, ... ]
+}

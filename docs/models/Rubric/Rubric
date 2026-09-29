@@ -1,0 +1,21 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.Rubric
+
+{
+    "RubricId": <number:D2LID>,
+    "Name": <string>,
+    "Description": "{composite:RichText}",
+    "RubricType": <number:RUBRIC_T>,
+    "RubricStateId": <number:RUBRIC_STATE_ID_M>,
+    "ScoringMethod": <number:SCORING_M>,
+    "Visibility": <number:VISIBILITY_M>, // Added with LMS v20.26.4
+    "IsScoreVisibleToAssessedUsers": <boolean>,
+    "ReverseLevelDisplayOrder": <boolean>, // Added with LMS v20.26.4
+    "CriteriaGroups": [  // Array of CriteriaGroup blocks
+        { <composite:CriteriaGroup> },
+        { <composite:CriteriaGroup> }, ...
+    ],
+    "OverallLevels": [  // Array of OverallLevel blocks
+        { <composite:Overalllevel> },
+        { <composite:OverallLevel> }, ...
+    ]
+}

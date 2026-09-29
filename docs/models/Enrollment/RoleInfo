@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Enrollment.RoleInfo
+
+{
+    "Id": <number:D2LID>,
+    "Code": <string>|null,
+    "Name": <string>
+}

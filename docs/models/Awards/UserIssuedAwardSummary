@@ -1,0 +1,14 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.UserIssuedAwardSummary
+
+{
+     "UserId": <number:D2LID>,
+     "OrgUnitId": <number:D2LID>,
+     "ProfileImage": <string:URL>,
+     "DisplayName": <string>,
+     "FirstName": <string>,
+     "LastName": <string>,
+     "TotalAwardCount": <number>,
+     "TotalCreditCount": <number:decimal>,
+     "Rank": <number>,
+     "IssuedAwards": { <composite:Api.ObjectListPage<Awards.IssuedAward>> }
+}

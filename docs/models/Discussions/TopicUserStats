@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/discuss.html#Discussions.TopicUserStats
+
+{
+    "UserId": <number:long>,
+    "DisplayName": <string>,
+    "ThreadsPosted": <number:int>,
+    "RepliesPosted": <number:int>,
+    "PostsReadCount": <number:int>,
+    "UnapprovedPostCount": <number:int>,
+    "ScoredPostCount": <number:int>,
+    "UpVotes": <number:int>|null,
+    "DownVotes": <number:int>|null,
+    "StarRating": <number:decimal>|null,
+    "StarRatingsCount": <number:int>|null
+}

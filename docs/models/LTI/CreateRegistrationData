@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/ltiadvantage.html#LTI.CreateRegistrationData
+
+{
+    "IsEnabled": <boolean>,
+    "Name": <string>,
+    "Description": <string>|null,
+    "Domain": <string>,
+    "RedirectUrls": [ <string>, ... ],
+    "OpenIDConnectLoginUrl": <string>,
+    "KeysetUrl": <string>|null,
+    "EnabledExtensions": [ <number:EXTENSION_T>, ... ],
+    "SendInstitutionRole": <boolean>,
+    "CustomParameters": [ { <composite:LTI.CustomParameters> }, ... ],
+    "TargetLinkUri": <string>|null
+}

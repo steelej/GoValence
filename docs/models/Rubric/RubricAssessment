@@ -1,0 +1,28 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.RubricAssessment
+
+{
+    "RubricId": <number:D2LID>,
+    "UserId": <number:D2LID>,
+    "ObjectType": <string>,
+    "ObjectId": <number:D2LID>,
+    "OverallOutcome": {
+        "LevelId": <number:D2LID>,
+        "Score": <number:decimal>|null,
+        "ScoreIsOverridden": <boolean>,
+        "Feedback": { <composite:RichText> },
+        "FeedbackIsOverridden": <boolean>,
+        "AssessorId": <number:D2LID>,
+        "AutoCalculate": <boolean>|null,
+    },
+    "CriteriaOutcome": [ // Array of CriterionOutcome blocks
+        {
+            "CriterionId": <number:D2LID>,
+            "LevelId": <number:D2LID>|null,
+            "Score": <number:decimal>|null,
+            "ScoreIsOverridden": <boolean>,
+            "Feedback": { <composite:RichText> },
+            "FeedbackIsOverridden": <boolean>
+        },
+        { <composite:CriterionOutcome> }, ...
+    ]
+}

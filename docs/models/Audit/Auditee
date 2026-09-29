@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/enroll.html#Audit.Auditee
+
+{
+    "AuditeeId": <number:D2LID>,
+    "DisplayName": <string>
+}

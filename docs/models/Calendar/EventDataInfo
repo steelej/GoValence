@@ -1,0 +1,30 @@
+https://docs.valence.desire2learn.com/res/calendar.html#Calendar.EventDataInfo
+
+{
+    "CalendarEventId": <number:D2LID>,
+    "OrgUnitId": <number:D2LID>,
+    "Title": <string>,
+    "Description": <string>,
+    "StartDateTime": <string:UTCDateTime>|null,
+    "EndDateTime": <string:UTCDateTime>|null,
+    "IsAllDayEvent": <boolean>,
+    "StartDay": <string:LocalDateTime>|null,
+    "EndDay": <string:LocalDateTime>|null,
+    "GroupId": <number:D2LID>|null,
+    "IsRecurring": <boolean>,
+    "RecurrenceInfo": { <composite:Calendar.RecurrenceInfo> },
+    "LocationId": <number:D2LID>|null,
+    "LocationName": <string>,
+    "OrgUnitName": <string>,
+    "OrgUnitCode": <string>,
+    "IsAssociatedWithEntity": <boolean>,
+    "AssociatedEntity": { <composite:Calendar.AssociatedEntityInfo> },
+    "HasVisibilityRestrictions": <boolean>,
+    "VisibilityRestrictions" : { <composite:Calendar.VisibilityInfo> },
+    "CalendarEventViewUrl" : <string:URL>,
+    "EventType": <number:EVENTTYPE_T>,  // Added with LE API v1.94
+    "Presenters" : [  // Array of PresenterInfo blocks
+      { <composite:Calendar.PresenterInfo> },
+      { <composite:Calendar.PresenterInfo> }, ...
+    ]
+}

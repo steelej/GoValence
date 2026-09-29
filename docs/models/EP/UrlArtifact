@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/artifact.html#EP.UrlArtifact
+
+[No JSON-like schema in source]
+An UrlArtifact EP object’s structure differs in two ways from the general
+form of the EpObject : Its ObjectTypeProperty will be set to the appropriate EPOBJ_T value ( "<number:EPOBJ_T:UrlArtifact>" ). A single additional property appears in both the Create and Fetch forms of
+the EP object’s data block: "Url": "<string>" .

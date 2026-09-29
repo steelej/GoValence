@@ -1,0 +1,12 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.ExpiryCalculation
+
+{
+    "ExpiryCalculationType": <number:EXPIRY_CALCULATION_T>,
+    "Minute": <number>|null,
+    "Hour": <number>|null,
+    "Day": <number>|null,
+    "Week": <number>|null,
+    "DayOfWeek": <number>|null,
+    "Month": <number>|null,
+    "Year": <number>|null
+}

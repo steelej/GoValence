@@ -1,0 +1,15 @@
+https://docs.valence.desire2learn.com/res/awards.html#Awards.AwardCreate
+
+{
+    "AwardType": <number:AWARD_T>,
+    "Title": <string>,
+    "Description": <string>,
+    "ExpiryCalculation": { <composite:Awards.ExpiryCalculation> },
+    "ExpiryNotification": { <composite:Awards.ExpiryNotification> },
+    "IssuerName": <string>,
+    "IssuerUrl": <string:URL>,
+    "IssuerContact": <string>,
+    "Certificate": { <composite:Awards.InputFileInfo> },
+    "Image": { <composite:Awards.InputFileInfo> },
+    "Criteria": <string>|null
+}

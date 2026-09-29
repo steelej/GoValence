@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/course.html#Course.CopyCourseLogMessage
+
+{
+    "LogId": <number>,
+    "CopyCourseJobId": <number:D2LID>,
+    "LogDateTime": <string:UTCDateTime>,
+    "Message": <string>
+}

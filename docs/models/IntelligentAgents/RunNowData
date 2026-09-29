@@ -1,0 +1,5 @@
+https://docs.valence.desire2learn.com/res/intelligentagents.html#IntelligentAgents.RunNowData
+
+{
+    "RunNowType": <number:RUNNOWTYPE_T>|null
+}

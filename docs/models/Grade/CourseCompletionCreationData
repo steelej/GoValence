@@ -1,0 +1,7 @@
+https://docs.valence.desire2learn.com/res/grade.html#Grade.CourseCompletionCreationData
+
+{
+    "UserId": <number:D2LID>,
+    "CompletedDate": <string:UTCDateTime>,
+    "ExpiryDate": <string:UTCDateTime>|null
+}

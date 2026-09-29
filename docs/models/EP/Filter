@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/epactivity.html#EP.Filter
+
+{
+    "Id": <string:D2LID>,
+    "Name": <string>
+}

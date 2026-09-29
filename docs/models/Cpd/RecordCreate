@@ -1,0 +1,18 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.RecordCreate
+
+{
+   "Name": <string>,
+   "CategoryId": <number:D2LID>,
+   "IsStructured": <boolean>,
+   "MethodId": <number:D2LID>,
+   "CreditMinutes": <number>,
+   "Answers": [ // Array of AnswerCreate blocks
+      {
+         "QuestionId": <number:D2LID>,
+         "Text": <string>
+      },
+      { <composite:AnswerCreate> }, ...
+   ],
+   "DateCompleted": <string:UtcDateTime>,
+   "RecordStateId": <number:RECORDSTATE_T>
+}

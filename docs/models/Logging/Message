@@ -1,0 +1,21 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Logging.Message
+
+{
+    "LogMessageId": <string>,
+    "LogLevel": <string:LOGLEVEL_T>,
+    "MessageTimestamp": <string:UTCDateTime>,
+    "ExceptionMessage": <string>,
+    "MachineName": <string>,
+    "ProcessName": <string>,
+    "ProcessStartTime": <string:UTCDateTime>|null,
+    "LoggerAssembly": <string>,
+    "LoggerType": <string>,
+    "ExceptionStackTrace": <string>|null,
+    "ExceptionType": <string>,
+    "DeveloperMessage": <string>,
+    "StackTrace": <string>|null,
+    "MessageGroupId": <number:D2LID>,
+    "UserId": <number:D2LID>|null,
+    "OrgId": <number:D2LID>|null,
+    "OrgUnitId": <number:D2LID>|null
+}

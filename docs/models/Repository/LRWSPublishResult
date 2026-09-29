@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/lor.html#Repository.LRWSPublishResult
+
+{
+    "ExecutionMessage": <string>,
+    "ExecutionStatus": <number:LR_EXEC_STATUS_T>,
+    "IdentId": <number:D2LID>,
+    "Version": <number>,
+    "ActivityId": <string>  // Available in LR unstable API contract
+}

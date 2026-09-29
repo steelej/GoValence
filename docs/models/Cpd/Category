@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/cpd.html#Cpd.Category
+
+{
+   "Id": <number:D2LID>,
+   "Name": <string>,
+   "SortOrder": <number>,
+   "InUse": <boolean>
+}

@@ -1,0 +1,10 @@
+https://docs.valence.desire2learn.com/basic/apicall.html#Api.ObjectListPage
+
+{
+    "Next": <string:APIURL>|null,
+    "Objects": [
+        { <composite:first_item_in_this_set> },
+        { <composite:second_item_in_this_set> }, ...
+        { <composite:nth_item_in_this_set> }
+    ]
+}

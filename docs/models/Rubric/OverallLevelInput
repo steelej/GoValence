@@ -1,0 +1,8 @@
+https://docs.valence.desire2learn.com/res/assessment.html#Rubric.OverallLevelInput
+
+{
+    "Name": <string>,
+    "RangeStart": <number:decimal>|null,
+    "Description": { <composite:RichTextInput> }|null,
+    "Feedback": { <composite:RichTextInput> }|null
+}

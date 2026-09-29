@@ -1,0 +1,9 @@
+https://docs.valence.desire2learn.com/res/apiprop.html#Errors.ProblemDetails
+
+{
+    "type": <string>,
+    "status": <number>,
+    "title": <string>,
+    "detail": <string>,
+    "instance": <string>
+}

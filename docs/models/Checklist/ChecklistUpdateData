@@ -1,0 +1,6 @@
+https://docs.valence.desire2learn.com/res/checklist.html#Checklist.ChecklistUpdateData
+
+{
+   "Name": <string>,
+   "Description": { <composite:RichTextInput> },
+}
