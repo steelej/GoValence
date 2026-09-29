@@ -96,6 +96,9 @@ ALIASES: dict[str, str] = {
     "AwardExpiryCalculation": "Awards/ExpiryCalculation",
     "AwardExpiryNotification": "Awards/ExpiryNotification",
     "AwardFileData": "Awards/FileData",
+    "OrgToolInfo":"Tools/OrgInformation",
+    "CreateSectionSettingsData":"Section/SectionSettingsData@1",
+    "UpdateSectionSettingsData":"Section/SectionSettingsData@3",
 }
 
 
