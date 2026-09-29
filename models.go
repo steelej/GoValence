@@ -1145,6 +1145,15 @@ type LTIAdvantageCreateSharingRuleData struct {
 
 // ---- Tools -----------------------------------------------------------------
 
+// OrgToolInfo is the organization-level information returned by the tools/org/ route.
+type OrgToolInfo struct {
+	ToolId      string `json:"ToolId"`
+	DisplayName string `json:"DisplayName"`
+	OrgId       int64  `json:"OrgId"`
+	Status      bool   `json:"Status"`
+	OUDefault   bool   `json:"OUDefault"`
+}
+
 // OrgUnitInformation block returned by GET /d2l/api/lp/(version)/tools/orgUnits/(orgUnitId)
 type ToolInfo struct {
 	ToolId           string `json:"ToolId"`

@@ -2,6 +2,15 @@ package valence
 
 import "net/url"
 
+// GetOrgToolsPage returns one page of organization-level tool information.
+// Supported params are "includeRestrictedTools" and "bookmark".
+// GET /d2l/api/lp/{lpVersion}/tools/org/
+func (c *Client) GetOrgToolsPage(params url.Values) (*PagedResultSet[OrgToolInfo], error) {
+	var out PagedResultSet[OrgToolInfo]
+	err := c.get(c.lpPath("tools/org/"), params, &out)
+	return &out, err
+}
+
 // GetOrgUnitToolsPage returns one page of tool information for an org unit.
 // Supported params include "bookmark" and "namesOnly". If namesOnly is true,
 // use GetOrgUnitToolNamesPage instead.
