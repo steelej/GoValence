@@ -1,5 +1,13 @@
 package valence
 
+// CreateSection creates a new section in an org unit.
+// PUT /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/
+func (c *Client) InitalizeSections(orgUnitId int64, data SectionSettingsData) ([]SectionData, error) {
+	var out []SectionData
+	err := c.putJSON(c.lpPath("%d/sections/", orgUnitId), nil, data, &out)
+	return out, err
+}
+
 // GetSections returns all sections for an org unit.
 // GET /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/
 func (c *Client) GetSections(orgUnitId int64) ([]Section, error) {
@@ -30,4 +38,10 @@ func (c *Client) GetSectionEnrollments(orgUnitId, sectionId int64) ([]GroupEnrol
 	var out []GroupEnrollment
 	err := c.get(c.lpPath("%d/sections/%d/enrollments/", orgUnitId, sectionId), nil, &out)
 	return out, err
+}
+
+// DeleteSection deletes the specified section.
+// DELETE /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/{sectionId}
+func (c *Client) DeleteSection(orgUnitId, sectionId int64) error {
+	return c.delete(c.lpPath("%d/sections/%d", orgUnitId, sectionId), nil, nil)
 }

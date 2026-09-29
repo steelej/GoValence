@@ -420,6 +420,32 @@ type SectionData struct {
 	Description RichTextInput `json:"Description"`
 }
 
+type CreateSectionSettingsData struct {
+	EnrollmentStyle                int64 `json:"EnrollmentStyle"`
+	EnrollmentQuantity             int64 `json:"EnrollmentQuantity"`
+	AutoEnroll                     bool  `json:"AutoEnroll"`
+	RandomizeEnrollments           bool  `json:"RandomizeEnrollments"`
+	DescriptionsVisibleToEnrollees bool  `json:"DescriptionsVisibleToEnrollees"`
+}
+
+type UpdateSectionSettingsData struct {
+	Name                           string        `json:"Name"`
+	Description                    RichTextInput `json:"Description"`
+	AutoEnroll                     bool          `json:"AutoEnroll"`
+	RandomizeEnrollments           bool          `json:"RandomizeEnrollments"`
+	DescriptionsVisibleToEnrollees bool          `json:"DescriptionsVisibleToEnrollees"`
+}
+
+type SectionSettingsData struct {
+	Name                           string        `json:"Name"`
+	Description                    RichTextInput `json:"Description"`
+	EnrollmentStyle                int64         `json:"EnrollmentStyle"`
+	EnrollmentQuantity             int64         `json:"EnrollmentQuantity"`
+	AutoEnroll                     bool          `json:"AutoEnroll"`
+	RandomizeEnrollments           bool          `json:"RandomizeEnrollments"`
+	DescriptionsVisibleToEnrollees bool          `json:"DescriptionsVisibleToEnrollees"`
+}
+
 // ---- Grade -----------------------------------------------------------------
 
 type GradeSchemeRange struct {
