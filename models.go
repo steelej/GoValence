@@ -439,7 +439,7 @@ type UpdateSectionSettingsData struct {
 type SectionSettingsData struct {
 	Name                           string        `json:"Name"`
 	Description                    RichTextInput `json:"Description"`
-	EnrollmentStyle                int64         `json:"EnrollmentStyle"`
+	EnrollmentStyle                string        `json:"EnrollmentStyle"`
 	EnrollmentQuantity             int64         `json:"EnrollmentQuantity"`
 	AutoEnroll                     bool          `json:"AutoEnroll"`
 	RandomizeEnrollments           bool          `json:"RandomizeEnrollments"`

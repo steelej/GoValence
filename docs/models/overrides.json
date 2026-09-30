@@ -1,0 +1,11 @@
+[
+  {
+    "model": "SectionSettingsData",
+    "document": "Section/SectionSettingsData",
+    "field": "EnrollmentStyle",
+    "kind": "type",
+    "documented_kinds": ["number"],
+    "go_type": "string",
+    "reason": "Observed Brightspace JSON payloads encode EnrollmentStyle as a string, despite the documentation declaring a number."
+  }
+]
