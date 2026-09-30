@@ -2,7 +2,7 @@ package valence
 
 // CreateSection creates a new section in an org unit.
 // PUT /d2l/api/lp/{lpVersion}/{orgUnitId}/sections/
-func (c *Client) InitalizeSections(orgUnitId int64, data SectionSettingsData) (SectionSettingsData, error) {
+func (c *Client) InitializeSections(orgUnitId int64, data SectionSettingsData) (SectionSettingsData, error) {
 	var out SectionSettingsData
 	err := c.postJSON(c.lpPath("%d/sections/settings", orgUnitId), nil, data, &out)
 	return out, err
